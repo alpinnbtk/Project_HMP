@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+  <div class="header" style="text-align: center; margin-top: 40px;">
+    <h1 class="title" style="font-size: 24px; font-weight: bold; color: black;">Selamat Datang</h1>
+    <p class="subTitle" style="font-size: 16px; color: #555;">Pendaftaran Akun Baru</p>
+  </div>
+
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input placeholder="Nama Lengkap" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Email" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Password" class="input" type="password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+
+      <div class="linkLogin" style="text-align: center; margin-top: 10px;">
+        <p style="color:black">
+          Sudah punya akun?
+          <a style="color: #FFC33F" [routerLink]="['/login']">Masuk Sekarang</a>
+        </p>
+      </div>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px;">
+      <ion-fab-button [routerLink]="['/tabs/home']">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

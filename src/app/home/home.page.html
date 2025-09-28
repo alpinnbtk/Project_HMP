@@ -4,38 +4,40 @@
         <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Blank
+      Daftar Berita
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class = "ion-padding">
+  <div class="horizontal-slider">
+    <div class="slide-item" *ngFor="let item of kategori" [style.background-image]="'url(' + item.image + ')'">
+      <h2>{{ item.title }}</h2>
+    </div>
+  </div>
 
-  <ion-card>
+
+  <ion-card *ngFor = "let news of berita">
+    <img alt="Silhouette of mountains" [src]="news.gambar"/>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>{{ news.title }}</ion-card-title>
+      <ion-card-subtitle> {{  news.category }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      Penulis : {{ news.author }}
+    </ion-card-content>
+    <ion-card-content>
+      Published : {{ news.publishedDate}}
     </ion-card-content>
   </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an mobile app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container" class="ion-margin-top ion-text-center">
     <a routerLink="/login">Login</a><br>
     <a routerLink="/berita/baca">Baca Berita</a><br>
     <a routerLink="/berita/cari">Cari Berita</a><br>
     <a routerLink="/berita/daftar">Daftar Berita</a><br>
     <a routerLink="/berita/kategori">Kategori Berita</a><br>
     <a routerLink="/my-favorite">Favorit Saya</a><br>
-
   </div>
 </ion-content>

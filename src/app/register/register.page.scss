@@ -9,6 +9,7 @@ ion-content {
     font-size: 300;
 }
 
+
 ion-item {
     --background:#F1F1F1;
     border-radius: 10px;
@@ -29,11 +30,10 @@ ion-input, ion-icon {
     }
     title {
         font-size: 2rem;
-        color: black;
     }
 }
 
-.signupLink {
+.linkLogin {
     display: flex;
     margin: auto;
     flex-direction: row;
@@ -51,15 +51,4 @@ ion-input, ion-icon {
     a {
         text-decoration: none;
     }
-}
-
-.lupaPassword {
-    display: flex;
-    justify-content: flex-end;
-    a {
-        font-weight: 400;
-        font-size: 0.8rem;
-        text-decoration: none;
-    }
-
 }

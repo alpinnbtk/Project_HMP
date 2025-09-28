@@ -1,0 +1,19 @@
+ion-content {
+  --background: #fff; /* latar putih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  text-align: center;
+}
+.judul-landing {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
