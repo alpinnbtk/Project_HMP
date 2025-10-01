@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
@@ -19,22 +20,32 @@ export class LoginPage implements OnInit {
     { username: 'tachyon', password: 'admin123' },
   ];
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private router: Router) { }
 
-  login() {
+  cekLogin() {
     const isValid = this.users.some(user =>
       user.username === this.username &&
       user.password === this.password
     );
 
     if (isValid) {
-      alert('✅ Login berhasil');
+      alert('Login berhasil!');
       this.navCtrl.navigateRoot('/tabs/home');
     } else {
-      alert('❌ Username atau password salah');
+      alert('Username atau password salah!');
     }
   }
 
+  login() {
+    // contoh login sukses (cek username/password dsb)
+    // kalau berhasil, simpan status login
+    localStorage.setItem('isLoggedIn', 'true');
+
+    // arahkan ke halaman utama (misalnya /tabs/home)
+    this.router.navigate(['/tabs/home']);
+  }
+
+  
   ngOnInit() {
   }
 

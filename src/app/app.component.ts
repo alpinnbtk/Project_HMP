@@ -21,5 +21,12 @@ export class AppComponent {
       this.showTabs = !noTabPages.some(page => currentUrl.startsWith(page));
     });
 
+    const loggedIn = localStorage.getItem('isLoggedIn');
+    if (loggedIn === 'true') {
+      this.router.navigate(['/tabs/home']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+
   }
 }

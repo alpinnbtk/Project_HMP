@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  standalone: false,
+  selector: 'app-kategori',
+  templateUrl: './kategori.page.html',
+  styleUrls: ['./kategori.page.scss'],
+  standalone: false
 })
-export class HomePage {
+export class KategoriPage implements OnInit {
+
+  kategoriTerpilih = ""
 
   berita = [
     {
@@ -132,22 +134,26 @@ export class HomePage {
     }
   ]
 
-  kategori = [
-    { image: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/06/2024/01/02/VIRAL-2877297154.jpg', title: 'Viral' },
-    { image: 'https://sbvpa.org/wp-content/uploads/2022/08/sports-tools_53876-138077.jpg', title: 'Olahraga' },
-    { image: 'https://sistekin.untag-sby.ac.id/uploads/berita/contoh-gambar-artikel.jpeg', title: 'Teknologi' },
-    { image: 'https://staiku.ac.id/blog/wp-content/uploads/2024/04/Screenshot_2024-04-20_122434-transformed.png', title: 'Ekonomi' },
-    { image: 'https://mahasiswa.co.id/wp-content/uploads/2025/07/image-5.jpg', title: 'Kesehatan' },
-    { image: 'https://www.portugal.com/wp-content/uploads/2024/09/breaking-news-7562017_1280.jpg', title: 'Peristiwa' },
-    { image: 'https://akcdn.detik.net.id/visual/2019/08/17/695786f1-2a1d-4a0e-b520-8f9440842bed_169.jpeg?w=400&q=90', title: 'Nasional' },
-  ];
-
-  logout() {
-    localStorage.removeItem('isLoggedIn');
-    this.router.navigate(['/login']);
+  get filteredNews() {
+    return this.berita.filter(news => {
+      if (Array.isArray(news.category)) {
+        return news.category.includes(this.kategoriTerpilih);
+      } else {
+        return news.category === this.kategoriTerpilih;
+      }
+    });
   }
 
+  isArray(value: any): boolean {
+    return Array.isArray(value);
+  }
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+       this.kategoriTerpilih = params['jenis']; 
+    });
+  }
 
 }

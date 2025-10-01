@@ -12,7 +12,7 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'baca',
+        path: 'baca/:index',
         loadChildren: () => import('../baca/baca.module').then(m => m.BacaPageModule)
       },
       {
