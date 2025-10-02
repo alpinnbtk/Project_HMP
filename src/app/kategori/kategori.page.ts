@@ -155,5 +155,4 @@ export class KategoriPage implements OnInit {
        this.kategoriTerpilih = params['jenis']; 
     });
   }
-
 }

@@ -2,21 +2,30 @@
   <ion-toolbar>
     <ion-title>Baca Berita</ion-title>
   </ion-toolbar>
+
+  <style>
+    .ion-margin-bottom {
+      text-align: center;
+      --min-height: 32px;
+      font-size: 12px;
+      margin: 0;
+    }
+  </style>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item class="ion-margin-bottom">
-      Judul Berita : {{ berita[index].title }}
+    <ion-item class="ion-margin-bottom" lines="none">
+      <h2>{{ berita[index].title }}</h2>
+    </ion-item>
+    <ion-item class="ion-margin-bottom" lines="none">
+      <ion-label style="font-size: 10px;">{{ berita[index].author }} - OnNews</ion-label>
+    </ion-item>
+    <ion-item class="ion-margin-bottom" lines="none">
+      <ion-label style="font-size: 9px;">{{ berita[index].publishedDate }}</ion-label>
     </ion-item>
     <ion-item class="ion-margin-bottom">
-      Penulis : {{ berita[index].author }}
-    </ion-item>
-    <ion-item class="ion-margin-bottom">
-      Published : {{ berita[index].publishedDate }}
-    </ion-item>
-    <ion-item class="ion-margin-bottom">
-      Kategori : {{ berita[index].category.join(', ') }}
+      <ion-label style="font-size: 10px;">Kategori : {{ berita[index].category.join(', ') }}</ion-label>
     </ion-item>
 
     <ion-grid>
@@ -29,8 +38,18 @@
       </ion-row>
     </ion-grid>
 
-    <ion-item class="ion-margin-bottom">
-      Isi Berita : {{ berita[index].description }}
+    <ion-item lines="none">
+      {{ berita[index].description }}
     </ion-item>
+
+    <ion-list>
+      <ion-item lines="none">Comments: </ion-item>
+      <ion-item *ngFor="let k of berita[index].komentar">
+        <ion-label>
+          <h3>{{ k.username }} :</h3>
+          <p>{{ k.komentar }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </ion-list>
 </ion-content>

@@ -24,7 +24,13 @@ export class BacaPage implements OnInit {
         'https://cms.soulofjakarta.id/uploads/article/old-asset/mata_20171102_144710.jpg',
         'https://res.cloudinary.com/dk0z4ums3/image/upload/v1621835922/attached_image/tujuh-cara-menjaga-kesehatan-mata.jpg'
       ],
-      description: 'Pastikan kamu memperhatikan gambar ini dengan baik ya sebelum kamu menjawab pertanyaannya. Sudah siap? Yuk langsung coba!'
+      description: 'Pastikan kamu memperhatikan gambar ini dengan baik ya sebelum kamu menjawab pertanyaannya. Sudah siap? Yuk langsung coba!',
+      komentar: [
+        { username: 'visionlover', komentar: 'Wah seru banget, kayak tes mata di optik wkwk 😂' },
+        { username: 'indra22', komentar: 'Aku kok gagal terus ya, apa mataku minus makin parah?' },
+        { username: 'fitrihijau', komentar: 'Berguna banget buat ngecek kesehatan mata tanpa harus ke dokter.' },
+        { username: 'chorts', komentar: 'Next bikin quiz buat tes buta warna dong!' }
+      ]
     },
     {
       index: 1,
@@ -38,7 +44,13 @@ export class BacaPage implements OnInit {
         'https://thumb-hw.tvonenews.com/images/2025/09/25/68d55e43ed05c-menko-pangan-zulkifli-hasan-bersama-presiden-ri-prabowo-subianto.jpg',
         'https://c.inilah.com/reborn/2025/09/Whats_App_Image_2025_09_25_at_17_28_57_35ee3ef215.jpeg'
       ],
-      description: 'Jakarta, IDN Times - Menteri Koordinator (Menko) Pangan Zulkifli Hasan menggarisbawahi pidato Presiden Prabowo Subianto mengenai krisis pangan yang disampaikan dalam Sidang Umum PBB di Amerika Serikat (AS). Dia menilai, kehadiran Prabowo di forum internasional tersebut sekaligus menunjukkan Indonesia tidak lagi sekadar hadir sebagai partisipan, melainkan tampil sebagai pemain utama yang membawa solusi. Dia menyebut, momen tersebut menjadi penanda era baru diplomasi Indonesia'
+      description: 'Jakarta, IDN Times - Menteri Koordinator (Menko) Pangan Zulkifli Hasan menggarisbawahi pidato Presiden Prabowo Subianto mengenai krisis pangan yang disampaikan dalam Sidang Umum PBB di Amerika Serikat (AS). Dia menilai, kehadiran Prabowo di forum internasional tersebut sekaligus menunjukkan Indonesia tidak lagi sekadar hadir sebagai partisipan, melainkan tampil sebagai pemain utama yang membawa solusi. Dia menyebut, momen tersebut menjadi penanda era baru diplomasi Indonesia',
+      komentar: [
+        { username: 'ekonommuda', komentar: 'Semoga misi pangan ini benar-benar ada hasilnya, bukan cuma wacana.' },
+        { username: 'agussetia', komentar: 'Bangga sih Indonesia jadi pemain utama di forum internasional 👏' },
+        { username: 'nadiar', komentar: 'Tapi masalah pangan di dalam negeri juga jangan dilupain dong.' },
+        { username: 'alpinnbtk', komentar: 'Diplomasi iklim juga penting, semoga ada aksi nyata.' }
+      ]
     },
     {
       index: 2,
@@ -52,7 +64,13 @@ export class BacaPage implements OnInit {
         'https://image.idntimes.com/post/20250223/maxus-mifa-9-9707fc84772566518e5eeb38c3506942.jpg',
         'https://image.idntimes.com/post/20250223/toyota-bz4x-95a7ec01a88044ec97e9a0dd19554f61.jpg'
       ],
-      description: 'Jakarta, IDN Times – Perjalanan bersama keluarga butuh kendaraan yang nyaman, irit, dan ramah lingkungan. Mobil listrik kini jadi pilihan populer karena biaya operasionalnya lebih murah. Selain itu, teknologinya makin canggih dengan fitur keselamatan dan kenyamanan terbaik. Beberapa mobil listrik untuk keluarga menawarkan kabin luas dan teknologi canggih. Lantas, apa saja mobil listrik yang layak kamu pertimbangkan untuk perjalanan keluargamu? Yuk, simak daftar lengkapnya dan temukan pilihan terbaik di artikel ini'
+      description: 'Jakarta, IDN Times – Perjalanan bersama keluarga butuh kendaraan yang nyaman, irit, dan ramah lingkungan. Mobil listrik kini jadi pilihan populer karena biaya operasionalnya lebih murah. Selain itu, teknologinya makin canggih dengan fitur keselamatan dan kenyamanan terbaik. Beberapa mobil listrik untuk keluarga menawarkan kabin luas dan teknologi canggih. Lantas, apa saja mobil listrik yang layak kamu pertimbangkan untuk perjalanan keluargamu? Yuk, simak daftar lengkapnya dan temukan pilihan terbaik di artikel ini',
+      komentar: [
+        { username: 'mobilmania', komentar: 'Keren sih tapi harga pasti masih tinggi buat kebanyakan orang.' },
+        { username: 'greenfuture', komentar: 'Akhirnya ada pilihan mobil listrik yang family friendly 👍' },
+        { username: 'jokocar', komentar: 'Baterainya tahan berapa lama ya? Takutnya repot isi ulang.' },
+        { username: 'fitrihijau', komentar: 'Aku suka desain Kia EV9, modern banget.' }
+      ]
     },
     {
       index: 3,
@@ -65,8 +83,13 @@ export class BacaPage implements OnInit {
         'https://image.idntimes.com/post/20250906/foto_3banding2_990e1a41-a748-479f-8a73-48b2b029d7c5.jpg',
         'https://kitagaruda.id/_next/image?url=https%3A%2F%2Fkitagaruda.sgp1.cdn.digitaloceanspaces.com%2F01K35RHBRWRFEW9E1N25CJD241.jpg&w=2048&q=75',
         'https://cdn1-production-images-kly.akamaized.net/Jaw4DgkuSfBwRYmAop1O30gUPbU=/0x220:5168x3133/800x450/filters:quality(75):strip_icc():format(webp):watermark(kly-media-production/assets/images/watermarks/bola/watermark-color-landscape-new.png,725,20,0)/kly-media-production/medias/5339674/original/047240900_1757081733-20250904AA_Timnas_Indonesia_vs_China_Taipei-08.JPG'
-    ],
-      description: 'Jakarta, IDN Times - Putaran keempat Kualifikasi Piala Dunia 2026 zona Asia tinggal menghitung hari. Timnas Indonesia dijadwalkan bertolak ke Arab Saudi yang terbagi dalam beberapa kloter, pada 1-2 Oktober 2025. Artinya, Timnas memiliki waktu persiapan sepekan demi menyiapkan diri dalam persaingan satu tiket ke putaran final Piala Dunia 2026. Itu karena laga perdana mereka dijadwalkan pada 9 Oktober mendatang, kontra Arab Saudi.'
+      ],
+      description: 'Jakarta, IDN Times - Putaran keempat Kualifikasi Piala Dunia 2026 zona Asia tinggal menghitung hari. Timnas Indonesia dijadwalkan bertolak ke Arab Saudi yang terbagi dalam beberapa kloter, pada 1-2 Oktober 2025. Artinya, Timnas memiliki waktu persiapan sepekan demi menyiapkan diri dalam persaingan satu tiket ke putaran final Piala Dunia 2026. Itu karena laga perdana mereka dijadwalkan pada 9 Oktober mendatang, kontra Arab Saudi.',
+      komentar: [
+        { username: 'garudapride', komentar: 'Gas terus timnas! Minimal seri lawan Arab Saudi udah keren.' },
+        { username: 'bolaindo', komentar: 'Persiapan sepekan cukup gak ya? Lawan berat loh.' },
+        { username: 'fanatikbola', komentar: 'Ayo Garuda, jangan kasih kendor 💪🔥' }
+      ]
     },
     {
       index: 4,
@@ -80,7 +103,13 @@ export class BacaPage implements OnInit {
         'https://cdn-images.vtv.vn/thumb_w/730/66349b6076cb4dee98746cf1/2025/10/01/sammblake-photos-latest-post-went-112528592-92a501-27488576037647393472167-33037298886991583916454.jpg',
         'https://people.com/thmb/64QyxDbKyyM5xQ3cYDauDJ0RH1I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1040x543:1042x545)/selena-gomez-benny-blanco-wedding-092825-02-08acc5fee9174d45a2836fdd68722ff5.jpg'
       ],
-      description: 'Selena Gomez resmi menikah dengan Benny Blanco. Pelantun lagu "Come & Get It" tersebut mengumumkannya lewat sederet foto pernikahan yang diunggah ke Instagram resminya, Sabtu (27/9/2025) waktu setempat. "9.27.25," tulis Selena dengan emoji hati berwarna putih. Selena Gomez dan Benny Blanco pertama kali bertemu ketika sang aktris masih berusia 17 tahun. Saat itu, ibunda Selena mempertemukannya dengan Blanco untuk membantu sang anak membangun karier musiknya. Mereka pun menjadi teman dan melakukan sejumlah proyek kolaborasi bersama.'
+      description: 'Selena Gomez resmi menikah dengan Benny Blanco. Pelantun lagu "Come & Get It" tersebut mengumumkannya lewat sederet foto pernikahan yang diunggah ke Instagram resminya, Sabtu (27/9/2025) waktu setempat. "9.27.25," tulis Selena dengan emoji hati berwarna putih. Selena Gomez dan Benny Blanco pertama kali bertemu ketika sang aktris masih berusia 17 tahun. Saat itu, ibunda Selena mempertemukannya dengan Blanco untuk membantu sang anak membangun karier musiknya. Mereka pun menjadi teman dan melakukan sejumlah proyek kolaborasi bersama.',
+      komentar: [
+        { username: 'fanselena', komentar: 'Selamat Selena! Semoga langgeng sama Benny 💖' },
+        { username: 'popculture', komentar: 'Wah akhirnya juga nikah, banyak fans yang nunggu moment ini.' },
+        { username: 'indoviral', komentar: 'Cakep banget fotonya, kayak di film romantis.' },
+        { username: 'cynthialuv', komentar: 'Semoga bahagia selalu yaa 🥰' }
+      ]
     },
     {
       index: 5,
@@ -94,7 +123,13 @@ export class BacaPage implements OnInit {
         'https://media.suara.com/pictures/653x366/2025/09/30/43985-anak-presiden-ketiga-bj-habibie-ilham-habibie.jpg',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoGNsLY3RMgQ6S6uLyToO6XuWpa5y_izFMw&s'
       ],
-      description: 'KPK menyita uang sebesar Rp 1,3 miliar dari Ilham Habibie. Uang tersebut diduga berasal dari cicilan mobil Mercy yang dibeli oleh RK terkait kasus yang ditangani.'
+      description: 'KPK menyita uang sebesar Rp 1,3 miliar dari Ilham Habibie. Uang tersebut diduga berasal dari cicilan mobil Mercy yang dibeli oleh RK terkait kasus yang ditangani.',
+      komentar: [
+        { username: 'justicewatcher', komentar: 'Kasusnya makin rumit ya, kok bisa sampai cicilan mobil ikut nyangkut 😮' },
+        { username: 'rakyatjelas', komentar: 'Rp 1,3 M itu uang kecil buat mereka, tapi gede banget buat rakyat biasa.' },
+        { username: 'lawstudent', komentar: 'Semoga KPK bisa bener-bener bongkar semua alurnya, jangan tebang pilih.' },
+        { username: 'bandungkepo', komentar: 'RK lagi-lagi disebut, pasti bakal ramai nih.' }
+      ]
     },
     {
       index: 6,
@@ -108,7 +143,13 @@ export class BacaPage implements OnInit {
         'https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/7865/live/fd290140-9e84-11f0-aaa6-730f9358a2bf.jpg.webp',
         'https://cdn0-production-images-kly.akamaized.net/xs_06m4H0zK-IkEQz0kn3VKhr24=/800x400/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/5366393/original/085860400_1759225913-1.jpg'
       ],
-      description: 'Musala sebuah pondok pesantren di Sidoarjo roboh dan menelan korban. Dugaan kuat menunjukkan bangunan tidak berizin dan konstruksi tidak sesuai standar.'
+      description: 'Musala sebuah pondok pesantren di Sidoarjo roboh dan menelan korban. Dugaan kuat menunjukkan bangunan tidak berizin dan konstruksi tidak sesuai standar.',
+      komentar: [
+        { username: 'indonesiabuild', komentar: 'Bangunan pendidikan kok bisa ga ada izin, bahaya banget.' },
+        { username: 'wargajawa', komentar: 'Kasihan santri-santri yang jadi korban, harusnya bisa dicegah 😢' },
+        { username: 'arsitekmuda', komentar: 'Pakai material murah dan tanpa standar, ya wajar roboh.' },
+        { username: 'netizenkritis', komentar: 'Pemda juga harus tanggung jawab soal pengawasan.' }
+      ]
     },
     {
       index: 7,
@@ -122,7 +163,13 @@ export class BacaPage implements OnInit {
         'https://img.idxchannel.com/media/1200/images/idx/2025/01/20/Presiden_Prabowo_Makan_Bergizi_Gratis.jpg',
         'https://asset.kompas.com/crops/x5peCksDYqVGhsZtgAm9mz0GLlM=/0x0:0x0/750x500/data/photo/2025/10/01/68dcb865c832e.jpg'
       ],
-      description: 'Presiden Prabowo Subianto akan menyusun Peraturan Presiden terkait tata kelola program Makan Bergizi Gratis (MBG), dengan persyaratan Dapur SPPG harus dikelola oleh tenaga berkompeten (chef terlatih).'
+      description: 'Presiden Prabowo Subianto akan menyusun Peraturan Presiden terkait tata kelola program Makan Bergizi Gratis (MBG), dengan persyaratan Dapur SPPG harus dikelola oleh tenaga berkompeten (chef terlatih).',
+      komentar: [
+        { username: 'politikindo', komentar: 'Debatnya seru, tapi lebih banyak gimmick daripada solusi nyata.' },
+        { username: 'pemilu2024', komentar: 'Publik lebih butuh program konkrit, bukan saling serang personal.' },
+        { username: 'mahasiswakritik', komentar: 'Moderatornya kurang tegas, jadi banyak yang interupsi.' },
+        { username: 'indonesiavote', komentar: 'Minimal rakyat bisa lihat kualitas calon presidennya.' }
+      ]
     },
     {
       index: 8,
@@ -136,7 +183,15 @@ export class BacaPage implements OnInit {
         'https://a-cdn.sindonews.net/dyn/480/content/2018/07/16/34/1322174/realisasi-impor-indonesia-turun-menjadi-usd11-26-miliar-XB2-thumb.jpg',
         'https://www.pajak.com/storage/2024/10/WhatsApp-Image-2024-10-15-at-14.09.31-758x505.jpeg'
       ],
-      description: 'BPS mencatat bahwa impor Indonesia pada Agustus 2025 menurun sebesar 6,56% dibanding periode sama tahun lalu, yang disebabkan melemahnya permintaan domestik dan harga komoditas global.'
+      description: 'BPS mencatat bahwa impor Indonesia pada Agustus 2025 menurun sebesar 6,56% dibanding periode sama tahun lalu, yang disebabkan melemahnya permintaan domestik dan harga komoditas global.',
+      komentar: [
+        { username: 'ekonomindo', komentar: 'Turunnya impor bisa jadi sinyal daya beli dalam negeri lagi melemah.' },
+        { username: 'dagangjaya', komentar: 'Bisa juga karena produksi lokal meningkat, makanya impor turun.' },
+        { username: 'analisisekonomi', komentar: 'Harus dilihat juga sektor apa yang paling turun, apakah bahan baku atau konsumsi.' },
+        { username: 'netizenpeduli', komentar: 'Kalau impor turun tapi ekspor juga turun, ekonomi tetap bahaya sih.' },
+        { username: 'optimisnusantara', komentar: 'Semoga ini tanda kemandirian industri lokal makin kuat.' }
+      ]
+
     },
     {
       index: 9,
@@ -150,7 +205,15 @@ export class BacaPage implements OnInit {
         'https://media.suara.com/pictures/970x544/2025/04/11/82813-fakta-pemutihan-pajak-kendaraan-jawa-barat-2025-samsatinfo.jpg',
         'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/247/2025/09/23/Pemutihan-Pajak-Kendaraan-2091053470.jpg'
       ],
-      description: 'Pemerintah Jawa Barat resmi mengakhiri program pemutihan pajak kendaraan bermotor. Dedi Mulyadi mengajak warga mengevaluasi manfaat dan kerugiannya.'
+      description: 'Pemerintah Jawa Barat resmi mengakhiri program pemutihan pajak kendaraan bermotor. Dedi Mulyadi mengajak warga mengevaluasi manfaat dan kerugiannya.',
+      komentar: [
+        { username: 'wargajabar', komentar: 'Kemarin banyak yang manfaatin pemutihan ini, lumayan ngurangin beban rakyat.' },
+        { username: 'motorlover', komentar: 'Sayang telat tahu, udah keburu berakhir 😭' },
+        { username: 'pajakjelas', komentar: 'Program bagus sih, tapi harus rutin biar masyarakat lebih taat pajak.' },
+        { username: 'bandungmania', komentar: 'Hasilnya keliatan kok, banyak kendaraan yang akhirnya diurus legalitasnya.' },
+        { username: 'netizenkritis', komentar: 'Semoga gak cuma gimmick politik, tapi benar-benar ada manfaatnya buat rakyat.' }
+      ]
+
     },
     {
       index: 10,
@@ -164,7 +227,15 @@ export class BacaPage implements OnInit {
         'https://cdn.antaranews.com/cache/1200x800/2025/08/28/1000056337.jpg',
         'https://cdn.antaranews.com/cache/1200x800/2025/03/14/deklarasi-komunitas-relawan-dukung-ridwan-suswono-01092024-dr-01.jpg.webp'
       ],
-      description: 'Setelah tindakan penyitaan uang oleh KPK, lembaga tersebut memastikan akan memanggil Gubernur Jawa Barat Ridwan Kamil untuk klarifikasi lebih lanjut.'
+      description: 'Setelah tindakan penyitaan uang oleh KPK, lembaga tersebut memastikan akan memanggil Gubernur Jawa Barat Ridwan Kamil untuk klarifikasi lebih lanjut.',
+      komentar: [
+        { username: 'rakyatjelas', komentar: 'Semoga kasus ini bener-bener diusut tuntas, jangan ada yang kebal hukum.' },
+        { username: 'bandungkepo', komentar: 'Nama RK makin sering muncul, pasti jadi sorotan publik.' },
+        { username: 'lawstudent', komentar: 'Pemanggilan ini penting buat transparansi, biar jelas alur uangnya.' },
+        { username: 'justicewatch', komentar: 'Rp 1,3 M itu bukan uang kecil, masyarakat berhak tahu kebenarannya.' },
+        { username: 'indonesiakritis', komentar: 'Kalau bener bersih ya bagus, kalau ada salah ya harus tanggung jawab.' }
+      ]
+
     },
     {
       index: 11,
@@ -178,7 +249,15 @@ export class BacaPage implements OnInit {
         'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/01/2025/09/30/Bangunan-Ponpes-Al-Khoziny-Sidoarjo-Ambruk-Angger-Bondan-3-3216214447.jpeg',
         'https://beritanasional.com/storage/2025/09/pemerintah-diminta-gerak-cepat-tangani-musibah-ambruknya-musala-ponpes-al-khoziny-30092025-161721.jpg'
       ],
-      description: 'Musala Ponpes Al Khoziny di Sidoarjo roboh saat salat Asar. DPR mendesak pemerintah memberikan pendampingan agar pembangunan kembali lebih aman dan sesuai standar.'
+      description: 'Musala Ponpes Al Khoziny di Sidoarjo roboh saat salat Asar. DPR mendesak pemerintah memberikan pendampingan agar pembangunan kembali lebih aman dan sesuai standar.',
+      komentar: [
+        { username: 'santri_sidoarjo', komentar: 'Innalillahi, semoga korban diberi kesabaran dan ketabahan.' },
+        { username: 'warganet77', komentar: 'Harusnya ada pengawasan bangunan pesantren, jangan sampai asal jadi.' },
+        { username: 'edukasiislam', komentar: 'Pemerintah perlu serius bantu rekonstruksi, biar bisa dipakai lagi untuk ibadah.' },
+        { username: 'newsupdate', komentar: 'Kejadian ini harus jadi pelajaran agar pembangunan sesuai standar.' },
+        { username: 'harapanumat', komentar: 'Semoga musala bisa cepat dibangun kembali dan lebih aman.' }
+      ]
+
     },
     {
       index: 12,
@@ -192,7 +271,15 @@ export class BacaPage implements OnInit {
         'https://awsimages.detik.net.id/community/media/visual/2025/09/22/lokasi-penemuan-mayat-bocah-perempuan-usia-8-tahun-di-penjaringan-jakarta-utara-1758523757106_169.jpeg?w=600&q=90',
         'https://asset.kompas.com/crops/unQ84m5tXDlWXy3fIYyEH7VUN40=/0x0:0x0/750x500/data/photo/2025/09/22/68d0fed9c2418.jpg'
       ],
-      description: 'Seorang bocah perempuan ditemukan tewas membusuk di kamar kos di Jakarta Utara. Warga melaporkan kondisi tubuh korban penuh bekas lebam, penyelidikan sedang berlangsung.'
+      description: 'Seorang bocah perempuan ditemukan tewas membusuk di kamar kos di Jakarta Utara. Warga melaporkan kondisi tubuh korban penuh bekas lebam, penyelidikan sedang berlangsung.',
+      komentar: [
+        { username: 'jakutnews', komentar: 'Ngeri banget kasusnya, semoga pelaku segera ditangkap polisi.' },
+        { username: 'ibu_rumah', komentar: 'Kasihan banget anak kecil, nggak kebayang sakitnya.' },
+        { username: 'justice4kids', komentar: 'Harus ada hukuman berat biar jadi efek jera buat pelaku kekerasan anak.' },
+        { username: 'mata_warga', komentar: 'Lingkungan harus lebih peduli kalau ada tanda-tanda kekerasan di sekitar.' },
+        { username: 'prihatinbanget', komentar: 'Semoga keluarga diberi kekuatan, miris sekali dengar kasus ini.' }
+      ]
+
     },
     {
       index: 13,
@@ -206,7 +293,14 @@ export class BacaPage implements OnInit {
         'https://cdn0-production-images-kly.akamaized.net/S3kr1Akt2bqr2tpDyuTMTKoMFEw=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3938374/original/017867600_1645165607-20220218-Waspada_Cuaca_Ekstrem_di_Jakarta-5.jpg',
         'https://img.idxchannel.com/media/700/images/idx/2023/12/31/Hujan_Bundaran_HI-1.jpg'
       ],
-      description: 'Hujan deras mengguyur Jakarta pagi ini. Akibatnya, beberapa ruas jalan mengalami kepadatan lalu lintas signifikan.'
+      description: 'Hujan deras mengguyur Jakarta pagi ini. Akibatnya, beberapa ruas jalan mengalami kepadatan lalu lintas signifikan.',
+      komentar: [
+        { username: 'commuterlife', komentar: 'Baru hujan sebentar aja jalanan udah macet parah 😩' },
+        { username: 'ojekonline', komentar: 'Orderan rame pas hujan, tapi jalannya bikin lama banget.' },
+        { username: 'jakartans', komentar: 'Semoga nggak sampai banjir, soalnya udah mulai masuk musim hujan nih.' },
+        { username: 'mobilmania', komentar: 'Hujan dikit langsung padat, transportasi publik harus lebih siap.' },
+        { username: 'wargajakarta', komentar: 'Setiap hujan, selalu macet. Kayak nggak ada solusi dari tahun ke tahun.' }
+      ]
     },
     {
       index: 14,
@@ -220,7 +314,15 @@ export class BacaPage implements OnInit {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQZGTz3ppiXtCHZMe2brVsuW2p5KaTXTFcTg&s',
         'https://img.okezone.com/okz/1200/content/2025/10/01/337/3173646/prabowo-KkEZ_large.jpg'
       ],
-      description: 'Presiden Prabowo Subianto bertindak sebagai inspektur upacara peringatan Hari Kesaktian Pancasila di Monumen Pancasila Sakti, Lubang Buaya, Jakarta Timur.'
+      description: 'Presiden Prabowo Subianto bertindak sebagai inspektur upacara peringatan Hari Kesaktian Pancasila di Monumen Pancasila Sakti, Lubang Buaya, Jakarta Timur.',
+      komentar: [
+        { username: 'merahputih', komentar: 'Upacara ini penting untuk mengingatkan generasi muda tentang sejarah bangsa.' },
+        { username: 'indonesiahebat', komentar: 'Semoga nilai-nilai Pancasila benar-benar diterapkan, bukan cuma seremonial.' },
+        { username: 'sejarahwan', komentar: 'Lubang Buaya selalu jadi saksi sejarah yang harus diingat.' },
+        { username: 'nasionalis', komentar: 'Bagus Prabowo hadir langsung, menunjukkan penghormatan terhadap sejarah.' },
+        { username: 'realitaid', komentar: 'Jangan hanya memperingati, tapi implementasi Pancasila di kehidupan sehari-hari juga penting.' }
+      ]
+
     }
   ]
 
@@ -228,7 +330,7 @@ export class BacaPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-       this.index = params['index']; 
+      this.index = params['index'];
     });
   }
 
