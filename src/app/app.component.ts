@@ -15,7 +15,7 @@ export class AppComponent {
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((event: any) => {
-      const currentUrl = event.urlAfterRedirects.split('?')[0]; // buang query string
+      const currentUrl = event.urlAfterRedirects.split('?')[0]; 
       const noTabPages = ['/landing'];
 
       this.showTabs = !noTabPages.some(page => currentUrl.startsWith(page));

@@ -12,12 +12,34 @@
       </ion-item>
       <ion-item>
         <ion-input placeholder="Email" class="input"></ion-input>
+        <ion-icon name="mail"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Username" class="input"></ion-input>
         <ion-icon name="person-outline"></ion-icon>
       </ion-item>
       <ion-item>
-        <ion-input placeholder="Password" class="input" type="password"></ion-input>
-        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+        <ion-input 
+          placeholder="Password" 
+          type="password" 
+          [(ngModel)]="password" 
+          (keydown.enter)="validatePassword()">
+        </ion-input>
       </ion-item>
+
+      <ion-text color="danger" *ngIf="password_error">
+        {{ password_error }}
+      </ion-text>
+
+      <ion-button id="btnDaftar" (click)="registerNewUser()" expand = "full">Daftar</ion-button>
+      <ion-alert
+        trigger="btnDaftar"
+        header="Pendaftaran Akun Baru"
+        message="Pendaftaran Akun Berhasil!!"
+        [buttons]="btnPeringatan"
+      ></ion-alert>
+
 
       <div class="linkLogin" style="text-align: center; margin-top: 10px;">
         <p style="color:black">

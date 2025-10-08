@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router'; 
+import { Users } from '../users';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +13,9 @@ export class LoginPage implements OnInit {
   username:string = ""
   password:string = ""
 
-  users = [
-    { username: 'alpinnbtk', password: 'admin123' },
-    { username: 'chorts', password: 'admin123' },
-    { username: 'justrich', password: 'admin123' },
-    { username: 'tachyon', password: 'admin123' },
-  ];
+  users:any[] = []
 
-  constructor(private navCtrl: NavController, private router: Router) { }
+  constructor(private router: Router, private the_users: Users) { }
 
   cekLogin() {
     const isValid = this.users.some(user =>
@@ -30,23 +25,21 @@ export class LoginPage implements OnInit {
 
     if (isValid) {
       alert('Login berhasil!');
-      this.navCtrl.navigateRoot('/tabs/home');
+      this.router.navigate(['/tabs/home']);
     } else {
       alert('Username atau password salah!');
     }
   }
 
   login() {
-    // contoh login sukses (cek username/password dsb)
-    // kalau berhasil, simpan status login
+    // Login Sukses -> Simpan status login
     localStorage.setItem('isLoggedIn', 'true');
 
-    // arahkan ke halaman utama (misalnya /tabs/home)
     this.router.navigate(['/tabs/home']);
   }
 
-  
   ngOnInit() {
+    this.users = this.the_users.users;
   }
 
 }

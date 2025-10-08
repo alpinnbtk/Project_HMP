@@ -191,7 +191,6 @@ export class BacaPage implements OnInit {
         { username: 'netizenpeduli', komentar: 'Kalau impor turun tapi ekspor juga turun, ekonomi tetap bahaya sih.' },
         { username: 'optimisnusantara', komentar: 'Semoga ini tanda kemandirian industri lokal makin kuat.' }
       ]
-
     },
     {
       index: 9,
@@ -213,7 +212,6 @@ export class BacaPage implements OnInit {
         { username: 'bandungmania', komentar: 'Hasilnya keliatan kok, banyak kendaraan yang akhirnya diurus legalitasnya.' },
         { username: 'netizenkritis', komentar: 'Semoga gak cuma gimmick politik, tapi benar-benar ada manfaatnya buat rakyat.' }
       ]
-
     },
     {
       index: 10,
@@ -235,7 +233,6 @@ export class BacaPage implements OnInit {
         { username: 'justicewatch', komentar: 'Rp 1,3 M itu bukan uang kecil, masyarakat berhak tahu kebenarannya.' },
         { username: 'indonesiakritis', komentar: 'Kalau bener bersih ya bagus, kalau ada salah ya harus tanggung jawab.' }
       ]
-
     },
     {
       index: 11,
@@ -279,7 +276,6 @@ export class BacaPage implements OnInit {
         { username: 'mata_warga', komentar: 'Lingkungan harus lebih peduli kalau ada tanda-tanda kekerasan di sekitar.' },
         { username: 'prihatinbanget', komentar: 'Semoga keluarga diberi kekuatan, miris sekali dengar kasus ini.' }
       ]
-
     },
     {
       index: 13,
@@ -322,7 +318,6 @@ export class BacaPage implements OnInit {
         { username: 'nasionalis', komentar: 'Bagus Prabowo hadir langsung, menunjukkan penghormatan terhadap sejarah.' },
         { username: 'realitaid', komentar: 'Jangan hanya memperingati, tapi implementasi Pancasila di kehidupan sehari-hari juga penting.' }
       ]
-
     }
   ]
 

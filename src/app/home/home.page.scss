@@ -40,8 +40,8 @@ h2 {
 
 ion-card img {
   width: 100%;
-  height: 35vw;  // tinggi gambar 35% dari lebar layar
-  max-height: 200px; // batasi tinggi maksimum
+  height: 35vw;  
+  max-height: 200px; 
   object-fit: cover;
 }
 
@@ -63,9 +63,9 @@ ion-card img {
   position: relative;
   color: white;
   display: flex;
-  justify-content: center;    /* ⬅️ Teks horizontal di tengah */
-  align-items: center;        /* ⬅️ Teks vertikal di tengah */
-  text-align: center;         /* ⬅️ Teks rata tengah jika lebih dari satu baris */
+  justify-content: center;    
+  align-items: center;        
+  text-align: center;         
   padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }

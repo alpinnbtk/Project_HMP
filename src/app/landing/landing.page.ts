@@ -13,12 +13,12 @@ export class LandingPage implements OnInit {
 
   ngOnInit() {
     console.log('Landing Page Loaded!');
-    this.menuCtrl.enable(false);  // ❌ Nonaktifkan menu saat di landing
-    this.menuCtrl.close();        // ✅ Tutup menu jika sempat terbuka
+    this.menuCtrl.enable(false);  
+    this.menuCtrl.close();        
   }
 
   ionViewWillLeave() {
-    this.menuCtrl.enable(true);   // 🔁 Aktifkan lagi menu saat meninggalkan landing
+    this.menuCtrl.enable(true);  
   }
 
 }
