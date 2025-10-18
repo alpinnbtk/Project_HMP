@@ -75,7 +75,7 @@ export class News {
       author: 'Tino Satrio',
       publishedDate: new Date('2025-09-25'),
       category: ['Olahraga', 'Nasional'],
-      gambrCover: 'https://image.idntimes.com/post/20250611/upload_27a0dbe571fdab2202b4f5aaa0ce0d42.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
+      gambarCover: 'https://image.idntimes.com/post/20250611/upload_27a0dbe571fdab2202b4f5aaa0ce0d42.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
         'https://image.idntimes.com/post/20250611/upload_27a0dbe571fdab2202b4f5aaa0ce0d42.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
         'https://image.idntimes.com/post/20250906/foto_3banding2_990e1a41-a748-479f-8a73-48b2b029d7c5.jpg',
@@ -332,5 +332,11 @@ export class News {
 
   addReply(p_index: number, p_reply: string) {
 
+  }
+
+  addComment(p_newComment: string, p_index: number, p_currentUser: string) {
+    this.berita[p_index].komentar.push({
+      username: p_currentUser, komentar: p_newComment
+    });
   }
 }

@@ -50,6 +50,17 @@
           <p>{{ k.komentar }}</p>
         </ion-label>
       </ion-item>
+
+      <ion-item>
+        <ion-label *ngIf="berita[index].komentar.length == 0" lines="none">
+          Belum ada komentar.
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Write your comments.." [(ngModel)]="newComment"></ion-input>
+      </ion-item>
+      <ion-button (click)="submitComment()">Kirim</ion-button>
     </ion-list>
   </ion-list>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { Users } from '../users';
 
 @Component({
@@ -10,10 +10,10 @@ import { Users } from '../users';
 })
 export class LoginPage implements OnInit {
 
-  username:string = ""
-  password:string = ""
+  username: string = ""
+  password: string = ""
 
-  users:any[] = []
+  users: any[] = []
 
   constructor(private router: Router, private the_users: Users) { }
 
@@ -24,6 +24,8 @@ export class LoginPage implements OnInit {
     );
 
     if (isValid) {
+      localStorage.setItem('currentUser', this.username);
+
       alert('Login berhasil!');
       this.router.navigate(['/tabs/home']);
     } else {
@@ -34,6 +36,7 @@ export class LoginPage implements OnInit {
   login() {
     // Login Sukses -> Simpan status login
     localStorage.setItem('isLoggedIn', 'true');
+    
 
     this.router.navigate(['/tabs/home']);
   }
