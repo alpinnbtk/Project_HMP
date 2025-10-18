@@ -28,6 +28,10 @@
     <ion-card-content>
       Published : {{ news.publishedDate}}
     </ion-card-content>
-    <ion-card-content></ion-card-content>
+    
+    <ion-card-content>
+      <p *ngIf="news.rating.length === 0">Belum ada rating.</p>
+      <p>Rating : {{overallRating(news)}}</p>
+    </ion-card-content>
   </ion-card>
 </ion-content>

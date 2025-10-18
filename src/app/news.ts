@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { race, raceWith } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,12 @@ export class News {
         { username: 'indra22', komentar: 'Aku kok gagal terus ya, apa mataku minus makin parah?' },
         { username: 'fitrihijau', komentar: 'Berguna banget buat ngecek kesehatan mata tanpa harus ke dokter.' },
         { username: 'chorts', komentar: 'Next bikin quiz buat tes buta warna dong!' }
+      ], 
+      rating: [
+        { username: 'visionlover', rate: 4 },
+        { username: 'indra22', rate: 3 },
+        { username: 'fitrihijau', rate: 5 },
+        { username: 'chorts', rate: 4 }
       ]
     },
     {
@@ -46,6 +53,12 @@ export class News {
         { username: 'agussetia', komentar: 'Bangga sih Indonesia jadi pemain utama di forum internasional 👏' },
         { username: 'nadiar', komentar: 'Tapi masalah pangan di dalam negeri juga jangan dilupain dong.' },
         { username: 'alpinnbtk', komentar: 'Diplomasi iklim juga penting, semoga ada aksi nyata.' }
+      ],
+      rating: [
+        { username: 'ekonommuda', rate: 4 },
+        { username: 'agussetia', rate: 5 },
+        { username: 'nadiar', rate: 4 },
+        { username: 'alpinnbtk', rate: 4 }
       ]
     },
     {
@@ -67,6 +80,12 @@ export class News {
         { username: 'greenfuture', komentar: 'Akhirnya ada pilihan mobil listrik yang family friendly 👍' },
         { username: 'jokocar', komentar: 'Baterainya tahan berapa lama ya? Takutnya repot isi ulang.' },
         { username: 'fitrihijau', komentar: 'Aku suka desain Kia EV9, modern banget.' }
+      ],
+      rating: [
+        { username: 'mobilmania', rate: 4 },
+        { username: 'greenfuture', rate: 5 },
+        { username: 'jokocar', rate: 4 },
+        { username: 'fitrihijau', rate: 5 }
       ]
     },
     {
@@ -87,6 +106,11 @@ export class News {
         { username: 'garudapride', komentar: 'Gas terus timnas! Minimal seri lawan Arab Saudi udah keren.' },
         { username: 'bolaindo', komentar: 'Persiapan sepekan cukup gak ya? Lawan berat loh.' },
         { username: 'fanatikbola', komentar: 'Ayo Garuda, jangan kasih kendor 💪🔥' }
+      ], 
+      rating: [
+        { username: 'garudapride', rate: 5 },
+        { username: 'bolaindo', rate: 4 },
+        { username: 'fanatikbola', rate: 5 }
       ]
     },
     {
@@ -108,6 +132,12 @@ export class News {
         { username: 'popculture', komentar: 'Wah akhirnya juga nikah, banyak fans yang nunggu moment ini.' },
         { username: 'indoviral', komentar: 'Cakep banget fotonya, kayak di film romantis.' },
         { username: 'cynthialuv', komentar: 'Semoga bahagia selalu yaa 🥰' }
+      ], 
+      rating: [
+        { username: 'fanselena', rate: 5 },
+        { username: 'popculture', rate: 4 },
+        { username: 'indoviral', rate: 5 },
+        { username: 'cynthialuv', rate: 4 }
       ]
     },
     {
@@ -129,6 +159,13 @@ export class News {
         { username: 'rakyatjelas', komentar: 'Rp 1,3 M itu uang kecil buat mereka, tapi gede banget buat rakyat biasa.' },
         { username: 'lawstudent', komentar: 'Semoga KPK bisa bener-bener bongkar semua alurnya, jangan tebang pilih.' },
         { username: 'bandungkepo', komentar: 'RK lagi-lagi disebut, pasti bakal ramai nih.' }
+      ], 
+      rating: [
+        { username: 'ekonomindo', rate: 4 },
+        { username: 'dagangjaya', rate: 5 },
+        { username: 'analisisekonomi', rate: 4 },
+        { username: 'netizenpeduli', rate: 3 },
+        { username: 'optimisnusantara', rate: 5 }
       ]
     },
     {
@@ -150,6 +187,13 @@ export class News {
         { username: 'wargajawa', komentar: 'Kasihan santri-santri yang jadi korban, harusnya bisa dicegah 😢' },
         { username: 'arsitekmuda', komentar: 'Pakai material murah dan tanpa standar, ya wajar roboh.' },
         { username: 'netizenkritis', komentar: 'Pemda juga harus tanggung jawab soal pengawasan.' }
+      ],
+      rating: [
+        { username: 'wargajabar', rate: 4 },
+        { username: 'motorlover', rate: 3 },
+        { username: 'pajakjelas', rate: 5 },
+        { username: 'bandungmania', rate: 4 },
+        { username: 'netizenkritis', rate: 4 }
       ]
     },
     {
@@ -171,6 +215,12 @@ export class News {
         { username: 'pemilu2024', komentar: 'Publik lebih butuh program konkrit, bukan saling serang personal.' },
         { username: 'mahasiswakritik', komentar: 'Moderatornya kurang tegas, jadi banyak yang interupsi.' },
         { username: 'indonesiavote', komentar: 'Minimal rakyat bisa lihat kualitas calon presidennya.' }
+      ],
+      rating: [
+        { username: 'politikindo', rate: 4 },
+        { username: 'pemilu2024', rate: 5 },
+        { username: 'mahasiswakritik', rate: 4 },
+        { username: 'indonesiavote', rate: 4 }
       ]
     },
     {
@@ -193,7 +243,14 @@ export class News {
         { username: 'analisisekonomi', komentar: 'Harus dilihat juga sektor apa yang paling turun, apakah bahan baku atau konsumsi.' },
         { username: 'netizenpeduli', komentar: 'Kalau impor turun tapi ekspor juga turun, ekonomi tetap bahaya sih.' },
         { username: 'optimisnusantara', komentar: 'Semoga ini tanda kemandirian industri lokal makin kuat.' }
-      ]
+      ],
+      rating: [
+        { username: 'ekonomindo', rate: 4 },  
+        { username: 'dagangjaya', rate: 5 },
+        { username: 'analisisekonomi', rate: 4 },
+        { username: 'netizenpeduli', rate: 3 },
+        { username: 'optimisnusantara', rate: 5 }
+      ]     
     },
     {
       index: 9,
@@ -215,6 +272,13 @@ export class News {
         { username: 'pajakjelas', komentar: 'Program bagus sih, tapi harus rutin biar masyarakat lebih taat pajak.' },
         { username: 'bandungmania', komentar: 'Hasilnya keliatan kok, banyak kendaraan yang akhirnya diurus legalitasnya.' },
         { username: 'netizenkritis', komentar: 'Semoga gak cuma gimmick politik, tapi benar-benar ada manfaatnya buat rakyat.' }
+      ],
+      rating: [
+        { username: 'wargajabar', rate: 4 },
+        { username: 'motorlover', rate: 3 },
+        { username: 'pajakjelas', rate: 5 },
+        { username: 'bandungmania', rate: 4 },
+        { username: 'netizenkritis', rate: 4 }
       ]
     },
     {
@@ -237,6 +301,13 @@ export class News {
         { username: 'lawstudent', komentar: 'Pemanggilan ini penting buat transparansi, biar jelas alur uangnya.' },
         { username: 'justicewatch', komentar: 'Rp 1,3 M itu bukan uang kecil, masyarakat berhak tahu kebenarannya.' },
         { username: 'indonesiakritis', komentar: 'Kalau bener bersih ya bagus, kalau ada salah ya harus tanggung jawab.' }
+      ],
+      rating: [
+        { username: 'rakyatjelas', rate: 4 },
+        { username: 'bandungkepo', rate: 3 },
+        { username: 'lawstudent', rate: 5 },
+        { username: 'justicewatch', rate: 4 },
+        { username: 'indonesiakritis', rate: 4 }
       ]
     },
     {
@@ -259,8 +330,14 @@ export class News {
         { username: 'edukasiislam', komentar: 'Pemerintah perlu serius bantu rekonstruksi, biar bisa dipakai lagi untuk ibadah.' },
         { username: 'newsupdate', komentar: 'Kejadian ini harus jadi pelajaran agar pembangunan sesuai standar.' },
         { username: 'harapanumat', komentar: 'Semoga musala bisa cepat dibangun kembali dan lebih aman.' }
+      ],
+      rating: [
+        { username: 'santri_sidoarjo', rate: 5 },
+        { username: 'warganet77', rate: 4 },
+        { username: 'edukasiislam', rate: 5 },
+        { username: 'newsupdate', rate: 4 },
+        { username: 'harapanumat', rate: 5 }
       ]
-
     },
     {
       index: 12,
@@ -282,6 +359,13 @@ export class News {
         { username: 'justice4kids', komentar: 'Harus ada hukuman berat biar jadi efek jera buat pelaku kekerasan anak.' },
         { username: 'mata_warga', komentar: 'Lingkungan harus lebih peduli kalau ada tanda-tanda kekerasan di sekitar.' },
         { username: 'prihatinbanget', komentar: 'Semoga keluarga diberi kekuatan, miris sekali dengar kasus ini.' }
+      ],
+      rating: [
+        { username: 'jakutnews', rate: 5 },
+        { username: 'ibu_rumah', rate: 4 },
+        { username: 'justice4kids', rate: 5 },
+        { username: 'mata_warga', rate: 4 },
+        { username: 'prihatinbanget', rate: 5 }
       ]
     },
     {
@@ -304,6 +388,13 @@ export class News {
         { username: 'jakartans', komentar: 'Semoga nggak sampai banjir, soalnya udah mulai masuk musim hujan nih.' },
         { username: 'mobilmania', komentar: 'Hujan dikit langsung padat, transportasi publik harus lebih siap.' },
         { username: 'wargajakarta', komentar: 'Setiap hujan, selalu macet. Kayak nggak ada solusi dari tahun ke tahun.' }
+      ],
+      rating: [
+        { username: 'commuterlife', rate: 4 },
+        { username: 'ojekonline', rate: 3 },
+        { username: 'jakartans', rate: 5 },
+        { username: 'mobilmania', rate: 4 },
+        { username: 'wargajakarta', rate: 2 }
       ]
     },
     {
@@ -326,6 +417,13 @@ export class News {
         { username: 'sejarahwan', komentar: 'Lubang Buaya selalu jadi saksi sejarah yang harus diingat.' },
         { username: 'nasionalis', komentar: 'Bagus Prabowo hadir langsung, menunjukkan penghormatan terhadap sejarah.' },
         { username: 'realitaid', komentar: 'Jangan hanya memperingati, tapi implementasi Pancasila di kehidupan sehari-hari juga penting.' }
+      ],
+      rating: [
+        { username: 'merahputih', rate: 5 },
+        { username: 'indonesiahebat', rate: 4 },
+        { username: 'sejarahwan', rate: 5 },
+        { username: 'nasionalis', rate: 4 },
+        { username: 'realitaid', rate: 5 }
       ]
     }
   ]
@@ -338,5 +436,15 @@ export class News {
     this.berita[p_index].komentar.push({
       username: p_currentUser, komentar: p_newComment
     });
+  }
+  addRating(p_newRating: number, p_index: number, p_currentUser: string) {
+    const existing = this.berita[p_index].rating.find((r: any) => r.username === p_currentUser);
+    if (existing) {
+      existing.rate = p_newRating;
+    } else {
+      this.berita[p_index].rating.push({
+        username: p_currentUser, rate: p_newRating
+      });
+    }
   }
 }

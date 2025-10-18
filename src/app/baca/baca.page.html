@@ -61,6 +61,19 @@
         <ion-input placeholder="Write your comments.." [(ngModel)]="newComment"></ion-input>
       </ion-item>
       <ion-button (click)="submitComment()">Kirim</ion-button>
+
+      <ion-item lines="none">Ratings: </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>{{overallRating(berita[index])}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" [(ngModel)]="newRating" min="1" max="5"></ion-input>
+      </ion-item>
+      <ion-button (click)="submitRating()">Kirim</ion-button>
+
     </ion-list>
   </ion-list>
 </ion-content>
