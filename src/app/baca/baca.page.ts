@@ -16,12 +16,16 @@ export class BacaPage implements OnInit {
   newRating = 0
   currentUser = ""
   news_added = false
+  replyIndex: number = -1
+  newReply: string = ""
+  totalKomentar: number = 0
 
   constructor(private route: ActivatedRoute, private news: News) { }
 
   ngOnInit() {
     this.berita = this.news.berita
     this.currentUser = localStorage.getItem('currentUser') ?? ''
+    this.hitungTotalKomentar(this.index)
 
     this.route.params.subscribe(params => {
       this.index = params['index'];
@@ -29,14 +33,44 @@ export class BacaPage implements OnInit {
     });
   }
 
+  toggleReplyBox(i: number) {
+    if (this.replyIndex == i) {
+      this.replyIndex = -1;
+    } else {
+      this.replyIndex = i;
+    }
+  }
+
+  addReply(k_index: number) {
+    var userReply = this.currentUser;
+    this.news.addReply(this.index, k_index, this.newReply, userReply);
+    this.hitungTotalKomentar(this.index)
+
+    this.newReply = "";
+    this.replyIndex = -1;
+  }
+
+  hitungTotalKomentar(berita_index: number) {
+    this.totalKomentar = 0
+    var komenBerita = this.berita[berita_index]
+
+    for (let komen of komenBerita.komentar) {
+      this.totalKomentar++
+      if (komen.reply.length > 0) {
+        this.totalKomentar += komen.reply.length
+      }
+    }
+  }
+
   submitComment() {
     this.news.addComment(this.newComment, this.index, this.currentUser)
+    this.hitungTotalKomentar(this.index)
   }
 
   submitRating() {
     if (this.newRating > 5) {
       this.newRating = 5
-    }else if (this.newRating < 1) {
+    } else if (this.newRating < 1) {
       this.newRating = 1
     }
     this.news.addRating(this.newRating, this.index, this.currentUser)

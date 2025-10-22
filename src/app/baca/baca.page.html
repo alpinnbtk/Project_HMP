@@ -10,6 +10,7 @@
       font-size: 12px;
       margin: 0;
     }
+
     .reply-comment {
       margin-left: 8px;
     }
@@ -46,11 +47,21 @@
     </ion-item>
 
     <ion-list>
-      <ion-item lines="none">Comments: </ion-item>
-      <ion-item *ngFor="let k of berita[index].komentar">
+      <ion-item lines="none">Comments ({{totalKomentar}}): </ion-item>
+      <ion-item *ngFor="let k of berita[index].komentar; let i = index">
         <ion-label>
           <h3 style="font-weight: bold;">{{ k.username }} :</h3>
           <p>{{ k.komentar }}</p>
+
+          <ion-button size="small" fill="clear" (click)="toggleReplyBox(i)">
+            Reply
+          </ion-button>
+
+          <div *ngIf="replyIndex == i" style="margin-top: 8px;">
+            <ion-input placeholder="Tulis balasan..." [(ngModel)]="newReply"></ion-input>
+            <ion-button size="small" (click)="addReply(i)">Kirim</ion-button>
+          </div>
+
           <div *ngIf="k.reply && k.reply.length > 0">
             <ion-label *ngFor="let r of k.reply">
               <h4 class="reply-comment">{{ r.username }}: {{r.komentar}}</h4>

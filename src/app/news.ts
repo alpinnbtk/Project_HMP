@@ -22,8 +22,10 @@ export class News {
       ],
       description: 'Pastikan kamu memperhatikan gambar ini dengan baik ya sebelum kamu menjawab pertanyaannya. Sudah siap? Yuk langsung coba!',
       komentar: [
-        { username: 'visionlover', komentar: 'Wah seru banget, kayak tes mata di optik wkwk 😂', 
-          reply: [ {username: 'tesss', komentar: 'reply nih bos'}, {username: 'tesss', komentar: 'reply nih bos'} ]},
+        {
+          username: 'visionlover', komentar: 'Wah seru banget, kayak tes mata di optik wkwk 😂',
+          reply: [{ username: 'tesss', komentar: 'reply nih bos' }, { username: 'tesss', komentar: 'reply nih bos' }]
+        },
         { username: 'indra22', komentar: 'Aku kok gagal terus ya, apa mataku minus makin parah?', reply: [] },
         { username: 'fitrihijau', komentar: 'Berguna banget buat ngecek kesehatan mata tanpa harus ke dokter.', reply: [] },
         { username: 'chorts', komentar: 'Next bikin quiz buat tes buta warna dong!', reply: [] }
@@ -450,13 +452,19 @@ export class News {
 
   favorites: { [username: string]: any[] } = {};
 
-  addReply(p_index: number, p_reply: string) {
+  addReply(berita_index: number, k_index: number, p_reply: string, p_user: string) {
+    var beritaDireply = this.berita[berita_index]
+    var tambah = beritaDireply.komentar[k_index]
 
+    tambah.reply.push({
+      username: p_user,
+      komentar: p_reply
+    });
   }
 
   addComment(p_newComment: string, p_index: number, p_currentUser: string) {
     this.berita[p_index].komentar.push({
-      username: p_currentUser, komentar: p_newComment, reply: [] 
+      username: p_currentUser, komentar: p_newComment, reply: []
     });
   }
 
