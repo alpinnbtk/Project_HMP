@@ -7,26 +7,31 @@
   <form>
     <div class="ion-padding">
       <ion-item>
-        <ion-input placeholder="Nama Lengkap" class="input"></ion-input>
+        <ion-input placeholder="Nama Lengkap" class="input" [(ngModel)]="nama_lengkap" name="nama_lengkap"></ion-input>
         <ion-icon name="person-outline"></ion-icon>
       </ion-item>
+
       <ion-item>
-        <ion-input placeholder="Email" class="input"></ion-input>
+        <ion-input placeholder="Email" class="input" [(ngModel)]="email" name="email"></ion-input>
         <ion-icon name="mail"></ion-icon>
       </ion-item>
+
       <ion-item>
-        <ion-input placeholder="Username" class="input"></ion-input>
+        <ion-input placeholder="Username" class="input" [(ngModel)]="username" name="username"></ion-input>
         <ion-icon name="person-outline"></ion-icon>
       </ion-item>
+
       <ion-item>
         <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
         <ion-input 
           placeholder="Password" 
           type="password" 
           [(ngModel)]="password" 
+          name="password"
           (keydown.enter)="validatePassword()">
         </ion-input>
       </ion-item>
+
 
       <ion-text color="danger" *ngIf="password_error">
         {{ password_error }}
@@ -36,7 +41,6 @@
       <ion-alert
         trigger="btnDaftar"
         header="Pendaftaran Akun Baru"
-        message="Pendaftaran Akun Berhasil!!"
         [buttons]="btnPeringatan"
       ></ion-alert>
 

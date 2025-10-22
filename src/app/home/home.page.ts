@@ -22,11 +22,6 @@ export class HomePage {
     { image: 'https://akcdn.detik.net.id/visual/2019/08/17/695786f1-2a1d-4a0e-b520-8f9440842bed_169.jpeg?w=400&q=90', title: 'Nasional' },
   ];
 
-  logout() {
-    localStorage.removeItem('isLoggedIn');
-    this.router.navigate(['/login']);
-  }
-
   constructor(private router: Router, private news: News) {}
 
   ngOnInit() {
@@ -45,5 +40,14 @@ export class HomePage {
   clickBerita(berita: any) {
     this.news.addViews(berita.index)
     this.router.navigate(['/tabs/baca', berita.index])
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('isLoggedIn');
+
+    alert('Anda telah melakukan logout.');
+
+    this.router.navigate(['/login']);
   }
 }

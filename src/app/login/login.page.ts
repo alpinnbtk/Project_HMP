@@ -17,6 +17,10 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private the_users: Users) { }
 
+  ngOnInit() {
+    this.users = this.the_users.users;
+  }
+  
   cekLogin() {
     const isValid = this.users.some(user =>
       user.username === this.username &&
@@ -40,8 +44,5 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/tabs/home']);
   }
 
-  ngOnInit() {
-    this.users = this.the_users.users;
-  }
 
 }
