@@ -15,6 +15,8 @@ export class BacaPage implements OnInit {
   newComment = ""
   newRating = 0
   currentUser = ""
+  news_added = false
+
   constructor(private route: ActivatedRoute, private news: News) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class BacaPage implements OnInit {
 
     this.route.params.subscribe(params => {
       this.index = params['index'];
+      this.checkFavorites();
     });
   }
 
@@ -31,7 +34,6 @@ export class BacaPage implements OnInit {
   }
 
   submitRating() {
-
     if (this.newRating > 5) {
       this.newRating = 5
     }else if (this.newRating < 1) {
@@ -39,11 +41,25 @@ export class BacaPage implements OnInit {
     }
     this.news.addRating(this.newRating, this.index, this.currentUser)
   }
+
   overallRating(news: any): number {
     if (!news.rating || news.rating.length === 0) {
       return 0;
     }
     const total = news.rating.reduce((sum: number, r: any) => sum + r.rate, 0);
     return total / news.rating.length;
+  }
+
+  addToFavorites() {
+    const success = this.news.addToFavorites(this.index, this.currentUser);
+    if (success) {
+      alert('Berita berhasil ditambahkan ke favorit!');
+    } else {
+      alert('Berita sudah ada di daftar favorit Anda.');
+    }
+  }
+
+  checkFavorites() {
+    this.news_added = this.news.checkFavorites(this.index, this.currentUser);
   }
 }

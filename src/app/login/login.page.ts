@@ -25,7 +25,8 @@ export class LoginPage implements OnInit {
 
     if (isValid) {
       localStorage.setItem('currentUser', this.username);
-
+      this.login()
+      
       alert('Login berhasil!');
       this.router.navigate(['/tabs/home']);
     } else {
@@ -34,10 +35,8 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    // Login Sukses -> Simpan status login
     localStorage.setItem('isLoggedIn', 'true');
     
-
     this.router.navigate(['/tabs/home']);
   }
 

@@ -1,13 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>my-favorite</ion-title>
+    <ion-title>Daftar Berita Favorit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">my-favorite</ion-title>
+      <ion-title size="large">Daftar Berita Favorit</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card *ngFor="let news of berita" [routerLink]="['/tabs/baca', news.index]">
+    <img alt="Silhouette of mountains" [src]="news.gambarCover" />
+    <ion-card-header>
+      <ion-card-title>{{ news.title }}</ion-card-title>
+      <ion-card-subtitle> {{ news.category.join(', ') }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Penulis : {{ news.author }}
+    </ion-card-content>
+    <ion-card-content>
+      Published : {{ news.publishedDate}}
+    </ion-card-content>
+    
+    <ion-card-content>
+      <p *ngIf="news.rating.length === 0">Belum ada rating.</p>
+      <p>Rating : {{overallRating(news)}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { News } from '../news';
 
 @Component({
   selector: 'app-my-favorite',
@@ -8,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFavoritePage implements OnInit {
 
-  constructor() { }
+  berita: any[] = []
+  currentUser = ""
+
+  constructor(private news: News) { }
 
   ngOnInit() {
+    this.currentUser = localStorage.getItem('currentUser') ?? ''
+    this.berita = this.news.getFavorites(this.currentUser)
+  }
+
+  overallRating(news: any): number {
+    if (!news.rating || news.rating.length === 0) {
+      return 0;
+    }
+    const total = news.rating.reduce((sum: number, r: any) => sum + r.rate, 0);
+    return total / news.rating.length;
   }
 
 }

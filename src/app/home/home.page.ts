@@ -32,6 +32,7 @@ export class HomePage {
   ngOnInit() {
     this.berita = this.news.berita;
   }
+  
   overallRating(news: any): number {
     if (!news.rating || news.rating.length === 0) {
       return 0;

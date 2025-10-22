@@ -428,6 +428,8 @@ export class News {
     }
   ]
 
+  favorites: { [username: string]: any[] } = {};
+
   addReply(p_index: number, p_reply: string) {
 
   }
@@ -437,6 +439,7 @@ export class News {
       username: p_currentUser, komentar: p_newComment
     });
   }
+
   addRating(p_newRating: number, p_index: number, p_currentUser: string) {
     const existing = this.berita[p_index].rating.find((r: any) => r.username === p_currentUser);
     if (existing) {
@@ -445,6 +448,58 @@ export class News {
       this.berita[p_index].rating.push({
         username: p_currentUser, rate: p_newRating
       });
+    }
+  }
+
+  addToFavorites(index: number, username: string): boolean {
+    if (!this.favorites[username]) {
+      this.favorites[username] = [];
+    }
+
+    const beritaFavorit = this.berita[index];
+
+    const alreadyExists = this.favorites[username].some(
+      (b) => b.title === beritaFavorit.title
+    );
+
+    if (alreadyExists) {
+      return false; 
+    }
+
+    this.favorites[username].push(beritaFavorit);
+    this.saveFavorites(); 
+    return true;
+  }
+
+  checkFavorites(index: number, username: string): boolean {
+    this.loadFavorites();
+
+    if (!this.favorites[username]) {
+      return false;
+    }
+
+    const beritaFavorit = this.berita[index];
+
+    const alreadyExists = this.favorites[username].some(
+      (b) => b.title === beritaFavorit.title
+    );
+
+    return alreadyExists; 
+  }
+
+  getFavorites(username: string): any[] {
+    this.loadFavorites();
+    return this.favorites[username] || [];
+  }
+
+  saveFavorites() {
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+  }
+
+  loadFavorites() {
+    const stored = localStorage.getItem('favorites');
+    if (stored) {
+      this.favorites = JSON.parse(stored);
     }
   }
 }

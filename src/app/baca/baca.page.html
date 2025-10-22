@@ -74,6 +74,13 @@
       </ion-item>
       <ion-button (click)="submitRating()">Kirim</ion-button>
 
+      <ion-item lines="none">
+        <ion-button *ngIf = "news_added === false" expand="block" color="warning" (click)="addToFavorites()">
+          <ion-icon slot="start" name="heart"></ion-icon>
+          Tambahkan ke Favorit
+        </ion-button>
+      </ion-item>
+      
     </ion-list>
   </ion-list>
 </ion-content>
