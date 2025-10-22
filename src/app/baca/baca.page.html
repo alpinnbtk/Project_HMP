@@ -10,6 +10,9 @@
       font-size: 12px;
       margin: 0;
     }
+    .reply-comment {
+      margin-left: 8px;
+    }
   </style>
 </ion-header>
 
@@ -46,8 +49,13 @@
       <ion-item lines="none">Comments: </ion-item>
       <ion-item *ngFor="let k of berita[index].komentar">
         <ion-label>
-          <h3>{{ k.username }} :</h3>
+          <h3 style="font-weight: bold;">{{ k.username }} :</h3>
           <p>{{ k.komentar }}</p>
+          <div *ngIf="k.reply && k.reply.length > 0">
+            <ion-label *ngFor="let r of k.reply">
+              <h4 class="reply-comment">{{ r.username }}: {{r.komentar}}</h4>
+            </ion-label>
+          </div>
         </ion-label>
       </ion-item>
 
@@ -75,12 +83,12 @@
       <ion-button (click)="submitRating()">Kirim</ion-button>
 
       <ion-item lines="none">
-        <ion-button *ngIf = "news_added === false" expand="block" color="warning" (click)="addToFavorites()">
+        <ion-button *ngIf="news_added === false" expand="block" color="warning" (click)="addToFavorites()">
           <ion-icon slot="start" name="heart"></ion-icon>
           Tambahkan ke Favorit
         </ion-button>
       </ion-item>
-      
+
     </ion-list>
   </ion-list>
 </ion-content>

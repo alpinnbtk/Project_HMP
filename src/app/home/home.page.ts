@@ -30,6 +30,7 @@ export class HomePage {
   constructor(private router: Router, private news: News) {}
 
   ngOnInit() {
+    this.news.loadViews();
     this.berita = this.news.berita;
   }
   
@@ -41,4 +42,8 @@ export class HomePage {
     return total / news.rating.length;
   }
 
+  clickBerita(berita: any) {
+    this.news.addViews(berita.index)
+    this.router.navigate(['/tabs/baca', berita.index])
+  }
 }

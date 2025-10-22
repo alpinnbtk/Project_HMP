@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, numberAttribute } from '@angular/core';
 import { race, raceWith } from 'rxjs';
 
 @Injectable({
@@ -22,17 +22,19 @@ export class News {
       ],
       description: 'Pastikan kamu memperhatikan gambar ini dengan baik ya sebelum kamu menjawab pertanyaannya. Sudah siap? Yuk langsung coba!',
       komentar: [
-        { username: 'visionlover', komentar: 'Wah seru banget, kayak tes mata di optik wkwk 😂' },
-        { username: 'indra22', komentar: 'Aku kok gagal terus ya, apa mataku minus makin parah?' },
-        { username: 'fitrihijau', komentar: 'Berguna banget buat ngecek kesehatan mata tanpa harus ke dokter.' },
-        { username: 'chorts', komentar: 'Next bikin quiz buat tes buta warna dong!' }
-      ], 
+        { username: 'visionlover', komentar: 'Wah seru banget, kayak tes mata di optik wkwk 😂', 
+          reply: [ {username: 'tesss', komentar: 'reply nih bos'}, {username: 'tesss', komentar: 'reply nih bos'} ]},
+        { username: 'indra22', komentar: 'Aku kok gagal terus ya, apa mataku minus makin parah?', reply: [] },
+        { username: 'fitrihijau', komentar: 'Berguna banget buat ngecek kesehatan mata tanpa harus ke dokter.', reply: [] },
+        { username: 'chorts', komentar: 'Next bikin quiz buat tes buta warna dong!', reply: [] }
+      ],
       rating: [
         { username: 'visionlover', rate: 4 },
         { username: 'indra22', rate: 3 },
         { username: 'fitrihijau', rate: 5 },
         { username: 'chorts', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 1,
@@ -49,17 +51,18 @@ export class News {
       ],
       description: 'Jakarta, IDN Times - Menteri Koordinator (Menko) Pangan Zulkifli Hasan menggarisbawahi pidato Presiden Prabowo Subianto mengenai krisis pangan yang disampaikan dalam Sidang Umum PBB di Amerika Serikat (AS). Dia menilai, kehadiran Prabowo di forum internasional tersebut sekaligus menunjukkan Indonesia tidak lagi sekadar hadir sebagai partisipan, melainkan tampil sebagai pemain utama yang membawa solusi. Dia menyebut, momen tersebut menjadi penanda era baru diplomasi Indonesia',
       komentar: [
-        { username: 'ekonommuda', komentar: 'Semoga misi pangan ini benar-benar ada hasilnya, bukan cuma wacana.' },
-        { username: 'agussetia', komentar: 'Bangga sih Indonesia jadi pemain utama di forum internasional 👏' },
-        { username: 'nadiar', komentar: 'Tapi masalah pangan di dalam negeri juga jangan dilupain dong.' },
-        { username: 'alpinnbtk', komentar: 'Diplomasi iklim juga penting, semoga ada aksi nyata.' }
+        { username: 'ekonommuda', komentar: 'Semoga misi pangan ini benar-benar ada hasilnya, bukan cuma wacana.', reply: [] },
+        { username: 'agussetia', komentar: 'Bangga sih Indonesia jadi pemain utama di forum internasional 👏', reply: [] },
+        { username: 'nadiar', komentar: 'Tapi masalah pangan di dalam negeri juga jangan dilupain dong.', reply: [] },
+        { username: 'alpinnbtk', komentar: 'Diplomasi iklim juga penting, semoga ada aksi nyata.', reply: [] }
       ],
       rating: [
         { username: 'ekonommuda', rate: 4 },
         { username: 'agussetia', rate: 5 },
         { username: 'nadiar', rate: 4 },
         { username: 'alpinnbtk', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 2,
@@ -76,17 +79,18 @@ export class News {
       ],
       description: 'Jakarta, IDN Times – Perjalanan bersama keluarga butuh kendaraan yang nyaman, irit, dan ramah lingkungan. Mobil listrik kini jadi pilihan populer karena biaya operasionalnya lebih murah. Selain itu, teknologinya makin canggih dengan fitur keselamatan dan kenyamanan terbaik. Beberapa mobil listrik untuk keluarga menawarkan kabin luas dan teknologi canggih. Lantas, apa saja mobil listrik yang layak kamu pertimbangkan untuk perjalanan keluargamu? Yuk, simak daftar lengkapnya dan temukan pilihan terbaik di artikel ini',
       komentar: [
-        { username: 'mobilmania', komentar: 'Keren sih tapi harga pasti masih tinggi buat kebanyakan orang.' },
-        { username: 'greenfuture', komentar: 'Akhirnya ada pilihan mobil listrik yang family friendly 👍' },
-        { username: 'jokocar', komentar: 'Baterainya tahan berapa lama ya? Takutnya repot isi ulang.' },
-        { username: 'fitrihijau', komentar: 'Aku suka desain Kia EV9, modern banget.' }
+        { username: 'mobilmania', komentar: 'Keren sih tapi harga pasti masih tinggi buat kebanyakan orang.', reply: [] },
+        { username: 'greenfuture', komentar: 'Akhirnya ada pilihan mobil listrik yang family friendly 👍', reply: [] },
+        { username: 'jokocar', komentar: 'Baterainya tahan berapa lama ya? Takutnya repot isi ulang.', reply: [] },
+        { username: 'fitrihijau', komentar: 'Aku suka desain Kia EV9, modern banget.', reply: [] }
       ],
       rating: [
         { username: 'mobilmania', rate: 4 },
         { username: 'greenfuture', rate: 5 },
         { username: 'jokocar', rate: 4 },
         { username: 'fitrihijau', rate: 5 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 3,
@@ -103,15 +107,16 @@ export class News {
       ],
       description: 'Jakarta, IDN Times - Putaran keempat Kualifikasi Piala Dunia 2026 zona Asia tinggal menghitung hari. Timnas Indonesia dijadwalkan bertolak ke Arab Saudi yang terbagi dalam beberapa kloter, pada 1-2 Oktober 2025. Artinya, Timnas memiliki waktu persiapan sepekan demi menyiapkan diri dalam persaingan satu tiket ke putaran final Piala Dunia 2026. Itu karena laga perdana mereka dijadwalkan pada 9 Oktober mendatang, kontra Arab Saudi.',
       komentar: [
-        { username: 'garudapride', komentar: 'Gas terus timnas! Minimal seri lawan Arab Saudi udah keren.' },
-        { username: 'bolaindo', komentar: 'Persiapan sepekan cukup gak ya? Lawan berat loh.' },
-        { username: 'fanatikbola', komentar: 'Ayo Garuda, jangan kasih kendor 💪🔥' }
-      ], 
+        { username: 'garudapride', komentar: 'Gas terus timnas! Minimal seri lawan Arab Saudi udah keren.', reply: [] },
+        { username: 'bolaindo', komentar: 'Persiapan sepekan cukup gak ya? Lawan berat loh.', reply: [] },
+        { username: 'fanatikbola', komentar: 'Ayo Garuda, jangan kasih kendor 💪🔥', reply: [] }
+      ],
       rating: [
         { username: 'garudapride', rate: 5 },
         { username: 'bolaindo', rate: 4 },
         { username: 'fanatikbola', rate: 5 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 4,
@@ -128,17 +133,18 @@ export class News {
       ],
       description: 'Selena Gomez resmi menikah dengan Benny Blanco. Pelantun lagu "Come & Get It" tersebut mengumumkannya lewat sederet foto pernikahan yang diunggah ke Instagram resminya, Sabtu (27/9/2025) waktu setempat. "9.27.25," tulis Selena dengan emoji hati berwarna putih. Selena Gomez dan Benny Blanco pertama kali bertemu ketika sang aktris masih berusia 17 tahun. Saat itu, ibunda Selena mempertemukannya dengan Blanco untuk membantu sang anak membangun karier musiknya. Mereka pun menjadi teman dan melakukan sejumlah proyek kolaborasi bersama.',
       komentar: [
-        { username: 'fanselena', komentar: 'Selamat Selena! Semoga langgeng sama Benny 💖' },
-        { username: 'popculture', komentar: 'Wah akhirnya juga nikah, banyak fans yang nunggu moment ini.' },
-        { username: 'indoviral', komentar: 'Cakep banget fotonya, kayak di film romantis.' },
-        { username: 'cynthialuv', komentar: 'Semoga bahagia selalu yaa 🥰' }
-      ], 
+        { username: 'fanselena', komentar: 'Selamat Selena! Semoga langgeng sama Benny 💖', reply: [] },
+        { username: 'popculture', komentar: 'Wah akhirnya juga nikah, banyak fans yang nunggu moment ini.', reply: [] },
+        { username: 'indoviral', komentar: 'Cakep banget fotonya, kayak di film romantis.', reply: [] },
+        { username: 'cynthialuv', komentar: 'Semoga bahagia selalu yaa 🥰', reply: [] }
+      ],
       rating: [
         { username: 'fanselena', rate: 5 },
         { username: 'popculture', rate: 4 },
         { username: 'indoviral', rate: 5 },
         { username: 'cynthialuv', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 5,
@@ -155,18 +161,19 @@ export class News {
       ],
       description: 'KPK menyita uang sebesar Rp 1,3 miliar dari Ilham Habibie. Uang tersebut diduga berasal dari cicilan mobil Mercy yang dibeli oleh RK terkait kasus yang ditangani.',
       komentar: [
-        { username: 'justicewatcher', komentar: 'Kasusnya makin rumit ya, kok bisa sampai cicilan mobil ikut nyangkut 😮' },
-        { username: 'rakyatjelas', komentar: 'Rp 1,3 M itu uang kecil buat mereka, tapi gede banget buat rakyat biasa.' },
-        { username: 'lawstudent', komentar: 'Semoga KPK bisa bener-bener bongkar semua alurnya, jangan tebang pilih.' },
-        { username: 'bandungkepo', komentar: 'RK lagi-lagi disebut, pasti bakal ramai nih.' }
-      ], 
+        { username: 'justicewatcher', komentar: 'Kasusnya makin rumit ya, kok bisa sampai cicilan mobil ikut nyangkut 😮', reply: [] },
+        { username: 'rakyatjelas', komentar: 'Rp 1,3 M itu uang kecil buat mereka, tapi gede banget buat rakyat biasa.', reply: [] },
+        { username: 'lawstudent', komentar: 'Semoga KPK bisa bener-bener bongkar semua alurnya, jangan tebang pilih.', reply: [] },
+        { username: 'bandungkepo', komentar: 'RK lagi-lagi disebut, pasti bakal ramai nih.', reply: [] }
+      ],
       rating: [
         { username: 'ekonomindo', rate: 4 },
         { username: 'dagangjaya', rate: 5 },
         { username: 'analisisekonomi', rate: 4 },
         { username: 'netizenpeduli', rate: 3 },
         { username: 'optimisnusantara', rate: 5 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 6,
@@ -183,10 +190,10 @@ export class News {
       ],
       description: 'Musala sebuah pondok pesantren di Sidoarjo roboh dan menelan korban. Dugaan kuat menunjukkan bangunan tidak berizin dan konstruksi tidak sesuai standar.',
       komentar: [
-        { username: 'indonesiabuild', komentar: 'Bangunan pendidikan kok bisa ga ada izin, bahaya banget.' },
-        { username: 'wargajawa', komentar: 'Kasihan santri-santri yang jadi korban, harusnya bisa dicegah 😢' },
-        { username: 'arsitekmuda', komentar: 'Pakai material murah dan tanpa standar, ya wajar roboh.' },
-        { username: 'netizenkritis', komentar: 'Pemda juga harus tanggung jawab soal pengawasan.' }
+        { username: 'indonesiabuild', komentar: 'Bangunan pendidikan kok bisa ga ada izin, bahaya banget.', reply: [] },
+        { username: 'wargajawa', komentar: 'Kasihan santri-santri yang jadi korban, harusnya bisa dicegah 😢', reply: [] },
+        { username: 'arsitekmuda', komentar: 'Pakai material murah dan tanpa standar, ya wajar roboh.', reply: [] },
+        { username: 'netizenkritis', komentar: 'Pemda juga harus tanggung jawab soal pengawasan.', reply: [] }
       ],
       rating: [
         { username: 'wargajabar', rate: 4 },
@@ -194,7 +201,8 @@ export class News {
         { username: 'pajakjelas', rate: 5 },
         { username: 'bandungmania', rate: 4 },
         { username: 'netizenkritis', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 7,
@@ -211,17 +219,18 @@ export class News {
       ],
       description: 'Presiden Prabowo Subianto akan menyusun Peraturan Presiden terkait tata kelola program Makan Bergizi Gratis (MBG), dengan persyaratan Dapur SPPG harus dikelola oleh tenaga berkompeten (chef terlatih).',
       komentar: [
-        { username: 'politikindo', komentar: 'Debatnya seru, tapi lebih banyak gimmick daripada solusi nyata.' },
-        { username: 'pemilu2024', komentar: 'Publik lebih butuh program konkrit, bukan saling serang personal.' },
-        { username: 'mahasiswakritik', komentar: 'Moderatornya kurang tegas, jadi banyak yang interupsi.' },
-        { username: 'indonesiavote', komentar: 'Minimal rakyat bisa lihat kualitas calon presidennya.' }
+        { username: 'politikindo', komentar: 'Debatnya seru, tapi lebih banyak gimmick daripada solusi nyata.', reply: [] },
+        { username: 'pemilu2024', komentar: 'Publik lebih butuh program konkrit, bukan saling serang personal.', reply: [] },
+        { username: 'mahasiswakritik', komentar: 'Moderatornya kurang tegas, jadi banyak yang interupsi.', reply: [] },
+        { username: 'indonesiavote', komentar: 'Minimal rakyat bisa lihat kualitas calon presidennya.', reply: [] }
       ],
       rating: [
         { username: 'politikindo', rate: 4 },
         { username: 'pemilu2024', rate: 5 },
         { username: 'mahasiswakritik', rate: 4 },
         { username: 'indonesiavote', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 8,
@@ -238,19 +247,20 @@ export class News {
       ],
       description: 'BPS mencatat bahwa impor Indonesia pada Agustus 2025 menurun sebesar 6,56% dibanding periode sama tahun lalu, yang disebabkan melemahnya permintaan domestik dan harga komoditas global.',
       komentar: [
-        { username: 'ekonomindo', komentar: 'Turunnya impor bisa jadi sinyal daya beli dalam negeri lagi melemah.' },
-        { username: 'dagangjaya', komentar: 'Bisa juga karena produksi lokal meningkat, makanya impor turun.' },
-        { username: 'analisisekonomi', komentar: 'Harus dilihat juga sektor apa yang paling turun, apakah bahan baku atau konsumsi.' },
-        { username: 'netizenpeduli', komentar: 'Kalau impor turun tapi ekspor juga turun, ekonomi tetap bahaya sih.' },
-        { username: 'optimisnusantara', komentar: 'Semoga ini tanda kemandirian industri lokal makin kuat.' }
+        { username: 'ekonomindo', komentar: 'Turunnya impor bisa jadi sinyal daya beli dalam negeri lagi melemah.', reply: [] },
+        { username: 'dagangjaya', komentar: 'Bisa juga karena produksi lokal meningkat, makanya impor turun.', reply: [] },
+        { username: 'analisisekonomi', komentar: 'Harus dilihat juga sektor apa yang paling turun, apakah bahan baku atau konsumsi.', reply: [] },
+        { username: 'netizenpeduli', komentar: 'Kalau impor turun tapi ekspor juga turun, ekonomi tetap bahaya sih.', reply: [] },
+        { username: 'optimisnusantara', komentar: 'Semoga ini tanda kemandirian industri lokal makin kuat.', reply: [] }
       ],
       rating: [
-        { username: 'ekonomindo', rate: 4 },  
+        { username: 'ekonomindo', rate: 4 },
         { username: 'dagangjaya', rate: 5 },
         { username: 'analisisekonomi', rate: 4 },
         { username: 'netizenpeduli', rate: 3 },
         { username: 'optimisnusantara', rate: 5 }
-      ]     
+      ],
+      views: 0
     },
     {
       index: 9,
@@ -267,11 +277,11 @@ export class News {
       ],
       description: 'Pemerintah Jawa Barat resmi mengakhiri program pemutihan pajak kendaraan bermotor. Dedi Mulyadi mengajak warga mengevaluasi manfaat dan kerugiannya.',
       komentar: [
-        { username: 'wargajabar', komentar: 'Kemarin banyak yang manfaatin pemutihan ini, lumayan ngurangin beban rakyat.' },
-        { username: 'motorlover', komentar: 'Sayang telat tahu, udah keburu berakhir 😭' },
-        { username: 'pajakjelas', komentar: 'Program bagus sih, tapi harus rutin biar masyarakat lebih taat pajak.' },
-        { username: 'bandungmania', komentar: 'Hasilnya keliatan kok, banyak kendaraan yang akhirnya diurus legalitasnya.' },
-        { username: 'netizenkritis', komentar: 'Semoga gak cuma gimmick politik, tapi benar-benar ada manfaatnya buat rakyat.' }
+        { username: 'wargajabar', komentar: 'Kemarin banyak yang manfaatin pemutihan ini, lumayan ngurangin beban rakyat.', reply: [] },
+        { username: 'motorlover', komentar: 'Sayang telat tahu, udah keburu berakhir 😭', reply: [] },
+        { username: 'pajakjelas', komentar: 'Program bagus sih, tapi harus rutin biar masyarakat lebih taat pajak.', reply: [] },
+        { username: 'bandungmania', komentar: 'Hasilnya keliatan kok, banyak kendaraan yang akhirnya diurus legalitasnya.', reply: [] },
+        { username: 'netizenkritis', komentar: 'Semoga gak cuma gimmick politik, tapi benar-benar ada manfaatnya buat rakyat.', reply: [] }
       ],
       rating: [
         { username: 'wargajabar', rate: 4 },
@@ -279,7 +289,8 @@ export class News {
         { username: 'pajakjelas', rate: 5 },
         { username: 'bandungmania', rate: 4 },
         { username: 'netizenkritis', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 10,
@@ -296,11 +307,11 @@ export class News {
       ],
       description: 'Setelah tindakan penyitaan uang oleh KPK, lembaga tersebut memastikan akan memanggil Gubernur Jawa Barat Ridwan Kamil untuk klarifikasi lebih lanjut.',
       komentar: [
-        { username: 'rakyatjelas', komentar: 'Semoga kasus ini bener-bener diusut tuntas, jangan ada yang kebal hukum.' },
-        { username: 'bandungkepo', komentar: 'Nama RK makin sering muncul, pasti jadi sorotan publik.' },
-        { username: 'lawstudent', komentar: 'Pemanggilan ini penting buat transparansi, biar jelas alur uangnya.' },
-        { username: 'justicewatch', komentar: 'Rp 1,3 M itu bukan uang kecil, masyarakat berhak tahu kebenarannya.' },
-        { username: 'indonesiakritis', komentar: 'Kalau bener bersih ya bagus, kalau ada salah ya harus tanggung jawab.' }
+        { username: 'rakyatjelas', komentar: 'Semoga kasus ini bener-bener diusut tuntas, jangan ada yang kebal hukum.', reply: [] },
+        { username: 'bandungkepo', komentar: 'Nama RK makin sering muncul, pasti jadi sorotan publik.', reply: [] },
+        { username: 'lawstudent', komentar: 'Pemanggilan ini penting buat transparansi, biar jelas alur uangnya.', reply: [] },
+        { username: 'justicewatch', komentar: 'Rp 1,3 M itu bukan uang kecil, masyarakat berhak tahu kebenarannya.', reply: [] },
+        { username: 'indonesiakritis', komentar: 'Kalau bener bersih ya bagus, kalau ada salah ya harus tanggung jawab.', reply: [] }
       ],
       rating: [
         { username: 'rakyatjelas', rate: 4 },
@@ -308,7 +319,8 @@ export class News {
         { username: 'lawstudent', rate: 5 },
         { username: 'justicewatch', rate: 4 },
         { username: 'indonesiakritis', rate: 4 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 11,
@@ -325,11 +337,11 @@ export class News {
       ],
       description: 'Musala Ponpes Al Khoziny di Sidoarjo roboh saat salat Asar. DPR mendesak pemerintah memberikan pendampingan agar pembangunan kembali lebih aman dan sesuai standar.',
       komentar: [
-        { username: 'santri_sidoarjo', komentar: 'Innalillahi, semoga korban diberi kesabaran dan ketabahan.' },
-        { username: 'warganet77', komentar: 'Harusnya ada pengawasan bangunan pesantren, jangan sampai asal jadi.' },
-        { username: 'edukasiislam', komentar: 'Pemerintah perlu serius bantu rekonstruksi, biar bisa dipakai lagi untuk ibadah.' },
-        { username: 'newsupdate', komentar: 'Kejadian ini harus jadi pelajaran agar pembangunan sesuai standar.' },
-        { username: 'harapanumat', komentar: 'Semoga musala bisa cepat dibangun kembali dan lebih aman.' }
+        { username: 'santri_sidoarjo', komentar: 'Innalillahi, semoga korban diberi kesabaran dan ketabahan.', reply: [] },
+        { username: 'warganet77', komentar: 'Harusnya ada pengawasan bangunan pesantren, jangan sampai asal jadi.', reply: [] },
+        { username: 'edukasiislam', komentar: 'Pemerintah perlu serius bantu rekonstruksi, biar bisa dipakai lagi untuk ibadah.', reply: [] },
+        { username: 'newsupdate', komentar: 'Kejadian ini harus jadi pelajaran agar pembangunan sesuai standar.', reply: [] },
+        { username: 'harapanumat', komentar: 'Semoga musala bisa cepat dibangun kembali dan lebih aman.', reply: [] }
       ],
       rating: [
         { username: 'santri_sidoarjo', rate: 5 },
@@ -337,7 +349,8 @@ export class News {
         { username: 'edukasiislam', rate: 5 },
         { username: 'newsupdate', rate: 4 },
         { username: 'harapanumat', rate: 5 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 12,
@@ -354,11 +367,11 @@ export class News {
       ],
       description: 'Seorang bocah perempuan ditemukan tewas membusuk di kamar kos di Jakarta Utara. Warga melaporkan kondisi tubuh korban penuh bekas lebam, penyelidikan sedang berlangsung.',
       komentar: [
-        { username: 'jakutnews', komentar: 'Ngeri banget kasusnya, semoga pelaku segera ditangkap polisi.' },
-        { username: 'ibu_rumah', komentar: 'Kasihan banget anak kecil, nggak kebayang sakitnya.' },
-        { username: 'justice4kids', komentar: 'Harus ada hukuman berat biar jadi efek jera buat pelaku kekerasan anak.' },
-        { username: 'mata_warga', komentar: 'Lingkungan harus lebih peduli kalau ada tanda-tanda kekerasan di sekitar.' },
-        { username: 'prihatinbanget', komentar: 'Semoga keluarga diberi kekuatan, miris sekali dengar kasus ini.' }
+        { username: 'jakutnews', komentar: 'Ngeri banget kasusnya, semoga pelaku segera ditangkap polisi.', reply: [] },
+        { username: 'ibu_rumah', komentar: 'Kasihan banget anak kecil, nggak kebayang sakitnya.', reply: [] },
+        { username: 'justice4kids', komentar: 'Harus ada hukuman berat biar jadi efek jera buat pelaku kekerasan anak.', reply: [] },
+        { username: 'mata_warga', komentar: 'Lingkungan harus lebih peduli kalau ada tanda-tanda kekerasan di sekitar.', reply: [] },
+        { username: 'prihatinbanget', komentar: 'Semoga keluarga diberi kekuatan, miris sekali dengar kasus ini.', reply: [] }
       ],
       rating: [
         { username: 'jakutnews', rate: 5 },
@@ -366,7 +379,8 @@ export class News {
         { username: 'justice4kids', rate: 5 },
         { username: 'mata_warga', rate: 4 },
         { username: 'prihatinbanget', rate: 5 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 13,
@@ -383,11 +397,15 @@ export class News {
       ],
       description: 'Hujan deras mengguyur Jakarta pagi ini. Akibatnya, beberapa ruas jalan mengalami kepadatan lalu lintas signifikan.',
       komentar: [
-        { username: 'commuterlife', komentar: 'Baru hujan sebentar aja jalanan udah macet parah 😩' },
-        { username: 'ojekonline', komentar: 'Orderan rame pas hujan, tapi jalannya bikin lama banget.' },
-        { username: 'jakartans', komentar: 'Semoga nggak sampai banjir, soalnya udah mulai masuk musim hujan nih.' },
-        { username: 'mobilmania', komentar: 'Hujan dikit langsung padat, transportasi publik harus lebih siap.' },
-        { username: 'wargajakarta', komentar: 'Setiap hujan, selalu macet. Kayak nggak ada solusi dari tahun ke tahun.' }
+        {
+          username: 'commuterlife',
+          komentar: 'Baru hujan sebentar aja jalanan udah macet parah 😩',
+          reply: []
+        },
+        { username: 'ojekonline', komentar: 'Orderan rame pas hujan, tapi jalannya bikin lama banget.', reply: [] },
+        { username: 'jakartans', komentar: 'Semoga nggak sampai banjir, soalnya udah mulai masuk musim hujan nih.', reply: [] },
+        { username: 'mobilmania', komentar: 'Hujan dikit langsung padat, transportasi publik harus lebih siap.', reply: [] },
+        { username: 'wargajakarta', komentar: 'Setiap hujan, selalu macet. Kayak nggak ada solusi dari tahun ke tahun.', reply: [] }
       ],
       rating: [
         { username: 'commuterlife', rate: 4 },
@@ -395,7 +413,8 @@ export class News {
         { username: 'jakartans', rate: 5 },
         { username: 'mobilmania', rate: 4 },
         { username: 'wargajakarta', rate: 2 }
-      ]
+      ],
+      views: 0
     },
     {
       index: 14,
@@ -412,11 +431,11 @@ export class News {
       ],
       description: 'Presiden Prabowo Subianto bertindak sebagai inspektur upacara peringatan Hari Kesaktian Pancasila di Monumen Pancasila Sakti, Lubang Buaya, Jakarta Timur.',
       komentar: [
-        { username: 'merahputih', komentar: 'Upacara ini penting untuk mengingatkan generasi muda tentang sejarah bangsa.' },
-        { username: 'indonesiahebat', komentar: 'Semoga nilai-nilai Pancasila benar-benar diterapkan, bukan cuma seremonial.' },
-        { username: 'sejarahwan', komentar: 'Lubang Buaya selalu jadi saksi sejarah yang harus diingat.' },
-        { username: 'nasionalis', komentar: 'Bagus Prabowo hadir langsung, menunjukkan penghormatan terhadap sejarah.' },
-        { username: 'realitaid', komentar: 'Jangan hanya memperingati, tapi implementasi Pancasila di kehidupan sehari-hari juga penting.' }
+        { username: 'merahputih', komentar: 'Upacara ini penting untuk mengingatkan generasi muda tentang sejarah bangsa.', reply: [] },
+        { username: 'indonesiahebat', komentar: 'Semoga nilai-nilai Pancasila benar-benar diterapkan, bukan cuma seremonial.', reply: [] },
+        { username: 'sejarahwan', komentar: 'Lubang Buaya selalu jadi saksi sejarah yang harus diingat.', reply: [] },
+        { username: 'nasionalis', komentar: 'Bagus Prabowo hadir langsung, menunjukkan penghormatan terhadap sejarah.', reply: [] },
+        { username: 'realitaid', komentar: 'Jangan hanya memperingati, tapi implementasi Pancasila di kehidupan sehari-hari juga penting.', reply: [] }
       ],
       rating: [
         { username: 'merahputih', rate: 5 },
@@ -424,7 +443,8 @@ export class News {
         { username: 'sejarahwan', rate: 5 },
         { username: 'nasionalis', rate: 4 },
         { username: 'realitaid', rate: 5 }
-      ]
+      ],
+      views: 0
     }
   ]
 
@@ -436,7 +456,7 @@ export class News {
 
   addComment(p_newComment: string, p_index: number, p_currentUser: string) {
     this.berita[p_index].komentar.push({
-      username: p_currentUser, komentar: p_newComment
+      username: p_currentUser, komentar: p_newComment, reply: [] 
     });
   }
 
@@ -463,11 +483,11 @@ export class News {
     );
 
     if (alreadyExists) {
-      return false; 
+      return false;
     }
 
     this.favorites[username].push(beritaFavorit);
-    this.saveFavorites(); 
+    this.saveFavorites();
     return true;
   }
 
@@ -484,7 +504,7 @@ export class News {
       (b) => b.title === beritaFavorit.title
     );
 
-    return alreadyExists; 
+    return alreadyExists;
   }
 
   getFavorites(username: string): any[] {
@@ -501,5 +521,17 @@ export class News {
     if (stored) {
       this.favorites = JSON.parse(stored);
     }
+  }
+
+  loadViews() {
+    const stored = localStorage.getItem('berita')
+    if (stored) {
+      this.berita = JSON.parse(stored)
+    }
+  }
+
+  addViews(beritaKe: number) {
+    this.berita[beritaKe].views++
+    localStorage.setItem('berita', JSON.stringify(this.berita))
   }
 }

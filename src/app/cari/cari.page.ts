@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { News } from '../news';
 
 @Component({
@@ -10,10 +11,10 @@ import { News } from '../news';
 export class CariPage implements OnInit {
 
   judulDicari: string = '';
-  berita: any[] = [];        
-  beritaRelevan: any[] = []; 
+  berita: any[] = [];
+  beritaRelevan: any[] = [];
 
-  constructor(private news: News) {}
+  constructor(private router: Router, private news: News) { }
 
   ngOnInit() {
     this.berita = this.news.berita
@@ -31,4 +32,16 @@ export class CariPage implements OnInit {
     }
   }
 
+  overallRating(news: any): number {
+    if (!news.rating || news.rating.length === 0) {
+      return 0;
+    }
+    const total = news.rating.reduce((sum: number, r: any) => sum + r.rate, 0);
+    return total / news.rating.length;
+  }
+
+  clickBerita(beritaDipilih: any) {
+    this.news.addViews(beritaDipilih.index)
+    this.router.navigate(['/tabs/baca', beritaDipilih.index])
+  }
 }
