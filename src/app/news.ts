@@ -518,12 +518,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Teknologi'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/community/2023/02/robot-ai-assistant-home.webp',
+      gambarCover: 'https://cdn.rri.co.id/berita/Palangkaraya/o/1727487698000-IMG_0411/i6jq52gjbv7u2ge.jpeg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/community/2023/02/robot-ai-assistant-home.webp',
-        'https://assets-global.website-files.com/621f3f05b9d7a96b5a8f84c4/626a47d0f6d4b35f35f6f321_robot-home.jpeg',
-        'https://images.unsplash.com/photo-1603791452906-e3e4d43c3b8f',
-        'https://www.analyticsinsight.net/wp-content/uploads/2023/07/AI-Robot.jpg'
+        'https://asset.kompas.com/crops/F2E8YbUEpq9NbnATx1RIVsTTEoc=/0x41:1000x708/1200x800/data/photo/2021/01/12/5ffd1a289f3d6.jpg',
+        'https://awsimages.detik.net.id/community/media/visual/2024/05/01/robot-art-astribot.png?w=1200',
+        'https://assets.pikiran-rakyat.com/crop/0x0:0x0/1200x675/photo/2024/05/05/2679842318.png',
+        'https://www.dbs.id/id/iwov-resources/images/blog/Pekerjaan-Rumah-Lebih-Mudah-1404x630.jpg'
       ],
       description: 'Robot asisten rumah tangga kini semakin cerdas berkat kemajuan Artificial Intelligence (AI). Produk baru buatan startup Indonesia ini mampu mengenali perintah suara dalam Bahasa Indonesia dan membantu pekerjaan rumah seperti membersihkan lantai, menyiapkan kopi, hingga mengingatkan jadwal harian pengguna.',
       komentar: [
@@ -554,12 +554,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Teknologi'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/community/2023/04/ai-note-app.webp',
+      gambarCover: 'https://play-lh.googleusercontent.com/Lk0FKOeJEXpawmrn_UndpsA7TisgR3XKrZqbDM3CWOGe9yFgh_qDN_ACNSeEcRropHwp=w526-h296-rw',
       gambar: [
-        'https://cdn.idntimes.com/content-images/community/2023/04/ai-note-app.webp',
-        'https://images.unsplash.com/photo-1553877522-43269d4ea984',
-        'https://www.analyticsinsight.net/wp-content/uploads/2023/10/AI-writing-app.jpg',
-        'https://miro.medium.com/v2/resize:fit:1400/1*QeJqYtWnY3ZqYyFe1z9vfw.png'
+        'https://play-lh.googleusercontent.com/B9YP3LVmFyZdZxaIPa5OxTKju4pBliT9CBlpyqoXwFuBu_zUF0IX740-Q29mn_K9yqQ=w526-h296-rw',
+        'https://play-lh.googleusercontent.com/OkF6xW-0xQvLCnYdtIWbEjVSdOc66M6XuLnjS6Gpm0O_uqzdBT7GXBFq9xf1mqoglw=w526-h296-rw',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY-7mZ9Tqdn63w5fFsa_XA1BQgAqCq53oV2w&s',
+        'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/b7/0c/9fb70c58-f43b-4476-bae0-884c340f63a0/fa74596e-4651-408d-8139-9f72db9e4b03_mac-3.png/643x0w.jpg'
       ],
       description: 'QuantumNote, aplikasi catatan digital buatan anak bangsa, kini viral karena fitur uniknya yang mampu memprediksi ide lanjutan dari tulisan pengguna menggunakan AI berbasis model bahasa besar. Aplikasi ini dirancang untuk membantu pelajar, penulis, dan pekerja kreatif agar tidak kehabisan inspirasi.',
       komentar: [
@@ -590,12 +590,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Viral'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/community/2024/02/oyen-lift-viral.webp',
+      gambarCover: 'https://res.cloudinary.com/dk0z4ums3/image/upload/v1699600661/attached_image/7-cara-melatih-kucing-agar-jadi-penurut.jpg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/community/2024/02/oyen-lift-viral.webp',
-        'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb',
-        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131',
-        'https://images.unsplash.com/photo-1517849845537-4d257902454a'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGi8vNBArztG4WMrJULMkfXdXoiJlfrs3JbA&s',
+        'https://cppetindo.com/wp-content/uploads/kenapa-kucing-memijat-kita.webp',
+        'https://cdn0-production-images-kly.akamaized.net/0RK-y69aft_a64NMk10uTStivAY=/0x150:4899x2911/500x281/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4096982/original/022222500_1658457324-tran-mau-tri-tam--81lVsfM4gQ-unsplash.jpg',
+        'https://asset.kompas.com/crops/PWLGXcxBhK6nPGDIMms7evgtgg0=/0x0:844x563/750x500/data/photo/2023/02/04/63ddd2ed3d6bc.jpg'
       ],
       description: 'Sebuah video yang memperlihatkan seekor kucing oranye menekan tombol lift sendiri sukses menghebohkan media sosial. Video berdurasi 15 detik itu menunjukkan kucing tersebut berdiri di depan lift, menunggu pintu terbuka, lalu masuk dan menekan tombol lantai menggunakan cakarnya. Netizen ramai-ramai menyebut kucing itu “Oyen Tercerdas 2025.”',
       komentar: [
@@ -626,12 +626,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Olahraga', 'Nasional'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/community/2025/05/timnas-u23-seagames.webp',
+      gambarCover: 'https://imgsrv2.voi.id/z5bKOk_qHH6DGa1CVOZ2V45ii25wj8LuS9YTERnI-nM/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8xMTU0NTYvMjAyMTEyMjAwNTIzLW1haW4uY3JvcHBlZF8xNjM5OTUyNjQwLmpwZWc.jpg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/community/2025/05/timnas-u23-seagames.webp',
-        'https://images.unsplash.com/photo-1521412644187-c49fa049e84d',
-        'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7',
-        'https://images.unsplash.com/photo-1551958219-acbc608c6377'
+        'https://static.republika.co.id/uploads/images/inpicture_slide/pesepak-bola-timnas-indonesia-pratama-arhan-kanan-berselebrasi-dengan_211219220122-897.jpg',
+        'https://media.suara.com/pictures/653x366/2021/12/19/40178-piala-aff-indonesia-kalahkan-malaysia.jpg',
+        'https://hariansulteng.com/wp-content/uploads/2021/12/IMG_20211220_020428-800x438.jpg',
+        'https://media.suara.com/pictures/653x366/2021/12/19/20935-timnas-indonesia.jpg'
       ],
       description: 'Timnas Indonesia U-23 berhasil menorehkan sejarah dengan menjuarai SEA Games 2025 setelah mengalahkan Malaysia dengan skor telak 3-0. Gol dicetak oleh Marselino Ferdinan, Ramadhan Sananta, dan Beckham Putra. Kemenangan ini disambut meriah oleh suporter yang memadati stadion Hanoi Arena.',
       komentar: [
@@ -662,12 +662,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Olahraga', 'Nasional'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/03/all-england-2025-final.webp',
+      gambarCover: 'https://cdn0-production-images-kly.akamaized.net/3l-TYZyWjI4Pq9xN7pJDNcK_4eU=/1280x720/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/5164130/original/015177600_1742115604-LeoBagas9_SF_AllEngland2025_PBSI_20250315.jpg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/post/2025/03/all-england-2025-final.webp',
-        'https://images.unsplash.com/photo-1604948501466-3d98de9dfe2a',
-        'https://images.unsplash.com/photo-1551698618-1dfe5d97d256',
-        'https://images.unsplash.com/photo-1584270354949-1f5d0e8f0c01'
+        'https://cdn.antaranews.com/cache/1200x800/2022/03/19/20220319-bagas-fikri_1.jpg.webp',
+        'https://cdn1-production-images-kly.akamaized.net/xH2QIcdHy6orFt95X8I06cZB4DY=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/5164377/original/056257500_1742171542-WhatsApp_Image_2025-03-17_at_03.10.21.jpeg',
+        'https://awsimages.detik.net.id/api/wm/2025/03/16/leo-rolly-carnando-bagas-maulana-1742112165694_169.jpeg?wid=60&w=1200&v=1&t=jpeg',
+        'https://c.inilah.com/reborn/2025/03/large_Leo_Bagas6_R16_All_England2025_PBSI_20250313_1024x683_f98f682b1f.jpg'
       ],
       description: 'Pasangan ganda putra Indonesia, Fajar Alfian dan Muhammad Rian Ardianto, sukses menjuarai All England 2025 setelah menumbangkan pasangan Jepang dalam laga sengit tiga set. Kemenangan ini menjadi gelar kedua mereka di turnamen bergengsi tersebut dan memperkuat posisi Indonesia sebagai raksasa bulutangkis dunia.',
       komentar: [
@@ -698,12 +698,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Ekonomi', 'Nasional'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/rupiah-menguat-2025.webp',
+      gambarCover: 'https://awsimages.detik.net.id/visual/2024/01/25/uang-dolar-as-dan-rupiah-cnbc-indonesiafaisal-rahman-10_169.jpeg?w=1200',
       gambar: [
-        'https://cdn.idntimes.com/content-images/post/2025/10/rupiah-menguat-2025.webp',
-        'https://images.unsplash.com/photo-1579621970795-87facc2f976d',
-        'https://images.unsplash.com/photo-1554224155-6726b3ff858f',
-        'https://images.unsplash.com/photo-1606327053886-3c9b75adcb7e'
+        'https://i.ytimg.com/vi/vum5nxth0GA/maxresdefault.jpg',
+        'https://cdn.antaranews.com/cache/1200x800/2024/11/06/Nilai-tukar-rupiah-melemah-061124-RIV-1.jpg',
+        'https://awsimages.detik.net.id/visual/2018/09/04/61cf7104-aabe-4c37-8c32-9e501d0752d6_169.jpeg?w=650',
+        'https://awsimages.detik.net.id/community/media/visual/2020/07/22/top-rupiah-meroket-jadi-juara-asia-1_169.jpeg?w=600&q=90'
       ],
       description: 'Nilai tukar rupiah menguat terhadap dolar AS dan kini berada di kisaran Rp15.200 per dolar. Penguatan ini terjadi setelah rilis data ekonomi nasional yang menunjukkan pertumbuhan PDB kuartal ketiga meningkat 5,4%. Para analis menilai kepercayaan investor terhadap stabilitas ekonomi Indonesia semakin tinggi.',
       komentar: [
@@ -734,12 +734,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Ekonomi'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/09/startup-umkm-digital.webp',
+      gambarCover: 'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/0180c5fee2f3f7d91ec8de57346f48fc.jpg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/post/2025/09/startup-umkm-digital.webp',
-        'https://images.unsplash.com/photo-1581090700227-1e37b190418e',
-        'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad',
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d'
+        'https://assets.promediateknologi.id/crop/0x0:0x0/750x500/photo/radarsolo/2023/04/FRESHFACTORY.jpg.webp',
+        'https://asset.kompas.com/crops/fmCoSOMu57mzvjfGjXOp1uoMNbg=/69x4:1076x675/375x240/data/photo/2021/09/22/614aef4ca2d87.jpg',
+        'https://imgx.parapuan.co/crop/159x111:1439x1071/x/photo/2022/11/14/whatsapp-image-2022-11-14-at-09-20221114065041.jpeg',
+        'https://img2.beritasatu.com/cache/investor/960x620-w/2024/12/1733300094-859x491.webp'
       ],
       description: 'Startup asal Bandung bernama “PasarGo” sukses mengantongi pendanaan seri A sebesar Rp120 miliar dari investor Jepang. Dana ini akan digunakan untuk memperluas jangkauan digitalisasi pasar tradisional di 20 kota di Indonesia. Pendekatan mereka menggabungkan sistem pembayaran non-tunai dan manajemen stok berbasis cloud.',
       komentar: [
@@ -770,12 +770,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Kesehatan'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/makanan-peningkat-imun.webp',
+      gambarCover: 'https://res.cloudinary.com/dk0z4ums3/image/upload/v1737519523/attached_image/7-makanan-sehat-dan-bergizi-yang-perlu-dikonsumsi.jpg',
       gambar: [
-        'https://cdn.idntimes.com/content-images/post/2025/10/makanan-peningkat-imun.webp',
-        'https://images.unsplash.com/photo-1619566636858-7e1e67aa0a4a',
-        'https://images.unsplash.com/photo-1606755962773-0c3ce1f6b7c8',
-        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f'
+        'https://cms-dashboard.realfood.co.id/app/uploads/2021/09/ciri-ciri-makanan-sehat-2.jpg',
+        'https://res.cloudinary.com/dk0z4ums3/image/upload/v1594622096/attached_image/ini-makanan-sehat-yang-perlu-dikonsumsi-setiap-hari.jpg',
+        'https://asset-2.tribunnews.com/health/foto/bank/images/makanan-sehat-7.jpg',
+        'https://cms-dashboard.realfood.co.id/app/uploads/2020/12/contoh-makanan-sehat-dan-bergizi.jpg.jpg'
       ],
       description: 'Musim hujan sering kali membuat daya tahan tubuh menurun dan mudah terserang flu. Untuk mencegahnya, kamu bisa mulai mengonsumsi makanan yang kaya akan vitamin C, seperti jeruk, kiwi, dan paprika merah. Selain itu, makanan tinggi zinc dan probiotik seperti yogurt juga bisa bantu memperkuat sistem imunmu secara alami.',
       komentar: [
@@ -802,12 +802,12 @@ export class News {
         year: 'numeric'
       }),
       category: ['Kesehatan'],
-      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/kurang-tidur-berat-badan.webp',
+      gambarCover: 'https://d1bpj0tv6vfxyp.cloudfront.net/articles/7d4127df-39e1-4ad6-8a5e-4f6cb9740eb7_article_image_url.webp',
       gambar: [
-        'https://cdn.idntimes.com/content-images/post/2025/10/kurang-tidur-berat-badan.webp',
-        'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f',
-        'https://images.unsplash.com/photo-1520170350709-5131f99393d3',
-        'https://images.unsplash.com/photo-1526401485004-2fda9f4a8313'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQILymTIElQqhdzuAeZ4N1vBmRvsJ2_XYqpg&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1S3kDOkSqCq6RM8xdC0nQwF-4PrYMsoztcg&s',
+        'https://awsimages.detik.net.id/community/media/visual/2019/07/19/92454e6a-2414-4fca-9c33-7833a3eea548_169.jpeg?w=600&q=90',
+        'https://ai-care.id/photos/2%20Feb%20-%2016%20Feb%202022/61fca12f3c8c8.jpg'
       ],
       description: 'Sebuah studi terbaru menunjukkan bahwa kurang tidur dapat memengaruhi hormon yang mengatur rasa lapar dan metabolisme tubuh. Akibatnya, seseorang yang tidur kurang dari 6 jam per malam cenderung lebih mudah mengalami peningkatan berat badan. Para ahli menyarankan untuk menjaga kualitas tidur minimal 7–8 jam agar metabolisme tetap seimbang.',
       komentar: [
