@@ -10,7 +10,7 @@
   </ion-searchbar>
 
   <ion-card *ngFor="let berita of beritaRelevan" (click)="clickBerita(berita)">
-    <img alt="Silhouette of mountains" [src]="berita.gambar" />
+    <img alt="Silhouette of mountains" [src]="berita.gambarCover" />
     <ion-card-header>
       <ion-card-title>{{ berita.title }}</ion-card-title>
       <ion-card-subtitle> {{ berita.category.join(', ') }}</ion-card-subtitle>
