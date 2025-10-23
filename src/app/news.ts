@@ -210,7 +210,7 @@ export class News {
         month: 'long',
         year: 'numeric'
       }),
-      category: ['Nasional', 'Peristiwa'],
+      category: ['Peristiwa'],
       gambarCover: 'https://statik.tempo.co/data/2025/09/30/id_1431574/1431574_720.jpg',
       gambar: [
         'https://statik.tempo.co/data/2025/09/30/id_1431574/1431574_720.jpg',

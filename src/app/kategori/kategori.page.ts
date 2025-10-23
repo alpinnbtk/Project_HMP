@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { News } from '../news'
 
 @Component({
@@ -28,12 +29,25 @@ export class KategoriPage implements OnInit {
     return Array.isArray(value);
   }
 
-  constructor(private route: ActivatedRoute, private news: News) { }
+  constructor(private activatedRoute: ActivatedRoute, private news: News, private route: Router) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
        this.kategoriTerpilih = params['jenis']; 
     });
     this.berita = this.news.berita;
+  }
+
+  overallRating(news: any): number {
+    if (!news.rating || news.rating.length === 0) {
+      return 0;
+    }
+    const total = news.rating.reduce((sum: number, r: any) => sum + r.rate, 0);
+    return total / news.rating.length;
+  }
+
+  clickBerita(berita: any) {
+    this.news.addViews(berita.index)
+    this.route.navigate(['/tabs/baca', berita.index])
   }
 }

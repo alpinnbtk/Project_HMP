@@ -25,12 +25,13 @@ export class BacaPage implements OnInit {
   ngOnInit() {
     this.berita = this.news.berita
     this.currentUser = localStorage.getItem('currentUser') ?? ''
-    this.hitungTotalKomentar(this.index)
 
     this.route.params.subscribe(params => {
       this.index = params['index'];
       this.checkFavorites();
     });
+
+    this.hitungTotalKomentar(this.index)
   }
 
   toggleReplyBox(i: number) {
