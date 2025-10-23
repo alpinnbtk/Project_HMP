@@ -19,6 +19,16 @@ export class MyFavoritePage implements OnInit {
     this.berita = this.news.getFavorites(this.currentUser)
   }
 
+  formatTanggal(tanggal: string | Date): string {
+    const d = new Date(tanggal);
+    const bulan = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    return `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
+
   overallRating(news: any): number {
     if (!news.rating || news.rating.length === 0) {
       return 0;

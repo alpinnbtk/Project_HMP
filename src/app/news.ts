@@ -11,7 +11,11 @@ export class News {
       index: 0,
       title: '[QUIZ] Seberapa Sehat Matamu? Coba Uji Melalui Kuis Ini!',
       author: 'Rully Bunga',
-      publishedDate: new Date('2025-09-25'),
+      publishedDate: new Date('2025-09-25').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Kesehatan'],
       gambarCover: 'https://image.idntimes.com/post/20180409/cover-367f24ae5ab0e0215bc59c55f374e5e9.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
@@ -42,7 +46,11 @@ export class News {
       index: 1,
       title: 'Zulhas Dampingi Prabowo ke AS Bawa Misi Pangan dan Iklim',
       author: 'Trio Hamdani',
-      publishedDate: new Date('2025-09-25'),
+      publishedDate: new Date('2025-09-25').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Ekonomi', 'Nasional'],
       gambarCover: 'https://image.idntimes.com/post/20250925/upload_a749e1ce364a27c32d25354362f14d9e_a939925d-4936-4dc7-a126-f5d52737ac60.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
@@ -70,7 +78,11 @@ export class News {
       index: 2,
       title: '7 Rekomendasi Mobil Listrik Keluarga, BYD M6 hingga GAC Aion Y Plus',
       author: 'Uswatun Khasanah',
-      publishedDate: new Date('2025-09-25'),
+      publishedDate: new Date('2025-09-25').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Teknologi'],
       gambarCover: 'https://image.idntimes.com/post/20250425/product-m6-top-86a7c8fbdc72570d029cdb712dd0c68d-f9448f3954e0f27b9f7ae09e084cd572.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
@@ -98,7 +110,11 @@ export class News {
       index: 3,
       title: 'Misi Lolos Piala Dunia 2026: Timnas Indonesia Punya Persiapan Sepekan',
       author: 'Tino Satrio',
-      publishedDate: new Date('2025-09-25'),
+      publishedDate: new Date('2025-09-25').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Olahraga', 'Nasional'],
       gambarCover: 'https://image.idntimes.com/post/20250611/upload_27a0dbe571fdab2202b4f5aaa0ce0d42.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
@@ -124,7 +140,11 @@ export class News {
       index: 4,
       title: 'Selena Gomez dan Benny Blanco Resmi Menikah',
       author: 'Zahrotustianah',
-      publishedDate: new Date('2025-09-28'),
+      publishedDate: new Date('2025-09-28').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Viral', 'Public Figure'],
       gambarCover: 'https://image.idntimes.com/post/20250928/upload_a654c0b773965de938d9a48bb9ab3480_d6cf73bf-ab95-4267-94be-dc1a690d26b8.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75',
       gambar: [
@@ -152,7 +172,11 @@ export class News {
       index: 5,
       title: 'KPK Sita Rp 1,3 M dari Ilham Habibie, Asalnya dari Cicilan Mercy Dibeli RK',
       author: 'DetikNews',
-      publishedDate: new Date('2025-10-01T??:??:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Hukum', 'Korupsi'],
       gambarCover: 'https://statik.tempo.co/data/2025/09/30/id_1431680/1431680_720.jpg',
       gambar: [
@@ -181,7 +205,11 @@ export class News {
       index: 6,
       title: 'Bangunan Ponpes Ambruk di Sidoarjo Diduga Tak Berizin-Konstruksi Tak Standar',
       author: 'DetikNews',
-      publishedDate: new Date('2025-10-01T??:??:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Nasional', 'Peristiwa'],
       gambarCover: 'https://statik.tempo.co/data/2025/09/30/id_1431574/1431574_720.jpg',
       gambar: [
@@ -210,7 +238,11 @@ export class News {
       index: 7,
       title: 'Prabowo akan Terbitkan Perpres Tata Kelola MBG: SPPG Harus Punya Chef Terlatih',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T12:27:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Politik', 'Pemerintahan'],
       gambarCover: 'https://suaragarut.id/upload/postingan/1759098075_isvyou7phc0pnpf.jpeg',
       gambar: [
@@ -238,7 +270,11 @@ export class News {
       index: 8,
       title: 'Impor Indonesia Agustus 2025 Turun 6,56%, Ini Sebabnya',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T12:15:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Ekonomi', 'Perdagangan'],
       gambarCover: 'https://www.pajak.com/storage/2025/02/WhatsApp-Image-2025-02-17-at-12.12.09-758x506.jpeg',
       gambar: [
@@ -268,7 +304,11 @@ export class News {
       index: 9,
       title: 'Dedi Mulyadi: Pemutihan Pajak Kendaraan di Jabar Berakhir, Lihat dan Rasakan Hasilnya',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T15:32:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Regional', 'Kebijakan'],
       gambarCover: 'https://asset.kompas.com/crops/JBC8fQxU6got2ZP3vpNijk6ROCs=/0x0:0x0/1200x800/data/photo/2025/09/25/68d4f6ec02f62.jpg',
       gambar: [
@@ -298,8 +338,12 @@ export class News {
       index: 10,
       title: 'KPK Pastikan Panggil Ridwan Kamil Usai Sita Uang Rp 1,3 Miliar',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T??:??:00'),
-      category: ['Hukum', 'Politik'],
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Hukum', 'Politik', 'Viral'],
       gambarCover: 'https://media.suara.com/pictures/653x366/2025/08/28/67376-ridwan-kamil-diperiksa-bareskrim-bareskrim-periksa-ridwan-kamil-ridwan-kamil-rk.jpg',
       gambar: [
         'https://media.suara.com/pictures/653x366/2025/08/28/67376-ridwan-kamil-diperiksa-bareskrim-bareskrim-periksa-ridwan-kamil-ridwan-kamil-rk.jpg',
@@ -328,7 +372,11 @@ export class News {
       index: 11,
       title: 'Musala Pesantren Al Khoziny Ambruk, DPR Minta Pemerintah Beri Pendampingan Pembangunan',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T09:58:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Nasional', 'Peristiwa'],
       gambarCover: 'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01k2p4csver0gs030k4e87pjv0.jpg',
       gambar: [
@@ -358,8 +406,12 @@ export class News {
       index: 12,
       title: 'Kasus Bocah Perempuan Tewas Membusuk di Jakut, Warga Lihat Wajah Korban Penuh Lebam',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T09:38:00'),
-      category: ['Nasional', 'Kejadian'],
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Nasional', 'Peristiwa'],
       gambarCover: 'https://i.ytimg.com/vi/CL2YLeCPRoU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCQ4QZlkclKdo959CIULJkKC3Jaow',
       gambar: [
         'https://i.ytimg.com/vi/CL2YLeCPRoU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCQ4QZlkclKdo959CIULJkKC3Jaow',
@@ -388,7 +440,11 @@ export class News {
       index: 13,
       title: 'Jakarta Diguyur Hujan, Sejumlah Ruas Jalan Terpantau Padat',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T09:32:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Metropolitan', 'Cuaca'],
       gambarCover: 'https://assets.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/jawapos/2022/11/JKT2-Himbauan-WFH-Pekerja-Ibu-Kota-eca5.jpg',
       gambar: [
@@ -422,7 +478,11 @@ export class News {
       index: 14,
       title: 'Prabowo Pimpin Upacara Peringatan Hari Kesaktian Pancasila 2025 di Lubang Buaya',
       author: 'Liputan6',
-      publishedDate: new Date('2025-10-01T07:46:00'),
+      publishedDate: new Date('2025-10-01').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
       category: ['Nasional', 'Upacara'],
       gambarCover: 'https://awsimages.detik.net.id/visual/2025/10/01/presiden-prabowo-subianto-memimpin-upacara-peringatan-hari-kesaktian-pancasila-2025-di-monumen-pancasila-sakti-lubang-buaya-ja-1759296388927.jpeg?w=650&q=80',
       gambar: [
@@ -445,6 +505,322 @@ export class News {
         { username: 'sejarahwan', rate: 5 },
         { username: 'nasionalis', rate: 4 },
         { username: 'realitaid', rate: 5 }
+      ],
+      views: 0
+    },
+    {
+      index: 15,
+      title: 'Inovasi AI Terbaru: Robot Asisten Rumah Tangga Cerdas Siap Masuk Pasar Indonesia!',
+      author: 'Dwi Prasetyo',
+      publishedDate: new Date('2025-10-15').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Teknologi'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/community/2023/02/robot-ai-assistant-home.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/community/2023/02/robot-ai-assistant-home.webp',
+        'https://assets-global.website-files.com/621f3f05b9d7a96b5a8f84c4/626a47d0f6d4b35f35f6f321_robot-home.jpeg',
+        'https://images.unsplash.com/photo-1603791452906-e3e4d43c3b8f',
+        'https://www.analyticsinsight.net/wp-content/uploads/2023/07/AI-Robot.jpg'
+      ],
+      description: 'Robot asisten rumah tangga kini semakin cerdas berkat kemajuan Artificial Intelligence (AI). Produk baru buatan startup Indonesia ini mampu mengenali perintah suara dalam Bahasa Indonesia dan membantu pekerjaan rumah seperti membersihkan lantai, menyiapkan kopi, hingga mengingatkan jadwal harian pengguna.',
+      komentar: [
+        {
+          username: 'techgeek88',
+          komentar: 'Wah keren banget! Semoga harganya terjangkau biar bisa punya di rumah 😆',
+          reply: [{ username: 'robotfan', komentar: 'Setuju! Kalau di bawah 10 juta pasti laku keras.' }]
+        },
+        { username: 'ai_enthusiast', komentar: 'Bangga banget produk AI lokal bisa saingi merek luar.', reply: [] },
+        { username: 'cleanbotlover', komentar: 'Kayaknya bakal bantu banget buat orang sibuk kayak aku.', reply: [] },
+        { username: 'skepticalone', komentar: 'Semoga data suaranya aman dan gak disalahgunakan ya.', reply: [] }
+      ],
+      rating: [
+        { username: 'techgeek88', rate: 5 },
+        { username: 'ai_enthusiast', rate: 4 },
+        { username: 'cleanbotlover', rate: 5 },
+        { username: 'skepticalone', rate: 3 }
+      ],
+      views: 0
+    },
+    {
+      index: 16,
+      title: 'Startup Lokal Rilis Aplikasi QuantumNote: Catatan Digital dengan Fitur AI Prediksi Ide!',
+      author: 'Nadia Kusuma',
+      publishedDate: new Date('2025-10-20').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Teknologi'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/community/2023/04/ai-note-app.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/community/2023/04/ai-note-app.webp',
+        'https://images.unsplash.com/photo-1553877522-43269d4ea984',
+        'https://www.analyticsinsight.net/wp-content/uploads/2023/10/AI-writing-app.jpg',
+        'https://miro.medium.com/v2/resize:fit:1400/1*QeJqYtWnY3ZqYyFe1z9vfw.png'
+      ],
+      description: 'QuantumNote, aplikasi catatan digital buatan anak bangsa, kini viral karena fitur uniknya yang mampu memprediksi ide lanjutan dari tulisan pengguna menggunakan AI berbasis model bahasa besar. Aplikasi ini dirancang untuk membantu pelajar, penulis, dan pekerja kreatif agar tidak kehabisan inspirasi.',
+      komentar: [
+        {
+          username: 'idehunter',
+          komentar: 'Keren banget, jadi gak stuck lagi waktu nulis jurnal atau ide startup! 🚀',
+          reply: [{ username: 'devnote', komentar: 'Betul! Bisa juga dipakai buat brainstorming tim.' }]
+        },
+        { username: 'techlady', komentar: 'Desain UI-nya minimalis banget, nyaman di mata.', reply: [] },
+        { username: 'writerzone', komentar: 'Akhirnya ada alternatif selain Notion dan Evernote nih.', reply: [] },
+        { username: 'skeptikuser', komentar: 'Semoga gak nyimpen data pribadi pengguna ya.', reply: [] }
+      ],
+      rating: [
+        { username: 'idehunter', rate: 5 },
+        { username: 'techlady', rate: 4 },
+        { username: 'writerzone', rate: 5 },
+        { username: 'skeptikuser', rate: 3 }
+      ],
+      views: 0
+    },
+    {
+      index: 17,
+      title: 'Aksi Kucing Menekan Tombol Lift Sendiri Jadi Viral, Netizen: “Pinter Banget Nih Si Oyen!”',
+      author: 'Laras Dewi',
+      publishedDate: new Date('2025-10-22').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Viral'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/community/2024/02/oyen-lift-viral.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/community/2024/02/oyen-lift-viral.webp',
+        'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131',
+        'https://images.unsplash.com/photo-1517849845537-4d257902454a'
+      ],
+      description: 'Sebuah video yang memperlihatkan seekor kucing oranye menekan tombol lift sendiri sukses menghebohkan media sosial. Video berdurasi 15 detik itu menunjukkan kucing tersebut berdiri di depan lift, menunggu pintu terbuka, lalu masuk dan menekan tombol lantai menggunakan cakarnya. Netizen ramai-ramai menyebut kucing itu “Oyen Tercerdas 2025.”',
+      komentar: [
+        {
+          username: 'meongmania',
+          komentar: 'Fix ini Oyen paling jenius di dunia! 😂',
+          reply: [{ username: 'catlover99', komentar: 'Kayaknya bisa kerja jadi satpam kantor nih haha' }]
+        },
+        { username: 'fypdaily', komentar: 'Videonya udah muncul di semua platform, gokil sih!', reply: [] },
+        { username: 'techcat', komentar: 'AI kalah sama kucing asli nih wkwkwk', reply: [] },
+        { username: 'oyenfans', komentar: 'Bangga jadi pecinta Oyen 🧡', reply: [] }
+      ],
+      rating: [
+        { username: 'meongmania', rate: 5 },
+        { username: 'fypdaily', rate: 5 },
+        { username: 'techcat', rate: 4 },
+        { username: 'oyenfans', rate: 5 }
+      ],
+      views: 0
+    },
+    {
+      index: 18,
+      title: 'Timnas Indonesia U-23 Libas Malaysia 3-0 di Final SEA Games 2025!',
+      author: 'Rafi Nugraha',
+      publishedDate: new Date('2025-10-10').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Olahraga', 'Nasional'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/community/2025/05/timnas-u23-seagames.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/community/2025/05/timnas-u23-seagames.webp',
+        'https://images.unsplash.com/photo-1521412644187-c49fa049e84d',
+        'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7',
+        'https://images.unsplash.com/photo-1551958219-acbc608c6377'
+      ],
+      description: 'Timnas Indonesia U-23 berhasil menorehkan sejarah dengan menjuarai SEA Games 2025 setelah mengalahkan Malaysia dengan skor telak 3-0. Gol dicetak oleh Marselino Ferdinan, Ramadhan Sananta, dan Beckham Putra. Kemenangan ini disambut meriah oleh suporter yang memadati stadion Hanoi Arena.',
+      komentar: [
+        {
+          username: 'garudapride',
+          komentar: 'Gila! Mainnya bener-bener kelas dunia 🔥🔥',
+          reply: [{ username: 'bolaindo', komentar: 'Setuju, pressing-nya luar biasa rapi!' }]
+        },
+        { username: 'aseanwatcher', komentar: 'Akhirnya Indonesia juara lagi setelah penantian panjang!', reply: [] },
+        { username: 'malaysiafan', komentar: 'GG tim kalian! Respek dari Malaysia 🇲🇾', reply: [] },
+        { username: 'goalmania', komentar: 'Marselino MVP sih ini, gak ada obat!', reply: [] }
+      ],
+      rating: [
+        { username: 'garudapride', rate: 5 },
+        { username: 'aseanwatcher', rate: 5 },
+        { username: 'malaysiafan', rate: 4 },
+        { username: 'goalmania', rate: 5 }
+      ],
+      views: 0
+    },
+    {
+      index: 19,
+      title: 'Pebulutangkis Indonesia Raih Gelar All England 2025 Lewat Ganda Putra!',
+      author: 'Sinta Adelia',
+      publishedDate: new Date('2025-03-17').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Olahraga', 'Nasional'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/03/all-england-2025-final.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/post/2025/03/all-england-2025-final.webp',
+        'https://images.unsplash.com/photo-1604948501466-3d98de9dfe2a',
+        'https://images.unsplash.com/photo-1551698618-1dfe5d97d256',
+        'https://images.unsplash.com/photo-1584270354949-1f5d0e8f0c01'
+      ],
+      description: 'Pasangan ganda putra Indonesia, Fajar Alfian dan Muhammad Rian Ardianto, sukses menjuarai All England 2025 setelah menumbangkan pasangan Jepang dalam laga sengit tiga set. Kemenangan ini menjadi gelar kedua mereka di turnamen bergengsi tersebut dan memperkuat posisi Indonesia sebagai raksasa bulutangkis dunia.',
+      komentar: [
+        {
+          username: 'badmintonfans',
+          komentar: 'Bangga banget! Fajar-Rian emang gak pernah ngecewain 🇮🇩',
+          reply: [{ username: 'sportlover', komentar: 'Setuju, mental juara banget mereka!' }]
+        },
+        { username: 'racketsquad', komentar: 'Semoga tunggal putra juga bisa nyusul tahun depan!', reply: [] },
+        { username: 'smashboom', komentar: 'Pertandingannya tegang banget dari awal sampai akhir 😱', reply: [] },
+        { username: 'tokyofan', komentar: 'Jepang udah main bagus, tapi Indonesia emang solid banget.', reply: [] }
+      ],
+      rating: [
+        { username: 'badmintonfans', rate: 5 },
+        { username: 'sportlover', rate: 5 },
+        { username: 'racketsquad', rate: 4 },
+        { username: 'smashboom', rate: 5 }
+      ],
+      views: 0
+    },
+    {
+      index: 20,
+      title: 'Rupiah Menguat ke Level Rp15.200 per Dolar AS, Dipicu Optimisme Pasar Domestik',
+      author: 'Andi Prakoso',
+      publishedDate: new Date('2025-10-18').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Ekonomi', 'Nasional'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/rupiah-menguat-2025.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/post/2025/10/rupiah-menguat-2025.webp',
+        'https://images.unsplash.com/photo-1579621970795-87facc2f976d',
+        'https://images.unsplash.com/photo-1554224155-6726b3ff858f',
+        'https://images.unsplash.com/photo-1606327053886-3c9b75adcb7e'
+      ],
+      description: 'Nilai tukar rupiah menguat terhadap dolar AS dan kini berada di kisaran Rp15.200 per dolar. Penguatan ini terjadi setelah rilis data ekonomi nasional yang menunjukkan pertumbuhan PDB kuartal ketiga meningkat 5,4%. Para analis menilai kepercayaan investor terhadap stabilitas ekonomi Indonesia semakin tinggi.',
+      komentar: [
+        {
+          username: 'ekonommuda',
+          komentar: 'Keren! Semoga bisa terus stabil biar harga barang gak naik turun terus.',
+          reply: [{ username: 'marketwatch', komentar: 'Iya, inflasi juga harus tetap dijaga biar gak ganggu daya beli.' }]
+        },
+        { username: 'investorindo', komentar: 'Waktunya masuk ke pasar saham nih kayaknya 😎', reply: [] },
+        { username: 'dolarhunter', komentar: 'Akhirnya rupiah sedikit bernafas juga!', reply: [] },
+        { username: 'analiskece', komentar: 'BI berhasil jaga keseimbangan moneter sejauh ini.', reply: [] }
+      ],
+      rating: [
+        { username: 'ekonommuda', rate: 5 },
+        { username: 'marketwatch', rate: 4 },
+        { username: 'investorindo', rate: 5 },
+        { username: 'dolarhunter', rate: 4 }
+      ],
+      views: 0
+    },
+    {
+      index: 21,
+      title: 'Startup UMKM Indonesia Raup Pendanaan Rp120 Miliar, Fokus pada Digitalisasi Pasar Tradisional',
+      author: 'Putri Rahmawati',
+      publishedDate: new Date('2025-09-30').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Ekonomi'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/09/startup-umkm-digital.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/post/2025/09/startup-umkm-digital.webp',
+        'https://images.unsplash.com/photo-1581090700227-1e37b190418e',
+        'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad',
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d'
+      ],
+      description: 'Startup asal Bandung bernama “PasarGo” sukses mengantongi pendanaan seri A sebesar Rp120 miliar dari investor Jepang. Dana ini akan digunakan untuk memperluas jangkauan digitalisasi pasar tradisional di 20 kota di Indonesia. Pendekatan mereka menggabungkan sistem pembayaran non-tunai dan manajemen stok berbasis cloud.',
+      komentar: [
+        {
+          username: 'umkmlover',
+          komentar: 'Wah keren! Akhirnya ada startup yang bantu pedagang kecil naik kelas 👏',
+          reply: [{ username: 'digitalpreneur', komentar: 'Betul, pasar tradisional harus ikut era digital.' }]
+        },
+        { username: 'investasia', komentar: 'Investor Jepang memang jeli lihat potensi ekonomi lokal.', reply: [] },
+        { username: 'pasarid', komentar: 'Semoga cepat hadir di kotaku juga nih!', reply: [] },
+        { username: 'skeptis', komentar: 'Jangan sampe pedagang kecil malah kesulitan adaptasi ya.', reply: [] }
+      ],
+      rating: [
+        { username: 'umkmlover', rate: 5 },
+        { username: 'digitalpreneur', rate: 4 },
+        { username: 'investasia', rate: 5 },
+        { username: 'pasarid', rate: 4 }
+      ],
+      views: 0
+    },
+    {
+      index: 22,
+      title: '[GAYA HIDUP SEHAT] 7 Makanan yang Bisa Meningkatkan Imun Tubuh di Musim Hujan!',
+      author: 'Citra Anggraini',
+      publishedDate: new Date('2025-10-12').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Kesehatan'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/makanan-peningkat-imun.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/post/2025/10/makanan-peningkat-imun.webp',
+        'https://images.unsplash.com/photo-1619566636858-7e1e67aa0a4a',
+        'https://images.unsplash.com/photo-1606755962773-0c3ce1f6b7c8',
+        'https://images.unsplash.com/photo-1556911220-e15b29be8c8f'
+      ],
+      description: 'Musim hujan sering kali membuat daya tahan tubuh menurun dan mudah terserang flu. Untuk mencegahnya, kamu bisa mulai mengonsumsi makanan yang kaya akan vitamin C, seperti jeruk, kiwi, dan paprika merah. Selain itu, makanan tinggi zinc dan probiotik seperti yogurt juga bisa bantu memperkuat sistem imunmu secara alami.',
+      komentar: [
+        { username: 'Anita Prameswari', komentar: 'Pas banget, lagi sering hujan di kota saya. Waktunya stok jeruk dan madu!', reply: [] },
+        { username: 'Yoga Firmansyah', komentar: 'Baru tahu kalau paprika merah tinggi vitamin C, kirain cuma buah-buahan aja.', reply: [] },
+        { username: 'liafit', komentar: 'Saya tiap pagi minum air lemon hangat, beneran bantu daya tahan tubuh.', reply: [] },
+        { username: 'ferdinan', komentar: 'Artikel yang sangat informatif, cocok buat musim pancaroba begini.', reply: [] }
+      ],
+      rating: [
+        { username: 'Anita Prameswari', rate: 5 },
+        { username: 'Yoga Firmansyah', rate: 4 },
+        { username: 'liafit', rate: 5 },
+        { username: 'ferdinan', rate: 4 }
+      ],
+      views: 0
+    },
+    {
+      index: 23,
+      title: '[TIPS KESEHATAN] Kurang Tidur Bisa Bikin Berat Badan Naik? Ini Penjelasan Ahli!',
+      author: 'Dr. Livia Kusuma',
+      publishedDate: new Date('2025-10-08').toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }),
+      category: ['Kesehatan'],
+      gambarCover: 'https://cdn.idntimes.com/content-images/post/2025/10/kurang-tidur-berat-badan.webp',
+      gambar: [
+        'https://cdn.idntimes.com/content-images/post/2025/10/kurang-tidur-berat-badan.webp',
+        'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f',
+        'https://images.unsplash.com/photo-1520170350709-5131f99393d3',
+        'https://images.unsplash.com/photo-1526401485004-2fda9f4a8313'
+      ],
+      description: 'Sebuah studi terbaru menunjukkan bahwa kurang tidur dapat memengaruhi hormon yang mengatur rasa lapar dan metabolisme tubuh. Akibatnya, seseorang yang tidur kurang dari 6 jam per malam cenderung lebih mudah mengalami peningkatan berat badan. Para ahli menyarankan untuk menjaga kualitas tidur minimal 7–8 jam agar metabolisme tetap seimbang.',
+      komentar: [
+        { username: 'Novi Aprilia', komentar: 'Pantesan berat badan naik padahal makan gak banyak, ternyata gara-gara begadang 😅', reply: [] },
+        { username: 'Andre Saputra', komentar: 'Mulai malam ini harus disiplin tidur cukup, biar gak tambah gemuk haha.', reply: [] },
+        { username: 'tiaratama', komentar: 'Baru sadar ternyata tidur cukup penting banget buat metabolisme.', reply: [] },
+        { username: 'restup', komentar: 'Gak nyangka efeknya bisa sampai ngaruh ke hormon lapar.', reply: [] }
+      ],
+      rating: [
+        { username: 'Novi Aprilia', rate: 5 },
+        { username: 'Andre Saputra', rate: 4 },
+        { username: 'tiaratama', rate: 5 },
+        { username: 'restup', rate: 4 }
       ],
       views: 0
     }
