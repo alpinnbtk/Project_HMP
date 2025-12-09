@@ -1,10 +1,14 @@
 import { Injectable, numberAttribute } from '@angular/core';
 import { race, raceWith } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class News {
+
+  constructor(private http: HttpClient) { }
 
   berita = [
     {
@@ -855,24 +859,32 @@ export class News {
     }
   }
 
-  addToFavorites(index: number, username: string): boolean {
-    if (!this.favorites[username]) {
-      this.favorites[username] = [];
-    }
+  addToFavorites(index: number, username: string) {
+    // if (!this.favorites[username]) {
+    //   this.favorites[username] = [];
+    // }
 
-    const beritaFavorit = this.berita[index];
+    // const beritaFavorit = this.berita[index];
 
-    const alreadyExists = this.favorites[username].some(
-      (b) => b.title === beritaFavorit.title
-    );
+    // const alreadyExists = this.favorites[username].some(
+    //   (b) => b.title === beritaFavorit.title
+    // );
 
-    if (alreadyExists) {
-      return false;
-    }
+    // if (alreadyExists) {
+    //   return false;
+    // }
 
-    this.favorites[username].push(beritaFavorit);
-    this.saveFavorites();
-    return true;
+    // this.favorites[username].push(beritaFavorit);
+    // this.saveFavorites();
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('index', index.toString());
+    body.set('username', username);
+    const urlEncodedData = body.toString();
+    
+    return this.http.post(
+    "https://ubaya.cloud/hybrid/160423055/add_favorite.php", urlEncodedData, { headers });
   }
 
   checkFavorites(index: number, username: string): boolean {

@@ -24,7 +24,7 @@ export class RegisterPage implements OnInit {
   constructor(private the_users: Users, private router: Router) { }
 
   ngOnInit() {
-    this.users = this.the_users.users;
+    // this.users = this.the_users.users;
   }
 
   validatePassword() {
@@ -49,9 +49,17 @@ export class RegisterPage implements OnInit {
     this.validatePassword(); 
 
     if (this.password_error === '') {
-      this.the_users.addNewUser(this.nama_lengkap, this.email, this.username, this.password);
-      alert("Proses Pendaftaran Akun Berhasil!");
-      this.router.navigate(['/login']);
+      this.the_users.registerUser(this.nama_lengkap, this.email, this.username, this.password).subscribe(
+        (response: any) => {
+            if(response.result==='success'){
+              alert("Proses Pendaftaran Akun Berhasil!");
+              this.router.navigate(['/login']);
+            }
+            else
+            {
+              alert(response.message)
+            }
+      });
     } else {
       alert("Proses pendaftaran tidak dapat dilakukan. Harap buat password sesuai dengan ketentuan.");
     }

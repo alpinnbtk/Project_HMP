@@ -24,7 +24,7 @@ export class BacaPage implements OnInit {
 
   ngOnInit() {
     this.berita = this.news.berita
-    this.currentUser = localStorage.getItem('currentUser') ?? ''
+    this.currentUser = localStorage.getItem('app_username') ?? ''
 
     this.route.params.subscribe(params => {
       this.index = params['index'];
@@ -86,12 +86,16 @@ export class BacaPage implements OnInit {
   }
 
   addToFavorites() {
-    const success = this.news.addToFavorites(this.index, this.currentUser);
-    if (success) {
-      alert('Berita berhasil ditambahkan ke favorit!');
-    } else {
-      alert('Berita sudah ada di daftar favorit Anda.');
-    }
+      this.news.addToFavorites(this.index,this.currentUser).subscribe(
+      (response: any) => {
+          if(response.result==='success'){
+            alert('Berita berhasil ditambahkan ke favorit!');
+          }
+          else
+          {
+            alert(response.message)
+          }
+    });
   }
 
   checkFavorites() {
