@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../news';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-favorite',
@@ -9,7 +10,7 @@ import { News } from '../news';
 })
 export class MyFavoritePage implements OnInit {
 
-  berita: any[] = []
+  berita!: Observable<any>;
   currentUser = ""
 
   constructor(private news: News) { }

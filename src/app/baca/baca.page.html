@@ -20,35 +20,32 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item class="ion-margin-bottom" lines="none">
-      <h2>{{ berita[index].title }}</h2>
-    </ion-item>
-    <ion-item class="ion-margin-bottom" lines="none">
-      <ion-label style="font-size: 10px;">{{ berita[index].author }} - OnNews</ion-label>
-    </ion-item>
-    <ion-item class="ion-margin-bottom" lines="none">
-      <ion-label style="font-size: 9px;">{{ berita[index].publishedDate }}</ion-label>
-    </ion-item>
-    <ion-item class="ion-margin-bottom">
-      <ion-label style="font-size: 10px;">Kategori : {{ berita[index].category.join(', ') }}</ion-label>
-    </ion-item>
+    <ng-container *ngIf="berita">
+      <h2>{{ berita.judul }}</h2>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6" *ngFor="let img of berita[index].gambar">
-          <ion-card>
-            <img [src]="img" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" />
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      <ion-label>{{ berita.nama_lengkap }} - OnNews</ion-label>
+      <ion-label>{{ berita.tanggal_dibuat }}</ion-label>
 
-    <ion-item lines="none">
-      {{ berita[index].description }}
-    </ion-item>
+      <ion-label>
+        Kategori: {{ berita.kategori.join(', ') }}
+      </ion-label>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" *ngFor="let img of berita.gambar">
+            <ion-card>
+              <img [src]="img" />
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <p>{{ berita.deskripsi }}</p>
+    </ng-container>
+
 
     <ion-list>
-      <ion-item lines="none">Comments ({{totalKomentar}}): </ion-item>
+      <!-- <ion-item lines="none">Comments ({{totalKomentar}}): </ion-item>
       <ion-item *ngFor="let k of berita[index].komentar; let i = index">
         <ion-label>
           <h3 style="font-weight: bold;">{{ k.username }} :</h3>
@@ -69,9 +66,9 @@
             </ion-label>
           </div>
         </ion-label>
-      </ion-item>
+      </ion-item> -->
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-label *ngIf="berita[index].komentar.length == 0" lines="none">
           Belum ada komentar.
         </ion-label>
@@ -92,7 +89,7 @@
       <ion-item>
         <ion-input type="number" [(ngModel)]="newRating" min="1" max="5"></ion-input>
       </ion-item>
-      <ion-button (click)="submitRating()">Kirim</ion-button>
+      <ion-button (click)="submitRating()">Kirim</ion-button> -->
 
       <ion-item lines="none">
         <ion-button *ngIf="news_added === false" expand="block" color="warning" (click)="addToFavorites()">

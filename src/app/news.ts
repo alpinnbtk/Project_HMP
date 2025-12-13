@@ -10,6 +10,14 @@ export class News {
 
   constructor(private http: HttpClient) { }
 
+  listBerita():Observable<any> {
+    return this.http.get("https://ubaya.cloud/hybrid/160423055/get_berita.php");
+  }
+
+  listBeritaDetail():Observable<any> {
+    return this.http.get("https://ubaya.cloud/hybrid/160423055/get_berita_detail.php");
+  }
+
   berita = [
     {
       index: 0,
@@ -832,6 +840,16 @@ export class News {
 
   favorites: { [username: string]: any[] } = {};
 
+  getBeritaById(id: number) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('id', id.toString());
+    const urlEncodedData = body.toString();
+    
+    return this.http.post(
+    "https://ubaya.cloud/hybrid/160423055/get_berita_by_id.php", urlEncodedData, { headers });
+  }
+  
   addReply(berita_index: number, k_index: number, p_reply: string, p_user: string) {
     var beritaDireply = this.berita[berita_index]
     var tambah = beritaDireply.komentar[k_index]
@@ -903,9 +921,14 @@ export class News {
     return alreadyExists;
   }
 
-  getFavorites(username: string): any[] {
-    this.loadFavorites();
-    return this.favorites[username] || [];
+  getFavorites(username: string) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('username', username);
+    const urlEncodedData = body.toString();
+    
+    return this.http.post(
+    "https://ubaya.cloud/hybrid/160423055/get_favorite.php", urlEncodedData, { headers });
   }
 
   saveFavorites() {

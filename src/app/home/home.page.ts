@@ -26,7 +26,9 @@ export class HomePage {
 
   ngOnInit() {
     this.news.loadViews();
-    this.berita = this.news.berita;
+    this.news.listBerita().subscribe(
+      (data) => { this.berita = data; }
+    );
   }
   
   overallRating(news: any): number {
@@ -38,8 +40,8 @@ export class HomePage {
   }
 
   clickBerita(berita: any) {
-    this.news.addViews(berita.index)
-    this.router.navigate(['/tabs/baca', berita.index])
+    this.news.addViews(berita.id)
+    this.router.navigate(['/tabs/baca', berita.id])
   }
 
   logout() {
@@ -49,5 +51,9 @@ export class HomePage {
     alert('Anda telah melakukan logout.');
 
     this.router.navigate(['/login']);
+  }
+
+  isArray(value: any): boolean {
+    return Array.isArray(value);
   }
 }

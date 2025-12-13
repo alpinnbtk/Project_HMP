@@ -19,25 +19,27 @@
 
 
   <ion-card *ngFor="let news of berita" (click)="clickBerita(news)">
-    <img alt="Silhouette of mountains" [src]="news.gambarCover"/>
+    <img alt="Silhouette of mountains" [src]="news.cover"/>
     <ion-card-header>
-      <ion-card-title>{{ news.title }}</ion-card-title>
-      <ion-card-subtitle> {{ news.category.join(', ') }}</ion-card-subtitle>
+      <ion-card-title>{{ news.judul }}</ion-card-title>
+      <ion-card-subtitle>
+        {{ isArray(news.kategori) ? news.kategori.join(', ') : news.kategori }}
+      </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Penulis : {{ news.author }}
+      Penulis : {{ news.nama_lengkap }}
     </ion-card-content>
     <ion-card-content>
-      Published : {{ news.publishedDate}}
+      Published : {{ news.tanggal_dibuat}}
     </ion-card-content>
 
-    <ion-card-content>
+    <!-- <ion-card-content>
       <p *ngIf="news.rating.length === 0">Belum ada rating.</p>
       <p>Rating : {{overallRating(news)}}</p>
     </ion-card-content>
     <ion-card-content>
       <p>Viewed {{news.views}} times</p>
-    </ion-card-content>
+    </ion-card-content> -->
   </ion-card>
 </ion-content>
