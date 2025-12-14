@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵcreateOrReusePlatformInjector } from '@angular/core';
 import { Users } from '../users';
 import { Route, Router } from '@angular/router';
 
@@ -16,15 +16,41 @@ export class RegisterPage implements OnInit {
   email = ""
   username = ""
   password = ""
+  password_konfirmasi = ""
 
   users:any[] = []
 
+  name_error = ""
+  email_error = ""
   password_error = "";
 
   constructor(private the_users: Users, private router: Router) { }
 
   ngOnInit() {
     // this.users = this.the_users.users;
+  }
+
+  validateName() {
+    const name = this.nama_lengkap || '';
+
+    if (name == "") {
+      this.name_error = 'Nama tidak boleh kosong!';
+    } 
+    else if (/[0-9]/.test(name)) {
+      this.name_error = 'Tidak boleh ada angka dalam nama anda!';
+    } else {
+      this.name_error = '';
+    }
+  }
+
+  checkEmail(){
+      this.the_users.checkEmail(this.email).subscribe(
+      (response: any) => {
+          if(response.result==='error'){
+            this.email_error = response.message
+          }
+    });
+
   }
 
   validatePassword() {
@@ -65,5 +91,13 @@ export class RegisterPage implements OnInit {
     }
   }
 
+  confirmPassword() {
+    const pwd = this.password || '';
+    const confirm = this.password_konfirmasi
+
+    if (pwd != confirm) {
+      this.password_error = 'Password konfirmasi harus sama dengan password yang anda inputkan diatas!';
+    } 
+  }
   
 }

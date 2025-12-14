@@ -9,25 +9,25 @@
     show-clear-button="focus">
   </ion-searchbar>
 
-  <ion-card *ngFor="let berita of beritaRelevan" (click)="clickBerita(berita)">
-    <img alt="Silhouette of mountains" [src]="berita.gambarCover" />
+  <ion-card *ngFor="let berita of beritaRelevan | async" (click)="clickBerita(berita)">
+    <img alt="Silhouette of mountains" [src]="berita.cover" />
     <ion-card-header>
-      <ion-card-title>{{ berita.title }}</ion-card-title>
-      <ion-card-subtitle> {{ berita.category.join(', ') }}</ion-card-subtitle>
+      <ion-card-title>{{ berita.judul }}</ion-card-title>
+      <ion-card-subtitle> {{ berita.kategori.join(', ') }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Penulis : {{ berita.author }}
+      Penulis : {{ berita.nama_lengkap }}
     </ion-card-content>
     <ion-card-content>
-      Published : {{ berita.publishedDate}}
+      Published : {{ berita.tanggal_dibuat}}
     </ion-card-content>
-    <ion-card-content>
+    <!-- <ion-card-content>
       <p *ngIf="berita.rating.length === 0">Belum ada rating.</p>
       <p>Rating : {{overallRating(berita)}}</p>
     </ion-card-content>
     <ion-card-content>
       <p>Viewed {{berita.views}} times</p>
-    </ion-card-content>
+    </ion-card-content> -->
   </ion-card>
 </ion-content>

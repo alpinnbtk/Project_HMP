@@ -16,7 +16,8 @@ export class MyFavoritePage implements OnInit {
   constructor(private news: News) { }
 
   ngOnInit() {
-    this.currentUser = localStorage.getItem('currentUser') ?? ''
+    this.currentUser = localStorage.getItem('app_username') ?? ''
+    console.log(this.currentUser)
     this.berita = this.news.getFavorites(this.currentUser)
   }
 
@@ -38,4 +39,7 @@ export class MyFavoritePage implements OnInit {
     return total / news.rating.length;
   }
 
+  isArray(value: any): boolean {
+    return Array.isArray(value);
+  }
 }

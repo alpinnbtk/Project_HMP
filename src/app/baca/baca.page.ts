@@ -37,6 +37,7 @@ export class BacaPage implements OnInit {
 
     this.route.params.subscribe(params => {
       const id = params['index'];
+      this.index = id;
 
       this.news.getBeritaById(id).subscribe((data: any) => {
         this.berita = {

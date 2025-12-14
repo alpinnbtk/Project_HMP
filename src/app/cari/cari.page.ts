@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { News } from '../news';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cari',
@@ -12,23 +13,27 @@ export class CariPage implements OnInit {
 
   judulDicari: string = '';
   berita: any[] = [];
-  beritaRelevan: any[] = [];
+  beritaRelevan!: Observable<any>
 
   constructor(private router: Router, private news: News) { }
 
   ngOnInit() {
-    this.berita = this.news.berita
+    this.news.listBerita().subscribe(
+      (data) => { this.berita = data; }
+    );
 
-    this.beritaRelevan = [...this.berita];
   }
 
   filterNews() {
     const keyword = this.judulDicari.toLowerCase();
+    console.log(keyword)
 
     if (keyword.trim() === '') {
-      this.beritaRelevan = [...this.berita];
+      this.news.listBerita().subscribe(
+        (data) => { this.beritaRelevan = data; }
+      );
     } else {
-      this.beritaRelevan = this.berita.filter(item => item.title.toLowerCase().includes(keyword));
+      this.beritaRelevan = this.news.getBeritaByName(keyword);
     }
   }
 
@@ -41,7 +46,7 @@ export class CariPage implements OnInit {
   }
 
   clickBerita(beritaDipilih: any) {
-    this.news.addViews(beritaDipilih.index)
-    this.router.navigate(['/tabs/baca', beritaDipilih.index])
+    this.news.addViews(beritaDipilih.id)
+    this.router.navigate(['/tabs/baca', beritaDipilih.id])
   }
 }

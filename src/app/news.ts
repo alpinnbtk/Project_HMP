@@ -849,6 +849,16 @@ export class News {
     return this.http.post(
     "https://ubaya.cloud/hybrid/160423055/get_berita_by_id.php", urlEncodedData, { headers });
   }
+
+  getBeritaByName(judul: string) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('judul', judul);
+    const urlEncodedData = body.toString();
+    
+    return this.http.post(
+    "https://ubaya.cloud/hybrid/160423055/get_berita_by_name.php", urlEncodedData, { headers });
+  }
   
   addReply(berita_index: number, k_index: number, p_reply: string, p_user: string) {
     var beritaDireply = this.berita[berita_index]

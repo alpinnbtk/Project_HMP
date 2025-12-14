@@ -20,6 +20,16 @@ export class Users {
   //   { nama_lengkap: 'Enrich Daniel Ong', email: 's160423091@student.ubaya.ac.id', username: 'justrich', password: 'admin123' },
   //   { nama_lengkap: 'Ignatius Felix Tjitradi', email: 's160423092@student.ubaya.ac.id', username: 'tachyon', password: 'admin123' },
   // ];
+
+  checkEmail(email:string)
+  {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('email', email);
+    const urlEncodedData = body.toString();
+
+    return this.http.post("https://ubaya.cloud/hybrid/160423055/check_email.php", urlEncodedData, { headers });
+  }
   
   login(username:string, password:string)
   {

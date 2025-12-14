@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'kategori/:jenis',
     loadChildren: () => import('./kategori/kategori.module').then( m => m.KategoriPageModule)
+  },
+  {
+    path: 'newberita',
+    loadChildren: () => import('./newberita/newberita.module').then( m => m.NewberitaPageModule)
   }
 ];
 
