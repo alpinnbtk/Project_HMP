@@ -13,7 +13,7 @@ export class CariPage implements OnInit {
 
   judulDicari: string = '';
   berita: any[] = [];
-  beritaRelevan!: Observable<any>
+  beritaRelevan: any[] = [];
 
   constructor(private router: Router, private news: News) { }
 
@@ -33,7 +33,10 @@ export class CariPage implements OnInit {
         (data) => { this.beritaRelevan = data; }
       );
     } else {
-      this.beritaRelevan = this.news.getBeritaByName(keyword);
+      this.news.getBeritaByName(keyword).subscribe((data: any) => {
+        this.beritaRelevan = [data];
+      });
+      console.log(this.beritaRelevan)
     }
   }
 
@@ -48,5 +51,9 @@ export class CariPage implements OnInit {
   clickBerita(beritaDipilih: any) {
     this.news.addViews(beritaDipilih.id)
     this.router.navigate(['/tabs/baca', beritaDipilih.id])
+  }
+
+  isArray(value: any): boolean {
+    return Array.isArray(value);
   }
 }

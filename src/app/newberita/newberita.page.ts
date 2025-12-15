@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewberitaPage implements OnInit {
 
+  judul_baru = ""
+  deskripsi = ""
+  
   constructor() { }
 
   ngOnInit() {

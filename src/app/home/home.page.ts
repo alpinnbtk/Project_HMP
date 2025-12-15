@@ -45,7 +45,7 @@ export class HomePage {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('app_username');
     localStorage.removeItem('isLoggedIn');
 
     alert('Anda telah melakukan logout.');

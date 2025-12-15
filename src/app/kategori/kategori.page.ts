@@ -15,15 +15,13 @@ export class KategoriPage implements OnInit {
 
   berita:any[] = []
 
-  get filteredNews() {
-    return this.berita.filter(news => {
-      if (Array.isArray(news.category)) {
-        return news.category.includes(this.kategoriTerpilih);
-      } else {
-        return news.category === this.kategoriTerpilih;
-      }
-    });
-  }
+  // get filteredNews() {
+  //   console.log(this.kategoriTerpilih)
+  //   this.news.getBeritaByKategori(this.kategoriTerpilih).subscribe(
+  //     (data) => { this.berita = data }
+  //   )
+  //   return this.berita
+  // }
 
   isArray(value: any): boolean {
     return Array.isArray(value);
@@ -33,9 +31,15 @@ export class KategoriPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-       this.kategoriTerpilih = params['jenis']; 
-    });
-    this.berita = this.news.berita;
+        this.kategoriTerpilih = params['jenis'];
+        this.loadBerita();
+      });
+    }
+
+    loadBerita() {
+      this.news.getBeritaByKategori(this.kategoriTerpilih).subscribe(
+        data => this.berita = data
+      );
   }
 
   overallRating(news: any): number {

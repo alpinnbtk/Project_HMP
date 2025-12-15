@@ -10,15 +10,18 @@ import { Observable } from 'rxjs';
 })
 export class MyFavoritePage implements OnInit {
 
-  berita!: Observable<any>;
+  berita: any[] = [];
   currentUser = ""
 
   constructor(private news: News) { }
 
   ngOnInit() {
-    this.currentUser = localStorage.getItem('app_username') ?? ''
-    console.log(this.currentUser)
-    this.berita = this.news.getFavorites(this.currentUser)
+    this.currentUser = localStorage.getItem('app_username') ?? '';
+    console.log(this.currentUser);
+
+    this.news.getFavorites(this.currentUser).subscribe((data: any[]) => {
+      this.berita = data;
+    });
   }
 
   formatTanggal(tanggal: string | Date): string {

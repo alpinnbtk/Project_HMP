@@ -9,11 +9,11 @@
     show-clear-button="focus">
   </ion-searchbar>
 
-  <ion-card *ngFor="let berita of beritaRelevan | async" (click)="clickBerita(berita)">
+  <ion-card *ngFor="let berita of beritaRelevan" (click)="clickBerita(berita)">
     <img alt="Silhouette of mountains" [src]="berita.cover" />
     <ion-card-header>
       <ion-card-title>{{ berita.judul }}</ion-card-title>
-      <ion-card-subtitle> {{ berita.kategori.join(', ') }}</ion-card-subtitle>
+      <ion-card-subtitle> {{ isArray(berita.kategori) ? berita.kategori.join(', ') : berita.kategori }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>

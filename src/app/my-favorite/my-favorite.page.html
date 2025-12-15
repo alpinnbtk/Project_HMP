@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let news of berita | async" [routerLink]="['/tabs/baca', news.id]">
+  <ion-card *ngFor="let news of berita" [routerLink]="['/tabs/baca', news.id]">
     <img alt="Silhouette of mountains" [src]="news.cover" />
     <ion-card-header>
       <ion-card-title>{{ news.judul }}</ion-card-title>
