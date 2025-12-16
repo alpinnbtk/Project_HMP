@@ -18,18 +18,19 @@ export class NewberitaPage implements OnInit {
   imageFiles: File[] = [];
   imagePreviews: string[] = [];
 
-  list_kategori: any[] = []
+  kategoriList: any[] = [];
+  list_kategori: any[] = [];
 
   currentUser = ""
-  
+
   constructor(private news: News) { }
 
   ngOnInit() {
     this.currentUser = localStorage.getItem('app_username') ?? '';
 
-    this.news.listKategori().subscribe(
-      (data) => { this.list_kategori = data; }
-    );
+    this.news.listKategori().subscribe((data: any[]) => {
+      this.kategoriList = data;
+    });
   }
 
   onImageChange(event: any) {
@@ -40,6 +41,8 @@ export class NewberitaPage implements OnInit {
       reader.onload = (e: any) => this.imagePreviews.push(e.target.result);
       reader.readAsDataURL(file);
     }
+
+    console.log(this.imageFiles);
   }
 
   hapusFoto(index: number) {
@@ -53,14 +56,13 @@ export class NewberitaPage implements OnInit {
 
     this.news.tambahBerita(this.currentUser, this.judul_baru, this.deskripsi, tanggal_dibuat, this.list_kategori, this.imageFiles).subscribe(
       (response: any) => {
-            if(response.result==='success'){
-              alert("Proses Tambah Berita Berhasil!");
-              // this.router.navigate(['/login']);
-            }
-            else
-            {
-              alert(response.message)
-            }
+        if (response.result === 'success') {
+          alert("Proses Tambah Berita Berhasil!");
+          // this.router.navigate(['/login']);
+        }
+        else {
+          alert(response.message)
+        }
       }
     )
   }

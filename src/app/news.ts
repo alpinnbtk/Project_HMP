@@ -10,11 +10,11 @@ export class News {
 
   constructor(private http: HttpClient) { }
 
-  listBerita():Observable<any> {
+  listBerita(): Observable<any> {
     return this.http.get("https://ubaya.cloud/hybrid/160423055/get_berita.php");
   }
 
-  listBeritaDetail():Observable<any> {
+  listBeritaDetail(): Observable<any> {
     return this.http.get("https://ubaya.cloud/hybrid/160423055/get_berita_detail.php");
   }
 
@@ -858,64 +858,104 @@ export class News {
     }
 
     return this.http.post(
-    'https://ubaya.cloud/hybrid/160423055/add_berita.php', body);
+      'https://ubaya.cloud/hybrid/160423055/add_berita.php', body);
   }
-  
-  getBeritaById(id: number) {
+
+  getBeritaById(id: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('id', id.toString());
     const urlEncodedData = body.toString();
-    
+
     return this.http.post(
-    "https://ubaya.cloud/hybrid/160423055/get_berita_by_id.php", urlEncodedData, { headers });
+      "https://ubaya.cloud/hybrid/160423055/get_berita_by_id.php", urlEncodedData, { headers });
   }
 
-  getBeritaByName(judul: string):Observable<any> {
+  getBeritaByName(judul: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('judul', judul);
     const urlEncodedData = body.toString();
-    
+
     return this.http.post(
-    "https://ubaya.cloud/hybrid/160423055/get_berita_by_name.php", urlEncodedData, { headers });
+      "https://ubaya.cloud/hybrid/160423055/get_berita_by_name.php", urlEncodedData, { headers });
   }
 
-  getBeritaByKategori(kategori: string):Observable<any> {
+  getBeritaByKategori(kategori: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('kategori', kategori);
     const urlEncodedData = body.toString();
-    
-    return this.http.post(
-    "https://ubaya.cloud/hybrid/160423055/get_berita_by_kategori.php", urlEncodedData, { headers });
-  }
-  
-  addReply(berita_index: number, k_index: number, p_reply: string, p_user: string) {
-    var beritaDireply = this.berita[berita_index]
-    var tambah = beritaDireply.komentar[k_index]
 
-    tambah.reply.push({
-      username: p_user,
-      komentar: p_reply
-    });
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/get_berita_by_kategori.php", urlEncodedData, { headers });
+  }
+
+  getKomentarBerita(id: number): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('id', id.toString());
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/get_komentar_berita.php", urlEncodedData, { headers });
+  }
+
+  addReply(k_index: number, reply: string, user: string) {
+    // var beritaDireply = this.berita[berita_index]
+    // var tambah = beritaDireply.komentar[k_index]
+
+    // tambah.reply.push({
+    //   username: p_user,
+    //   komentar: p_reply
+    // });
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('k_index', k_index.toString());
+    body.set('reply', reply);
+    body.set('username', user);
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/add_reply.php", urlEncodedData, { headers });
   }
 
   addComment(p_newComment: string, p_index: number, p_currentUser: string) {
-    this.berita[p_index].komentar.push({
-      username: p_currentUser, komentar: p_newComment, reply: []
-    });
+    // this.berita[p_index].komentar.push({
+    //   username: p_currentUser, komentar: p_newComment, reply: []
+    // });
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('index', p_index.toString());
+    body.set('username', p_currentUser);
+    body.set('isi', p_newComment);
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/add_comment.php", urlEncodedData, { headers });
   }
 
   addRating(p_newRating: number, p_index: number, p_currentUser: string) {
-    const existing = this.berita[p_index].rating.find((r: any) => r.username === p_currentUser);
-    if (existing) {
-      existing.rate = p_newRating;
-    } else {
-      this.berita[p_index].rating.push({
-        username: p_currentUser, rate: p_newRating
-      });
-    }
+    // const existing = this.berita[p_index].rating.find((r: any) => r.username === p_currentUser);
+    // if (existing) {
+    //   existing.rate = p_newRating;
+    // } else {
+    //   this.berita[p_index].rating.push({
+    //     username: p_currentUser, rate: p_newRating
+    //   });
+    // }
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('newRating', p_newRating.toString());
+    body.set('index', p_index.toString());
+    body.set('username', p_currentUser);
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/add_rating.php", urlEncodedData, { headers });
   }
 
   addToFavorites(index: number, username: string) {
@@ -941,9 +981,9 @@ export class News {
     body.set('index', index.toString());
     body.set('username', username);
     const urlEncodedData = body.toString();
-    
+
     return this.http.post(
-    "https://ubaya.cloud/hybrid/160423055/add_favorite.php", urlEncodedData, { headers });
+      "https://ubaya.cloud/hybrid/160423055/add_favorite.php", urlEncodedData, { headers });
   }
 
   checkFavorites(index: number, username: string): boolean {
@@ -962,14 +1002,14 @@ export class News {
     return alreadyExists;
   }
 
-  getFavorites(username: string):Observable<any> {
+  getFavorites(username: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('username', username);
     const urlEncodedData = body.toString();
-    
+
     return this.http.post(
-    "https://ubaya.cloud/hybrid/160423055/get_favorite.php", urlEncodedData, { headers });
+      "https://ubaya.cloud/hybrid/160423055/get_favorite.php", urlEncodedData, { headers });
   }
 
   saveFavorites() {

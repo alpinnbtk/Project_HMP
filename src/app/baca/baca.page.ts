@@ -44,8 +44,14 @@ export class BacaPage implements OnInit {
           ...data,
           gambar: data.gambar ? data.gambar.split(', ') : [],
           kategori: data.kategori ? data.kategori.split(', ') : [],
-          komentar: data.komentar || []
+          komentar: []   // inisialisasi dulu
         };
+
+        this.news.getKomentarBerita(id).subscribe((komentar: any) => {
+          if (this.berita) {
+            this.berita.komentar = komentar;
+          }
+        });
 
         this.hitungTotalKomentar();
         this.checkFavorites();
@@ -62,12 +68,39 @@ export class BacaPage implements OnInit {
   }
 
   addReply(k_index: number) {
-    var userReply = this.currentUser;
-    this.news.addReply(this.index, k_index, this.newReply, userReply);
-    this.hitungTotalKomentar()
+    // var userReply = this.currentUser;
+    // this.news.addReply(this.index, k_index, this.newReply, userReply);
+    // this.hitungTotalKomentar()
 
-    this.newReply = "";
-    this.replyIndex = -1;
+    // this.newReply = "";
+    // this.replyIndex = -1;
+
+    if (!this.newReply?.trim() || !this.berita) return;
+
+    const komentar = this.berita.komentar[k_index];
+    const komentarId = komentar.id;
+
+    this.news.addReply(komentarId, this.newReply, this.currentUser)
+      .subscribe((res: any) => {
+
+        if (res && res.result === 'success') {
+          console.log('Reply berhasil');
+
+          this.newReply = '';
+          this.replyIndex = -1;
+
+          this.news.getKomentarBerita(this.berita.id)
+            .subscribe(k => {
+              if (this.berita) {
+                this.berita.komentar = k;
+              }
+            });
+
+        } else {
+          console.log(res?.message || 'Gagal reply');
+        }
+
+      });
   }
 
   hitungTotalKomentar() {
@@ -83,10 +116,28 @@ export class BacaPage implements OnInit {
     }
   }
 
-
   submitComment() {
-    this.news.addComment(this.newComment, this.index, this.currentUser)
-    this.hitungTotalKomentar()
+    if (!this.newComment || !this.berita) return;
+
+    this.news.addComment(this.newComment, this.berita.id, this.currentUser)
+      .subscribe(
+        (res: any) => {
+          if (res && res.result === 'success') {
+            console.log('Komentar berhasil', res);
+
+            this.newComment = '';
+
+            this.news.getKomentarBerita(this.berita.id)
+              .subscribe(k => {
+                if (this.berita) {
+                  this.berita.komentar = k;
+                }
+                this.hitungTotalKomentar();
+              });
+          } else {
+            console.log(res.message);
+          }
+        });
   }
 
   submitRating() {
@@ -95,28 +146,29 @@ export class BacaPage implements OnInit {
     } else if (this.newRating < 1) {
       this.newRating = 1
     }
-    this.news.addRating(this.newRating, this.index, this.currentUser)
-  }
-
-  overallRating(news: any): number {
-    if (!news.rating || news.rating.length === 0) {
-      return 0;
-    }
-    const total = news.rating.reduce((sum: number, r: any) => sum + r.rate, 0);
-    return total / news.rating.length;
+    this.news.addRating(this.newRating, this.index, this.currentUser).subscribe(
+      (response: any) => {
+        if (response.result === "success") {
+          alert('Berhasil menambahkan rating.');
+          this.news.getBeritaById(this.berita.id)
+            .subscribe(d => this.berita.avg_rating = d.avg_rating);
+        } else {
+          alert(response.message)
+        }
+      }
+    )
   }
 
   addToFavorites() {
-      this.news.addToFavorites((this.index),this.currentUser).subscribe(
+    this.news.addToFavorites((this.index), this.currentUser).subscribe(
       (response: any) => {
-          if(response.result==='success'){
-            alert('Berita berhasil ditambahkan ke favorit!');
-          }
-          else
-          {
-            alert(response.message)
-          }
-    });
+        if (response.result === 'success') {
+          alert('Berita berhasil ditambahkan ke favorit!');
+        }
+        else {
+          alert(response.message)
+        }
+      });
   }
 
   checkFavorites() {
