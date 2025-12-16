@@ -4,58 +4,71 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tambah Berita Baru</ion-title>
     </ion-toolbar>
   </ion-header>
-    <ion-list>
-      <ion-item>
-        <ion-input label="Judul" labelPlacement = "floating" placeholder="Masukkan Judul Berita" [(ngModel)]="judul_baru"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-textarea label="Description" labelPlacement = "floating" rows = "4" placeholder="Masukkan Deskripsi" [(ngModel)]="deskripsi"></ion-textarea>
-      </ion-item>
 
-      <ion-item>
-        <ion-radio-group [(ngModel)]="imageType">
-            <ion-radio value="URL" justify="start" labelPlacement="end">URL</ion-radio>
-            <ion-radio value="Camera" justify="start" labelPlacement="end">Camera</ion-radio>
-        </ion-radio-group>
-      </ion-item>
-      <ion-item *ngIf="imageType=='Camera'">
-        <ion-button (click)="captureImage()">Capture Image</ion-button>
-        <ion-img [src]="base64"/>
-      </ion-item>
-      <ion-item *ngIf="imageType=='URL'">
-        <ion-input [(ngModel)]="new_url" label="URL" labelPlacement="floating" />
-        <ion-img [src]="new_url"/>
-      </ion-item>
+  <ion-list>
 
-      <ion-item>
-        <ion-img [src] = "new_url"></ion-img>
-      </ion-item>
+    <ion-item>
+      <ion-input label="Judul" labelPlacement="floating"
+        placeholder="Masukkan Judul Berita"
+        [(ngModel)]="judul_baru">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea label="Description" labelPlacement="floating"
+        rows="4" placeholder="Masukkan Deskripsi"
+        [(ngModel)]="deskripsi">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Foto Berita</ion-label>
+      <input type="file" multiple accept="image/*"
+        (change)="onImageChange($event)">
+    </ion-item>
+
+    <ion-grid *ngIf="imagePreviews.length > 0">
+      <ion-row>
+        <ion-col size="4" *ngFor="let img of imagePreviews; let i = index">
+          <ion-img [src]="img"></ion-img>
+          <ion-button
+            size="small"
+            color="danger"
+            expand="block"
+            (click)="hapusFoto(i)">
+            Hapus
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 
-      <ion-item>
-        <ion-select [(ngModel)]="new_price" label="Price" labelPlacement="floating" >
-          <ion-select-option *ngFor="let price of arr_price"     
-                  [value]="price">{{price}}</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-item>
-          <ion-label>Spicy?</ion-label>
-          <ion-checkbox slot="start" [(ngModel)]="new_spicy"></ion-checkbox>
-        </ion-item>
-      </ion-item>
-      <ion-button expand = "full" id="btnsubmit" (click)="submitpasta()">Submit</ion-button>
-            <ion-alert
-              trigger="btnsubmit"
-              header="Add Pasta"
-              message="Data berhasil ditambahkan!"
-              [buttons]="alertButtons"
-            ></ion-alert>
-    </ion-list>
-</ion-content> -->
+    <ion-item>
+      <ion-select label="Kategori Berita" labelPlacement="floating"
+        [(ngModel)]="list_kategori" multiple="true">
+        <ion-select-option *ngFor="let k of list_kategori" [value]="k.id">
+          {{ k.nama }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" id="btnsubmit" (click)="addBerita()">
+      Tambahkan
+    </ion-button>
+
+    <ion-alert
+      trigger="btnsubmit"
+      header="Add Berita"
+      message="Data berhasil ditambahkan!"
+      [buttons]="alertButtons">
+    </ion-alert>
+
+  </ion-list>
+</ion-content>
+

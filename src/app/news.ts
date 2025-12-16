@@ -18,6 +18,10 @@ export class News {
     return this.http.get("https://ubaya.cloud/hybrid/160423055/get_berita_detail.php");
   }
 
+  listKategori(): Observable<any> {
+    return this.http.get("https://ubaya.cloud/hybrid/160423055/get_kategori.php")
+  }
+
   berita = [
     {
       index: 0,
@@ -840,6 +844,23 @@ export class News {
 
   favorites: { [username: string]: any[] } = {};
 
+  tambahBerita(user: string, judul: string, deskripsi: string, tanggal_dibuat: string, kategori: any[], foto: File[]) {
+    const body = new FormData();
+
+    body.set('user', user);
+    body.set('judul', judul);
+    body.set('deskripsi', deskripsi);
+    body.set('tanggal', tanggal_dibuat);
+    body.set('kategori', JSON.stringify(kategori));
+
+    for (let i = 0; i < foto.length; i++) {
+      body.append('foto[]', foto[i], foto[i].name);
+    }
+
+    return this.http.post(
+    'https://ubaya.cloud/hybrid/160423055/add_berita.php', body);
+  }
+  
   getBeritaById(id: number) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
