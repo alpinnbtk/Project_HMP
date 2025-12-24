@@ -25,10 +25,14 @@ export class HomePage {
   constructor(private router: Router, private news: News) {}
 
   ngOnInit() {
-    this.news.loadViews();
     this.news.listBerita().subscribe(
-      (data) => { this.berita = data; }
-    );
+      (data) => { 
+        this.berita = data; 
+        this.berita.forEach(b => {
+          b.views = 0; 
+          this.loadViewsPerBerita(b);
+        });
+      });
   }
   
   overallRating(news: any): number {
@@ -40,7 +44,7 @@ export class HomePage {
   }
 
   clickBerita(berita: any) {
-    this.news.addViews(berita.id)
+    this.news.addViews(berita.id).subscribe();
     this.router.navigate(['/tabs/baca', berita.id])
   }
 
@@ -56,4 +60,9 @@ export class HomePage {
   isArray(value: any): boolean {
     return Array.isArray(value);
   }
+  loadViewsPerBerita(berita: any) {
+  this.news.loadViews(berita.id).subscribe((data : any) => {
+    berita.views = data.views; 
+  });
+}
 }

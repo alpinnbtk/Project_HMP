@@ -1023,15 +1023,29 @@ export class News {
     }
   }
 
-  loadViews() {
-    const stored = localStorage.getItem('berita')
-    if (stored) {
-      this.berita = JSON.parse(stored)
-    }
+  loadViews(beritaKe:number) {
+    // const stored = localStorage.getItem('berita')
+    // if (stored) {
+    //   this.berita = JSON.parse(stored)
+    // }
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('berita_id', beritaKe.toString());
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/get_views.php", urlEncodedData, { headers });
   }
 
   addViews(beritaKe: number) {
-    this.berita[beritaKe].views++
-    localStorage.setItem('berita', JSON.stringify(this.berita))
+    // this.berita[beritaKe].views++
+    // localStorage.setItem('berita', JSON.stringify(this.berita))
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('berita_id', beritaKe.toString());
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/add_views.php", urlEncodedData, { headers });
   }
 }
