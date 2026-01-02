@@ -1,0 +1,22 @@
+.meta h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.meta p {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.kategori {
+  margin-top: 6px;
+}
+
+ion-chip {
+  height: 22px;
+  font-size: 12px;
+}

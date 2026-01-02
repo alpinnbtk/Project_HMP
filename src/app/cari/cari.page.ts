@@ -33,10 +33,19 @@ export class CariPage implements OnInit {
         (data) => { this.beritaRelevan = data; }
       );
     } else {
-      this.news.getBeritaByName(keyword).subscribe((data: any) => {
-        this.beritaRelevan = [data];
+      this.news.getBeritaByName(keyword).subscribe((data: any[]) => {
+        this.beritaRelevan = data.map(b => ({
+          id: b[0],
+          judul: b[1],
+          deskripsi: b[2],
+          tanggal_dibuat: b[3],
+          cover: b[4],
+          nama_lengkap: b[5],
+          kategori: b[6]
+        }));
+
+        console.log(this.beritaRelevan); 
       });
-      console.log(this.beritaRelevan)
     }
   }
 

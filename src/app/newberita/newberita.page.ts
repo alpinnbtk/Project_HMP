@@ -23,7 +23,7 @@ export class NewberitaPage implements OnInit {
 
   currentUser = ""
 
-  constructor(private news: News) { }
+  constructor(private news: News, private router: Router) { }
 
   ngOnInit() {
     this.currentUser = localStorage.getItem('app_username') ?? '';
@@ -35,14 +35,19 @@ export class NewberitaPage implements OnInit {
 
   onImageChange(event: any) {
     const files = event.target.files;
+
     for (let file of files) {
+      if (file.size > 2 * 1024 * 1024) {
+        alert('Ukuran foto maksimal 2 MB');
+        continue;
+      }
+
       this.imageFiles.push(file);
+
       const reader = new FileReader();
       reader.onload = (e: any) => this.imagePreviews.push(e.target.result);
       reader.readAsDataURL(file);
     }
-
-    console.log(this.imageFiles);
   }
 
   hapusFoto(index: number) {
@@ -58,7 +63,7 @@ export class NewberitaPage implements OnInit {
       (response: any) => {
         if (response.result === 'success') {
           alert("Proses Tambah Berita Berhasil!");
-          // this.router.navigate(['/login']);
+          this.router.navigate(['/tabs/home']);
         }
         else {
           alert(response.message)

@@ -14,9 +14,9 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="horizontal-slider">
-    <div class="slide-item" *ngFor="let item of kategori" [style.background-image]="'url(' + item.image + ')'"
-      [routerLink]="['/kategori', item.title]">
-      <h2>{{ item.title }}</h2>
+    <div class="slide-item" *ngFor="let item of kategori" [style.background-image]="'url(' + item.foto + ')'"
+      [routerLink]="['/kategori', item.nama]">
+      <h2>{{ item.nama }}</h2>
     </div>
   </div>
 
@@ -26,17 +26,21 @@
     <ion-card-header>
       <ion-card-title>{{ news.judul }}</ion-card-title>
       <ion-card-subtitle>
+        <ion-icon name="pricetag-outline"></ion-icon>
         {{ isArray(news.kategori) ? news.kategori.join(', ') : news.kategori }}
       </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
+      <ion-icon name="person-outline"></ion-icon>
       Penulis : {{ news.nama_lengkap }}
     </ion-card-content>
     <ion-card-content>
+      <ion-icon name="calendar-outline"></ion-icon>
       Published : {{ news.tanggal_dibuat}}
     </ion-card-content>
     <ion-card-content>
+      <ion-icon name="eye"></ion-icon>
       Views : {{ news.views}}
     </ion-card-content>
 

@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'newberita',
     loadChildren: () => import('./newberita/newberita.module').then( m => m.NewberitaPageModule)
+  },
+  {
+    path: 'newkategori',
+    loadChildren: () => import('./newkategori/newkategori.module').then( m => m.NewkategoriPageModule)
+  },
+  {
+    path: 'hapus-berita',
+    loadChildren: () => import('./hapus-berita/hapus-berita.module').then( m => m.HapusBeritaPageModule)
   }
 ];
 

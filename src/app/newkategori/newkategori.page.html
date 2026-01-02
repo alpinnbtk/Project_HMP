@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tambah Kategori Baru</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tambah Kategori Baru</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input
+        label="Nama Kategori"
+        labelPlacement="floating"
+        placeholder="Masukkan Kategori Baru"
+        [(ngModel)]="kategori_baru">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Foto Kategori</ion-label>
+      <input type="file" accept="image/*" (change)="onFotoChange($event)">
+    </ion-item>
+
+    <ion-item *ngIf="fotoPreview">
+      <ion-img [src]="fotoPreview"></ion-img>
+    </ion-item>
+
+    <ion-button expand="full" (click)="addKategori()">
+      Simpan Kategori
+    </ion-button>
+
+  </ion-list>
+</ion-content>

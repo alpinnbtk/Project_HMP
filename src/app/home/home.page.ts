@@ -12,15 +12,7 @@ export class HomePage {
 
   berita:any[] = []
 
-  kategori = [
-    { image: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/06/2024/01/02/VIRAL-2877297154.jpg', title: 'Viral' },
-    { image: 'https://sbvpa.org/wp-content/uploads/2022/08/sports-tools_53876-138077.jpg', title: 'Olahraga' },
-    { image: 'https://sistekin.untag-sby.ac.id/uploads/berita/contoh-gambar-artikel.jpeg', title: 'Teknologi' },
-    { image: 'https://staiku.ac.id/blog/wp-content/uploads/2024/04/Screenshot_2024-04-20_122434-transformed.png', title: 'Ekonomi' },
-    { image: 'https://mahasiswa.co.id/wp-content/uploads/2025/07/image-5.jpg', title: 'Kesehatan' },
-    { image: 'https://www.portugal.com/wp-content/uploads/2024/09/breaking-news-7562017_1280.jpg', title: 'Peristiwa' },
-    { image: 'https://akcdn.detik.net.id/visual/2019/08/17/695786f1-2a1d-4a0e-b520-8f9440842bed_169.jpeg?w=400&q=90', title: 'Nasional' },
-  ];
+  kategori:any[] = []
 
   constructor(private router: Router, private news: News) {}
 
@@ -33,6 +25,9 @@ export class HomePage {
           this.loadViewsPerBerita(b);
         });
       });
+    this.news.daftarKategori().subscribe(
+      (data) => { this.kategori = data; }
+    )
   }
   
   overallRating(news: any): number {

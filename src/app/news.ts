@@ -22,6 +22,10 @@ export class News {
     return this.http.get("https://ubaya.cloud/hybrid/160423055/get_kategori.php")
   }
 
+  daftarKategori(): Observable<any> {
+    return this.http.get("https://ubaya.cloud/hybrid/160423055/list_kategori.php")
+  }
+
   berita = [
     {
       index: 0,
@@ -861,6 +865,15 @@ export class News {
       'https://ubaya.cloud/hybrid/160423055/add_berita.php', body);
   }
 
+  deleteBerita(id_berita: number) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('id', id_berita.toString()); 
+    const urlEncodedData = body.toString();
+    
+    return this.http.post("https://ubaya.cloud/hybrid/160423055/delete_berita.php", urlEncodedData, { headers })
+  }
+
   getBeritaById(id: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
@@ -889,6 +902,16 @@ export class News {
 
     return this.http.post(
       "https://ubaya.cloud/hybrid/160423055/get_berita_by_kategori.php", urlEncodedData, { headers });
+  }
+
+  getBeritaByUser(username: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('user', username);
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.cloud/hybrid/160423055/get_berita_by_user.php", urlEncodedData, { headers });
   }
 
   getKomentarBerita(id: number): Observable<any> {
@@ -1047,5 +1070,15 @@ export class News {
 
     return this.http.post(
       "https://ubaya.cloud/hybrid/160423055/add_views.php", urlEncodedData, { headers });
+  }
+
+  addKategori(kategori: string, foto: File) {
+    const body = new FormData();
+
+    body.set('kategori', kategori);
+    body.set('foto', foto);
+
+    return this.http.post(
+      'https://ubaya.cloud/hybrid/160423055/add_kategori.php', body);
   }
 }

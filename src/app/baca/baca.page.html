@@ -23,12 +23,23 @@
     <ng-container *ngIf="berita">
       <h2>{{ berita.judul }}</h2>
 
-      <ion-label>{{ berita.nama_lengkap }} - OnNews</ion-label>
-      <ion-label>{{ berita.tanggal_dibuat }}</ion-label>
+      <ion-item lines="none">
+        <ion-label class="meta">
+          <h2>{{ berita.nama_lengkap }}</h2>
 
-      <ion-label>
-        Kategori: {{ berita.kategori.join(', ') }}
-      </ion-label>
+          <p>
+            <ion-icon name="calendar-outline"></ion-icon>
+            {{ berita.tanggal_dibuat }} • OnNews
+          </p>
+
+          <div class="kategori">
+            <ion-chip *ngFor="let k of berita.kategori" color="primary">
+              {{ k }}
+            </ion-chip>
+          </div>
+        </ion-label>
+      </ion-item>
+
 
       <ion-grid>
         <ion-row>
