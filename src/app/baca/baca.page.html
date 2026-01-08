@@ -21,7 +21,11 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ng-container *ngIf="berita">
-      <h2>{{ berita.judul }}</h2>
+      <ion-item lines="none">
+        <ion-label>
+          <h2 class="judul-berita">{{ berita.judul }}</h2>
+        </ion-label>
+      </ion-item>
 
       <ion-item lines="none">
         <ion-label class="meta">
@@ -51,7 +55,11 @@
         </ion-row>
       </ion-grid>
 
-      <p>{{ berita.deskripsi }}</p>
+      <ion-item lines="none">
+        <ion-label>
+          <p class="deskripsi-berita">{{ berita.deskripsi }}</p>
+        </ion-label>
+      </ion-item>
     </ng-container>
 
 
@@ -150,10 +158,12 @@
           </ion-input>
         </ion-item>
 
-        <ion-button expand="block" (click)="submitComment()">
-          Kirim
-        </ion-button>
-
+        <ion-item lines = "none">
+          <ion-button expand="block" (click)="submitComment()">
+            Kirim
+          </ion-button>
+        </ion-item>
+        
         <ion-item lines="none">Ratings:</ion-item>
         <ion-item>
           <ion-label>
@@ -164,7 +174,11 @@
         <ion-item>
           <ion-input type="number" [(ngModel)]="newRating" min="1" max="5"></ion-input>
         </ion-item>
-        <ion-button (click)="submitRating()">Kirim</ion-button>
+
+        <ion-item lines = "none">
+          <ion-button (click)="submitRating()">Kirim</ion-button>
+        </ion-item>
+        
 
       </ng-container>
 
