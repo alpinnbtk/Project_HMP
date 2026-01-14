@@ -55,9 +55,10 @@ export class HomePage {
   isArray(value: any): boolean {
     return Array.isArray(value);
   }
+
   loadViewsPerBerita(berita: any) {
-  this.news.loadViews(berita.id).subscribe((data : any) => {
-    berita.views = data.views; 
-  });
-}
+    this.news.loadViews(berita.id).subscribe((data : any) => {
+      berita.views = data.views; 
+    });
+  }
 }

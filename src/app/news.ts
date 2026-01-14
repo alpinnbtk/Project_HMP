@@ -925,13 +925,6 @@ export class News {
   }
 
   addReply(k_index: number, reply: string, user: string) {
-    // var beritaDireply = this.berita[berita_index]
-    // var tambah = beritaDireply.komentar[k_index]
-
-    // tambah.reply.push({
-    //   username: p_user,
-    //   komentar: p_reply
-    // });
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
@@ -945,9 +938,6 @@ export class News {
   }
 
   addComment(p_newComment: string, p_index: number, p_currentUser: string) {
-    // this.berita[p_index].komentar.push({
-    //   username: p_currentUser, komentar: p_newComment, reply: []
-    // });
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
@@ -961,14 +951,6 @@ export class News {
   }
 
   addRating(p_newRating: number, p_index: number, p_currentUser: string) {
-    // const existing = this.berita[p_index].rating.find((r: any) => r.username === p_currentUser);
-    // if (existing) {
-    //   existing.rate = p_newRating;
-    // } else {
-    //   this.berita[p_index].rating.push({
-    //     username: p_currentUser, rate: p_newRating
-    //   });
-    // }
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
@@ -982,22 +964,6 @@ export class News {
   }
 
   addToFavorites(index: number, username: string) {
-    // if (!this.favorites[username]) {
-    //   this.favorites[username] = [];
-    // }
-
-    // const beritaFavorit = this.berita[index];
-
-    // const alreadyExists = this.favorites[username].some(
-    //   (b) => b.title === beritaFavorit.title
-    // );
-
-    // if (alreadyExists) {
-    //   return false;
-    // }
-
-    // this.favorites[username].push(beritaFavorit);
-    // this.saveFavorites();
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
@@ -1047,10 +1013,7 @@ export class News {
   }
 
   loadViews(beritaKe:number) {
-    // const stored = localStorage.getItem('berita')
-    // if (stored) {
-    //   this.berita = JSON.parse(stored)
-    // }
+
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('berita_id', beritaKe.toString());
@@ -1061,8 +1024,7 @@ export class News {
   }
 
   addViews(beritaKe: number) {
-    // this.berita[beritaKe].views++
-    // localStorage.setItem('berita', JSON.stringify(this.berita))
+
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = new URLSearchParams();
     body.set('berita_id', beritaKe.toString());

@@ -44,7 +44,7 @@ export class BacaPage implements OnInit {
           ...data,
           gambar: data.gambar ? data.gambar.split(', ') : [],
           kategori: data.kategori ? data.kategori.split(', ') : [],
-          komentar: []   // inisialisasi dulu
+          komentar: []   
         };
 
         this.news.getKomentarBerita(id).subscribe((komentar: any) => {

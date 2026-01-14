@@ -33,22 +33,31 @@ export class NewberitaPage implements OnInit {
     });
   }
 
-  onImageChange(event: any) {
+  async onImageChange(event: any) {
     const files = event.target.files;
 
     for (let file of files) {
-      if (file.size > 2 * 1024 * 1024) {
-        alert('Ukuran foto maksimal 2 MB');
+
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Ukuran foto maksimal 5 MB sebelum kompresi');
         continue;
       }
 
-      this.imageFiles.push(file);
+      const compressed = await this.compressImage(file);
+
+      console.log(
+        'Before:', Math.round(file.size / 1024), 'KB',
+        'After:', Math.round(compressed.size / 1024), 'KB'
+      );
+
+      this.imageFiles.push(compressed);
 
       const reader = new FileReader();
       reader.onload = (e: any) => this.imagePreviews.push(e.target.result);
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(compressed);
     }
   }
+
 
   hapusFoto(index: number) {
     this.imagePreviews.splice(index, 1);
@@ -71,4 +80,50 @@ export class NewberitaPage implements OnInit {
       }
     )
   }
+
+  compressImage(file: File): Promise<File> {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+
+      reader.onload = (event: any) => {
+        const img = new Image();
+        img.src = event.target.result;
+
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+
+          const MAX_WIDTH = 1024;
+          const scale = MAX_WIDTH / img.width;
+
+          canvas.width = MAX_WIDTH;
+          canvas.height = img.height * scale;
+
+          const ctx = canvas.getContext('2d')!;
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) return;
+
+              const compressedFile = new File(
+                [blob],
+                file.name.replace(/\.(png|jpg|jpeg)$/i, '.jpg'),
+                {
+                  type: 'image/jpeg',
+                  lastModified: Date.now()
+                }
+              );
+
+              resolve(compressedFile);
+            },
+            'image/jpeg',
+            0.7 
+          );
+        };
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+
 }

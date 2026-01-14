@@ -21,6 +21,10 @@ export class MyFavoritePage implements OnInit {
 
     this.news.getFavorites(this.currentUser).subscribe((data: any[]) => {
       this.berita = data;
+      this.berita.forEach(b => {
+            b.views = 0; 
+            this.loadViewsPerBerita(b);
+          }); 
     });
   }
 
@@ -44,5 +48,11 @@ export class MyFavoritePage implements OnInit {
 
   isArray(value: any): boolean {
     return Array.isArray(value);
+  }
+
+  loadViewsPerBerita(berita: any) {
+    this.news.loadViews(berita.id).subscribe((data : any) => {
+      berita.views = data.views; 
+    });
   }
 }

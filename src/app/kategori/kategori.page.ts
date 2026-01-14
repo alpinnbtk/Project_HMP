@@ -38,7 +38,12 @@ export class KategoriPage implements OnInit {
 
     loadBerita() {
       this.news.getBeritaByKategori(this.kategoriTerpilih).subscribe(
-        data => this.berita = data
+        (data) => { 
+          this.berita = data;
+          this.berita.forEach(b => {
+            b.views = 0; 
+            this.loadViewsPerBerita(b);
+          }); }
       );
   }
 
@@ -54,4 +59,11 @@ export class KategoriPage implements OnInit {
     this.news.addViews(berita.index)
     this.route.navigate(['/tabs/baca', berita.index])
   }
+
+  loadViewsPerBerita(berita: any) {
+    this.news.loadViews(berita.id).subscribe((data : any) => {
+      berita.views = data.views; 
+    });
+  }
+
 }

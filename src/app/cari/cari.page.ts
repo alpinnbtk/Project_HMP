@@ -19,7 +19,13 @@ export class CariPage implements OnInit {
 
   ngOnInit() {
     this.news.listBerita().subscribe(
-      (data) => { this.berita = data; }
+      (data) => { 
+        this.berita = data; 
+        this.berita.forEach(b => {
+          b.views = 0; 
+          this.loadViewsPerBerita(b);
+        });
+      }
     );
 
   }
@@ -44,7 +50,10 @@ export class CariPage implements OnInit {
           kategori: b[6]
         }));
 
-        console.log(this.beritaRelevan); 
+        this.beritaRelevan.forEach(b => {
+          b.views = 0; 
+          this.loadViewsPerBerita(b);
+        });
       });
     }
   }
@@ -64,5 +73,11 @@ export class CariPage implements OnInit {
 
   isArray(value: any): boolean {
     return Array.isArray(value);
+  }
+
+  loadViewsPerBerita(berita: any) {
+    this.news.loadViews(berita.id).subscribe((data : any) => {
+      berita.views = data.views; 
+    });
   }
 }
