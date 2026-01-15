@@ -15,14 +15,6 @@ export class KategoriPage implements OnInit {
 
   berita:any[] = []
 
-  // get filteredNews() {
-  //   console.log(this.kategoriTerpilih)
-  //   this.news.getBeritaByKategori(this.kategoriTerpilih).subscribe(
-  //     (data) => { this.berita = data }
-  //   )
-  //   return this.berita
-  // }
-
   isArray(value: any): boolean {
     return Array.isArray(value);
   }
@@ -43,6 +35,8 @@ export class KategoriPage implements OnInit {
           this.berita.forEach(b => {
             b.views = 0; 
             this.loadViewsPerBerita(b);
+            this.news.getBeritaById(b.id)
+            .subscribe(d => b.avg_rating = d.avg_rating);
           }); }
       );
   }
@@ -56,8 +50,8 @@ export class KategoriPage implements OnInit {
   }
 
   clickBerita(berita: any) {
-    this.news.addViews(berita.index)
-    this.route.navigate(['/tabs/baca', berita.index])
+    this.news.addViews(berita.id).subscribe()
+    this.route.navigate(['/tabs/baca', berita.id])
   }
 
   loadViewsPerBerita(berita: any) {

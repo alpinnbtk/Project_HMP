@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../news';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-favorite',
@@ -13,7 +14,7 @@ export class MyFavoritePage implements OnInit {
   berita: any[] = [];
   currentUser = ""
 
-  constructor(private news: News) { }
+  constructor(private route: Router, private news: News) { }
 
   ngOnInit() {
     this.currentUser = localStorage.getItem('app_username') ?? '';
@@ -24,6 +25,8 @@ export class MyFavoritePage implements OnInit {
       this.berita.forEach(b => {
             b.views = 0; 
             this.loadViewsPerBerita(b);
+            this.news.getBeritaById(b.id)
+            .subscribe(d => b.avg_rating = d.avg_rating);
           }); 
     });
   }
@@ -48,6 +51,11 @@ export class MyFavoritePage implements OnInit {
 
   isArray(value: any): boolean {
     return Array.isArray(value);
+  }
+
+  clickBerita(berita: any) {
+    this.news.addViews(berita.id).subscribe()
+    this.route.navigate(['/tabs/baca', berita.id])
   }
 
   loadViewsPerBerita(berita: any) {

@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let news of berita" [routerLink]="['/tabs/baca', news.id]">
+  <ion-card *ngFor="let news of berita" (click)="clickBerita(news)">
   <ion-img [src]="news.cover"></ion-img>
 
   <ion-card-header>
@@ -26,10 +26,9 @@
       Published : {{ news.tanggal_dibuat }}
     </ion-card-content>
 
-    <!-- <ion-card-content>
-      <p *ngIf="news.rating.length === 0">Belum ada rating.</p>
-      <p>Rating : {{overallRating(news)}}</p>
-    </ion-card-content> -->
+    <ion-card-content>
+      <p>Rating : {{ news?.avg_rating | number:'1.1-1' }}</p>
+    </ion-card-content> 
     <ion-card-content>
       <p>Viewed {{news.views}} times</p>
     </ion-card-content> 

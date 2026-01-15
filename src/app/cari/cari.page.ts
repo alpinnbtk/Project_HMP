@@ -24,6 +24,8 @@ export class CariPage implements OnInit {
         this.berita.forEach(b => {
           b.views = 0; 
           this.loadViewsPerBerita(b);
+          this.news.getBeritaById(b.id)
+            .subscribe(d => b.avg_rating = d.avg_rating);
         });
       }
     );
@@ -53,6 +55,8 @@ export class CariPage implements OnInit {
         this.beritaRelevan.forEach(b => {
           b.views = 0; 
           this.loadViewsPerBerita(b);
+          this.news.getBeritaById(b.id)
+            .subscribe(d => b.avg_rating = d.avg_rating);
         });
       });
     }
@@ -67,7 +71,7 @@ export class CariPage implements OnInit {
   }
 
   clickBerita(beritaDipilih: any) {
-    this.news.addViews(beritaDipilih.id)
+    this.news.addViews(beritaDipilih.id).subscribe()
     this.router.navigate(['/tabs/baca', beritaDipilih.id])
   }
 

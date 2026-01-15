@@ -44,12 +44,9 @@
       Views : {{ news.views}}
     </ion-card-content>
 
-    <!-- <ion-card-content>
-      <p *ngIf="news.rating.length === 0">Belum ada rating.</p>
-      <p>Rating : {{overallRating(news)}}</p>
-    </ion-card-content>
     <ion-card-content>
-      <p>Viewed {{news.views}} times</p>
-    </ion-card-content> -->
+      <p>Rating : {{ news?.avg_rating | number:'1.1-1' }}</p>
+    </ion-card-content>
+
   </ion-card>
 </ion-content>

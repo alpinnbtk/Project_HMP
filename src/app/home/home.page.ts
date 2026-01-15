@@ -23,6 +23,8 @@ export class HomePage {
         this.berita.forEach(b => {
           b.views = 0; 
           this.loadViewsPerBerita(b);
+          this.news.getBeritaById(b.id)
+            .subscribe(d => b.avg_rating = d.avg_rating);
         });
       });
     this.news.daftarKategori().subscribe(

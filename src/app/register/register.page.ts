@@ -27,7 +27,6 @@ export class RegisterPage implements OnInit {
   constructor(private the_users: Users, private router: Router) { }
 
   ngOnInit() {
-    // this.users = this.the_users.users;
   }
 
   validateName() {
