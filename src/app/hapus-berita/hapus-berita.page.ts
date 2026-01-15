@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from '../news';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-hapus-berita',
@@ -12,7 +13,7 @@ export class HapusBeritaPage implements OnInit {
   currentUser = ""
   beritaUser: any[] = [];
 
-  constructor(private news: News) { }
+  constructor(private news: News, private router: Router) { }
 
   ngOnInit() {
     this.currentUser = localStorage.getItem('app_username') ?? '';
@@ -26,6 +27,7 @@ export class HapusBeritaPage implements OnInit {
     this.news.deleteBerita(id).subscribe((response: any) => {
         if(response.result === 'success'){
           alert("Berita berhasil dihapus!")
+          this.router.navigate(['home'])
         }
         else {
           alert(response.message)
